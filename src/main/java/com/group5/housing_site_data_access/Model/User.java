@@ -1,18 +1,24 @@
 package com.group5.housing_site_data_access.Model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "User")
 public class User {
+    @Id
     double id;
+    @Column(name = "name")
     String name;
+    @Column(name = "surname")
     String surname;
+    @Column(name = "email")
     String email;
+    @Column(name = "password")
     String password;
 
-    public User(double id, String name, String surname, String email) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
-    }
 
     public double getId() {
         return id;
