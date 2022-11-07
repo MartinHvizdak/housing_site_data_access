@@ -19,6 +19,10 @@ public class User {
     @Column(name = "password")
     String password;
 
+    public User() {
+
+    }
+
 
     public double getId() {
         return id;

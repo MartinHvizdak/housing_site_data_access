@@ -7,10 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DBUser implements DBUserI{
+public class DBUser{
 
-    @Override
-    public User getUserById(int id) {
+    public User getUserById(long id) {
         try (Connection connection = DBConnection.getDBConnection()) {
 
             Statement statement;
@@ -25,7 +24,11 @@ public class DBUser implements DBUserI{
                 String Name = resultSet.getString("Name").trim();
                 String Surname = resultSet.getString("Surname").trim();
                 String Email = resultSet.getString("Email").trim();
-                user = new User(Id, Name, Surname, Email);
+                user = new User();
+                user.setId(Id);
+                user.setName(Name);
+                user.setSurname(Surname);
+                user.setEmail(Email);
             }
             resultSet.close();
             statement.close();
