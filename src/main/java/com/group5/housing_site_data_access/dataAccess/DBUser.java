@@ -9,7 +9,7 @@ import java.sql.Statement;
 
 public class DBUser{
 
-    public User getUserById(long id) {
+    public static User getUserById(long id) {
         try (Connection connection = DBConnection.getDBConnection()) {
 
             Statement statement;

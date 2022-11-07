@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Table(name = "User")
 public class User {
     @Id
-    double id;
+    long id;
     @Column(name = "name")
     String name;
     @Column(name = "surname")
@@ -23,12 +23,11 @@ public class User {
 
     }
 
-
-    public double getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(double id) {
+    public void setId(long id) {
         this.id = id;
     }
 
