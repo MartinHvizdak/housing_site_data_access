@@ -1,8 +1,6 @@
-package com.group5.housing_site_data_access;
+package com.group5;
 
-import com.group5.housing_site_data_access.Model.User;
-import com.group5.housing_site_data_access.dataAccess.DBUser;
-import com.group5.housing_site_data_access.service.UserImpl;
+import com.group5.service.UserImpl;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import org.springframework.boot.SpringApplication;
@@ -18,7 +16,7 @@ public class HousingSiteDataAccessApplication {
         SpringApplication.run(HousingSiteDataAccessApplication.class, args);
 
         Server server = ServerBuilder
-                .forPort(8080)
+                .forPort(8081)
                 .addService(new UserImpl()).build();
 
         server.start();

@@ -1,6 +1,6 @@
-package com.group5.housing_site_data_access.dataAccess;
+package com.group5.dataAccess;
 
-import com.group5.housing_site_data_access.Model.User;
+import com.group5.Model.User;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

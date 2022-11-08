@@ -1,4 +1,4 @@
-package com.group5.housing_site_data_access.dataAccess;
+package com.group5.dataAccess;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

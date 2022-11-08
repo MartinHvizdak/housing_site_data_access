@@ -1,6 +1,6 @@
 syntax = "proto3";
 option java_multiple_files = true;
-package com.group5.housing_site_data_access;
+package com.group5;
 
 message GetUserByIdRequest {
   int64 userId = 1;

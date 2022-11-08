@@ -1,10 +1,10 @@
-package com.group5.housing_site_data_access.service;
+package com.group5.service;
 
-import com.group5.housing_site_data_access.GetUserByIdRequest;
-import com.group5.housing_site_data_access.GetUserByIdResponse;
-import com.group5.housing_site_data_access.Model.User;
-import com.group5.housing_site_data_access.UserServiceGrpc;
-import com.group5.housing_site_data_access.dataAccess.DBUser;
+import com.group5.GetUserByIdRequest;
+import com.group5.GetUserByIdResponse;
+import com.group5.Model.User;
+import com.group5.UserServiceGrpc;
+import com.group5.dataAccess.DBUser;
 import io.grpc.stub.StreamObserver;
 
 public class UserImpl extends UserServiceGrpc.UserServiceImplBase {

@@ -1,4 +1,4 @@
-package com.group5.housing_site_data_access;
+package com.group5;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

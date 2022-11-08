@@ -1,4 +1,4 @@
-package com.group5.housing_site_data_access;
+package com.group5;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
@@ -11,32 +11,32 @@ public final class UserServiceGrpc {
 
   private UserServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "com.group5.housing_site_data_access.UserService";
+  public static final String SERVICE_NAME = "com.group5.UserService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.group5.housing_site_data_access.GetUserByIdRequest,
-      com.group5.housing_site_data_access.GetUserByIdResponse> getGetUserByIdMethod;
+  private static volatile io.grpc.MethodDescriptor<com.group5.GetUserByIdRequest,
+      com.group5.GetUserByIdResponse> getGetUserByIdMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getUserById",
-      requestType = com.group5.housing_site_data_access.GetUserByIdRequest.class,
-      responseType = com.group5.housing_site_data_access.GetUserByIdResponse.class,
+      requestType = com.group5.GetUserByIdRequest.class,
+      responseType = com.group5.GetUserByIdResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.group5.housing_site_data_access.GetUserByIdRequest,
-      com.group5.housing_site_data_access.GetUserByIdResponse> getGetUserByIdMethod() {
-    io.grpc.MethodDescriptor<com.group5.housing_site_data_access.GetUserByIdRequest, com.group5.housing_site_data_access.GetUserByIdResponse> getGetUserByIdMethod;
+  public static io.grpc.MethodDescriptor<com.group5.GetUserByIdRequest,
+      com.group5.GetUserByIdResponse> getGetUserByIdMethod() {
+    io.grpc.MethodDescriptor<com.group5.GetUserByIdRequest, com.group5.GetUserByIdResponse> getGetUserByIdMethod;
     if ((getGetUserByIdMethod = UserServiceGrpc.getGetUserByIdMethod) == null) {
       synchronized (UserServiceGrpc.class) {
         if ((getGetUserByIdMethod = UserServiceGrpc.getGetUserByIdMethod) == null) {
           UserServiceGrpc.getGetUserByIdMethod = getGetUserByIdMethod =
-              io.grpc.MethodDescriptor.<com.group5.housing_site_data_access.GetUserByIdRequest, com.group5.housing_site_data_access.GetUserByIdResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.group5.GetUserByIdRequest, com.group5.GetUserByIdResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getUserById"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.group5.housing_site_data_access.GetUserByIdRequest.getDefaultInstance()))
+                  com.group5.GetUserByIdRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.group5.housing_site_data_access.GetUserByIdResponse.getDefaultInstance()))
+                  com.group5.GetUserByIdResponse.getDefaultInstance()))
               .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("getUserById"))
               .build();
         }
@@ -95,8 +95,8 @@ public final class UserServiceGrpc {
 
     /**
      */
-    public void getUserById(com.group5.housing_site_data_access.GetUserByIdRequest request,
-        io.grpc.stub.StreamObserver<com.group5.housing_site_data_access.GetUserByIdResponse> responseObserver) {
+    public void getUserById(com.group5.GetUserByIdRequest request,
+        io.grpc.stub.StreamObserver<com.group5.GetUserByIdResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetUserByIdMethod(), responseObserver);
     }
 
@@ -106,8 +106,8 @@ public final class UserServiceGrpc {
             getGetUserByIdMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.group5.housing_site_data_access.GetUserByIdRequest,
-                com.group5.housing_site_data_access.GetUserByIdResponse>(
+                com.group5.GetUserByIdRequest,
+                com.group5.GetUserByIdResponse>(
                   this, METHODID_GET_USER_BY_ID)))
           .build();
     }
@@ -129,8 +129,8 @@ public final class UserServiceGrpc {
 
     /**
      */
-    public void getUserById(com.group5.housing_site_data_access.GetUserByIdRequest request,
-        io.grpc.stub.StreamObserver<com.group5.housing_site_data_access.GetUserByIdResponse> responseObserver) {
+    public void getUserById(com.group5.GetUserByIdRequest request,
+        io.grpc.stub.StreamObserver<com.group5.GetUserByIdResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetUserByIdMethod(), getCallOptions()), request, responseObserver);
     }
@@ -152,7 +152,7 @@ public final class UserServiceGrpc {
 
     /**
      */
-    public com.group5.housing_site_data_access.GetUserByIdResponse getUserById(com.group5.housing_site_data_access.GetUserByIdRequest request) {
+    public com.group5.GetUserByIdResponse getUserById(com.group5.GetUserByIdRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetUserByIdMethod(), getCallOptions(), request);
     }
@@ -174,8 +174,8 @@ public final class UserServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.group5.housing_site_data_access.GetUserByIdResponse> getUserById(
-        com.group5.housing_site_data_access.GetUserByIdRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.group5.GetUserByIdResponse> getUserById(
+        com.group5.GetUserByIdRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetUserByIdMethod(), getCallOptions()), request);
     }
@@ -201,8 +201,8 @@ public final class UserServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_GET_USER_BY_ID:
-          serviceImpl.getUserById((com.group5.housing_site_data_access.GetUserByIdRequest) request,
-              (io.grpc.stub.StreamObserver<com.group5.housing_site_data_access.GetUserByIdResponse>) responseObserver);
+          serviceImpl.getUserById((com.group5.GetUserByIdRequest) request,
+              (io.grpc.stub.StreamObserver<com.group5.GetUserByIdResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -226,7 +226,7 @@ public final class UserServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.group5.housing_site_data_access.HousingSite.getDescriptor();
+      return com.group5.HousingSite.getDescriptor();
     }
 
     @java.lang.Override

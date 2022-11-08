@@ -1,4 +1,4 @@
-package com.group5.housing_site_data_access.Model;
+package com.group5.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
