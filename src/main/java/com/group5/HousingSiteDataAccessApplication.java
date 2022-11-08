@@ -9,18 +9,12 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 import java.io.IOException;
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
+@SpringBootApplication
 public class HousingSiteDataAccessApplication {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         SpringApplication.run(HousingSiteDataAccessApplication.class, args);
 
-        Server server = ServerBuilder
-                .forPort(8081)
-                .addService(new UserImpl()).build();
-
-        server.start();
-        server.awaitTermination();
     }
 
 }

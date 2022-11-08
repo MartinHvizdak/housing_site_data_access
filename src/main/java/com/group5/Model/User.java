@@ -1,14 +1,12 @@
 package com.group5.Model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "User")
+@Table(name = "user",schema = "housingsystem")
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
     @Column(name = "name")
     String name;
@@ -18,9 +16,12 @@ public class User {
     String email;
     @Column(name = "password")
     String password;
-
-    public User() {
-
+    protected User(){}
+    public User(String name, String surname, String email, String password) {
+        this.name=name;
+        this.surname=surname;
+        this.email=email;
+        this.password=password;
     }
 
     public long getId() {
