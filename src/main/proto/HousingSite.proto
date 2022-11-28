@@ -6,13 +6,51 @@ message GetUserByIdRequest {
   int64 userId = 1;
 }
 
-message GetUserByIdResponse{
+message GetUserByIdResponse {
   int64 id = 1;
   string name = 2;
   string surname = 3;
   string email = 4;
 }
 
+message CreateHouseListingRequest {
+  string street = 1;
+  int32 postNumber = 2;
+  string city = 3;
+  int32 houseNo = 4;
+  int32 constructionYear = 5;
+  int32 lastRebuilt = 6;
+  bool hasInspection = 7;
+  double groundArea = 8;
+  double floorArea = 9;
+  repeated string imageBase64Data = 10;
+  repeated string imageContentType = 11;
+  repeated string imageFileName = 12;
+  int64 price = 13;
+}
+
+message CreateHouseListingResponse {
+  int64 id = 1;
+  string street = 2;
+  int32 postNumber = 3;
+  string city = 4;
+  int32 houseNo = 5;
+  int32 constructionYear = 6;
+  int32 lastRebuilt = 7;
+  bool hasInspection = 8;
+  double groundArea = 9;
+  double floorArea = 10;
+  repeated string imageBase64Data = 11;
+  repeated string imageContentType = 12;
+  repeated string imageFileName = 13;
+  int64 price = 14;
+  string creationDate = 15;
+}
+
 service UserService {
   rpc getUserById(GetUserByIdRequest) returns (GetUserByIdResponse);
+}
+
+service ListingService {
+  rpc createListing(CreateHouseListingRequest) returns (CreateHouseListingResponse);
 }

@@ -14,7 +14,6 @@ public class HousingSiteDataAccessApplication {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         SpringApplication.run(HousingSiteDataAccessApplication.class, args);
-
     }
 
 }
