@@ -23,10 +23,6 @@ public class HouseListing {
     @OneToOne
     @JoinColumn(name = "address_id")
     Address address;
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "image_file")
-    List<ImageFile> imageFiles;
-
 
     String creationDate;
 
@@ -117,11 +113,4 @@ public class HouseListing {
         this.address = address;
     }
 
-    public List<ImageFile> getImageFiles() {
-        return imageFiles;
-    }
-
-    public void setImageFiles(List<ImageFile> imageFiles) {
-        this.imageFiles = imageFiles;
-    }
 }

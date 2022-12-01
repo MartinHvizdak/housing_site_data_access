@@ -14,7 +14,7 @@ public class ImageFile {
     private String imageContentType;
     @Column(name = "file_name")
     private String fileName;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "house_listing_id")
     private HouseListing houseListing;
 

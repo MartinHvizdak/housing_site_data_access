@@ -42,9 +42,14 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
                 request.getLastRebuilt(), request.getHasInspection(), request.getGroundArea(),
                 request.getFloorArea(), request.getPrice(), address, LocalDate.now().toString()));
 
-        for(int index = 0; index > request.getImageBase64DataList().size(); index++) {
-            images.add(new ImageFile(request.getImageBase64Data(index), request.getImageContentType(index),
-                    request.getImageFileName(index), houseListing));
+
+        System.out.println(request.getImageBase64DataList().size());
+        System.out.println(request.getImageContentTypeList().size());
+        System.out.println(request.getImageFileNameList().size());
+
+        for(int index = 0; index < request.getImageBase64DataList().size(); index++) {
+            images.add(imageFileRepository.save(new ImageFile(request.getImageBase64Data(index), request.getImageContentType(index),
+                    request.getImageFileName(index), houseListing)));
         }
 
         List<String> imageBase64Data = new ArrayList<>();
