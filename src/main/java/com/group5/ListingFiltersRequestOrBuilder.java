@@ -8,44 +8,35 @@ public interface ListingFiltersRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int64 postNumber = 1;</code>
+   * <code>optional int64 postNumber = 1;</code>
+   * @return Whether the postNumber field is set.
+   */
+  boolean hasPostNumber();
+  /**
+   * <code>optional int64 postNumber = 1;</code>
    * @return The postNumber.
    */
   long getPostNumber();
 
   /**
-   * <code>string imageBase64Data = 2;</code>
-   * @return The imageBase64Data.
+   * <code>optional int64 maxPrice = 2;</code>
+   * @return Whether the maxPrice field is set.
    */
-  java.lang.String getImageBase64Data();
+  boolean hasMaxPrice();
   /**
-   * <code>string imageBase64Data = 2;</code>
-   * @return The bytes for imageBase64Data.
+   * <code>optional int64 maxPrice = 2;</code>
+   * @return The maxPrice.
    */
-  com.google.protobuf.ByteString
-      getImageBase64DataBytes();
+  long getMaxPrice();
 
   /**
-   * <code>string imageContentType = 3;</code>
-   * @return The imageContentType.
+   * <code>optional int64 minArea = 3;</code>
+   * @return Whether the minArea field is set.
    */
-  java.lang.String getImageContentType();
+  boolean hasMinArea();
   /**
-   * <code>string imageContentType = 3;</code>
-   * @return The bytes for imageContentType.
+   * <code>optional int64 minArea = 3;</code>
+   * @return The minArea.
    */
-  com.google.protobuf.ByteString
-      getImageContentTypeBytes();
-
-  /**
-   * <code>string imageFileName = 4;</code>
-   * @return The imageFileName.
-   */
-  java.lang.String getImageFileName();
-  /**
-   * <code>string imageFileName = 4;</code>
-   * @return The bytes for imageFileName.
-   */
-  com.google.protobuf.ByteString
-      getImageFileNameBytes();
+  long getMinArea();
 }

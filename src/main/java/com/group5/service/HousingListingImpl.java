@@ -72,4 +72,68 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
         responseObserver.onNext(responseText);
         responseObserver.onCompleted();
     }
+
+    @Override
+    public void getListingById(IdRequest request, StreamObserver<HouseResponse> responseObserver) {
+        System.out.println("Received Request ====> " + request.toString());
+        HouseListing houseListing = houseListingRepository.findById(request.getId()).get();
+        Address address=houseListing.getAddress();
+        Area area=houseListing.getAddress().getArea();
+        List<ImageFile> responseImages = new ArrayList<>();
+        List<ImageFile> images=imageFileRepository.findAll();
+        for(ImageFile x:images)
+        {
+            if(x.getHouseListing().getId()==request.getId())
+            {
+                images.add(x);
+            }
+        }
+        List<String> imageBase64Data = new ArrayList<>();
+        List<String> imageContentType = new ArrayList<>();
+        List<String> imageFileName = new ArrayList<>();
+
+        for(int index = 0; index > images.size(); index++){
+            imageBase64Data.add(images.get(index).getBase64data());
+            imageFileName.add(images.get(index).getFileName());
+            imageContentType.add(images.get(index).getImageContentType());
+        }
+
+
+        HouseResponse response = HouseResponse.newBuilder().setId(houseListing.getId()).
+                setStreet(address.getStreet()).setPostNumber(area.getPostNumber()).setCity(area.getCity()).
+                setHouseNo(address.getHouseNumber()).setConstructionYear(houseListing.getConstructionYear())
+                .setLastRebuilt(houseListing.getLastRebuilt()).setHasInspection(houseListing.isHasInspection()).
+                setGroundArea(houseListing.getGroundArea()).setFloorArea(houseListing.getGroundArea()).setPrice(houseListing.getPrice()).
+                setCreationDate(LocalDate.now().toString()).addAllImageBase64Data(imageBase64Data).addAllImageContentType(imageContentType).
+                addAllImageFileName(imageFileName)
+                .build();
+
+
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void getFilteredListings(ListingFiltersRequest request, StreamObserver<ShortListingResponse> responseObserver)
+    {
+        long priceFilter;
+        long postCodeFilter;
+        long areaFilter;
+
+        if(request.hasMaxPrice())
+        {
+            priceFilter=request.getMaxPrice();
+        }
+        if(request.hasMinArea())
+        {
+            areaFilter=request.getMinArea();
+        }
+        if(request.hasPostNumber())
+        {
+            postCodeFilter=request.getPostNumber();
+        }
+
+
+    }
+
 }

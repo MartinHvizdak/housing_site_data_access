@@ -52,10 +52,9 @@ message HouseResponse {
 }
 
 message ListingFiltersRequest{
-  int64 postNumber=1;
-  string imageBase64Data = 2;
-  string imageContentType = 3;
-  string imageFileName = 4;
+  optional int64 postNumber=1;
+  optional int64 maxPrice=2;
+  optional int64 minArea=3;
 }
 
 message ShortListingResponse{

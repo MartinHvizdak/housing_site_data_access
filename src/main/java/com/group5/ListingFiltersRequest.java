@@ -16,9 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListingFiltersRequest() {
-    imageBase64Data_ = "";
-    imageContentType_ = "";
-    imageFileName_ = "";
   }
 
   @java.lang.Override
@@ -41,6 +38,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -52,26 +50,18 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 8: {
-
+            bitField0_ |= 0x00000001;
             postNumber_ = input.readInt64();
             break;
           }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            imageBase64Data_ = s;
+          case 16: {
+            bitField0_ |= 0x00000002;
+            maxPrice_ = input.readInt64();
             break;
           }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            imageContentType_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            imageFileName_ = s;
+          case 24: {
+            bitField0_ |= 0x00000004;
+            minArea_ = input.readInt64();
             break;
           }
           default: {
@@ -108,10 +98,19 @@ private static final long serialVersionUID = 0L;
             com.group5.ListingFiltersRequest.class, com.group5.ListingFiltersRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int POSTNUMBER_FIELD_NUMBER = 1;
   private long postNumber_;
   /**
-   * <code>int64 postNumber = 1;</code>
+   * <code>optional int64 postNumber = 1;</code>
+   * @return Whether the postNumber field is set.
+   */
+  @java.lang.Override
+  public boolean hasPostNumber() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional int64 postNumber = 1;</code>
    * @return The postNumber.
    */
   @java.lang.Override
@@ -119,118 +118,42 @@ private static final long serialVersionUID = 0L;
     return postNumber_;
   }
 
-  public static final int IMAGEBASE64DATA_FIELD_NUMBER = 2;
-  private volatile java.lang.Object imageBase64Data_;
+  public static final int MAXPRICE_FIELD_NUMBER = 2;
+  private long maxPrice_;
   /**
-   * <code>string imageBase64Data = 2;</code>
-   * @return The imageBase64Data.
+   * <code>optional int64 maxPrice = 2;</code>
+   * @return Whether the maxPrice field is set.
    */
   @java.lang.Override
-  public java.lang.String getImageBase64Data() {
-    java.lang.Object ref = imageBase64Data_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      imageBase64Data_ = s;
-      return s;
-    }
+  public boolean hasMaxPrice() {
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>string imageBase64Data = 2;</code>
-   * @return The bytes for imageBase64Data.
+   * <code>optional int64 maxPrice = 2;</code>
+   * @return The maxPrice.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getImageBase64DataBytes() {
-    java.lang.Object ref = imageBase64Data_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      imageBase64Data_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getMaxPrice() {
+    return maxPrice_;
   }
 
-  public static final int IMAGECONTENTTYPE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object imageContentType_;
+  public static final int MINAREA_FIELD_NUMBER = 3;
+  private long minArea_;
   /**
-   * <code>string imageContentType = 3;</code>
-   * @return The imageContentType.
+   * <code>optional int64 minArea = 3;</code>
+   * @return Whether the minArea field is set.
    */
   @java.lang.Override
-  public java.lang.String getImageContentType() {
-    java.lang.Object ref = imageContentType_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      imageContentType_ = s;
-      return s;
-    }
+  public boolean hasMinArea() {
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>string imageContentType = 3;</code>
-   * @return The bytes for imageContentType.
+   * <code>optional int64 minArea = 3;</code>
+   * @return The minArea.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getImageContentTypeBytes() {
-    java.lang.Object ref = imageContentType_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      imageContentType_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int IMAGEFILENAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object imageFileName_;
-  /**
-   * <code>string imageFileName = 4;</code>
-   * @return The imageFileName.
-   */
-  @java.lang.Override
-  public java.lang.String getImageFileName() {
-    java.lang.Object ref = imageFileName_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      imageFileName_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string imageFileName = 4;</code>
-   * @return The bytes for imageFileName.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getImageFileNameBytes() {
-    java.lang.Object ref = imageFileName_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      imageFileName_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getMinArea() {
+    return minArea_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -247,17 +170,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (postNumber_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt64(1, postNumber_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageBase64Data_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, imageBase64Data_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeInt64(2, maxPrice_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageContentType_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, imageContentType_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageFileName_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, imageFileName_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeInt64(3, minArea_);
     }
     unknownFields.writeTo(output);
   }
@@ -268,18 +188,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (postNumber_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, postNumber_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageBase64Data_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, imageBase64Data_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(2, maxPrice_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageContentType_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, imageContentType_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageFileName_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, imageFileName_);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, minArea_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -296,14 +215,21 @@ private static final long serialVersionUID = 0L;
     }
     com.group5.ListingFiltersRequest other = (com.group5.ListingFiltersRequest) obj;
 
-    if (getPostNumber()
-        != other.getPostNumber()) return false;
-    if (!getImageBase64Data()
-        .equals(other.getImageBase64Data())) return false;
-    if (!getImageContentType()
-        .equals(other.getImageContentType())) return false;
-    if (!getImageFileName()
-        .equals(other.getImageFileName())) return false;
+    if (hasPostNumber() != other.hasPostNumber()) return false;
+    if (hasPostNumber()) {
+      if (getPostNumber()
+          != other.getPostNumber()) return false;
+    }
+    if (hasMaxPrice() != other.hasMaxPrice()) return false;
+    if (hasMaxPrice()) {
+      if (getMaxPrice()
+          != other.getMaxPrice()) return false;
+    }
+    if (hasMinArea() != other.hasMinArea()) return false;
+    if (hasMinArea()) {
+      if (getMinArea()
+          != other.getMinArea()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -315,15 +241,21 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + POSTNUMBER_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getPostNumber());
-    hash = (37 * hash) + IMAGEBASE64DATA_FIELD_NUMBER;
-    hash = (53 * hash) + getImageBase64Data().hashCode();
-    hash = (37 * hash) + IMAGECONTENTTYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getImageContentType().hashCode();
-    hash = (37 * hash) + IMAGEFILENAME_FIELD_NUMBER;
-    hash = (53 * hash) + getImageFileName().hashCode();
+    if (hasPostNumber()) {
+      hash = (37 * hash) + POSTNUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPostNumber());
+    }
+    if (hasMaxPrice()) {
+      hash = (37 * hash) + MAXPRICE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getMaxPrice());
+    }
+    if (hasMinArea()) {
+      hash = (37 * hash) + MINAREA_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getMinArea());
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -458,13 +390,11 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       postNumber_ = 0L;
-
-      imageBase64Data_ = "";
-
-      imageContentType_ = "";
-
-      imageFileName_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
+      maxPrice_ = 0L;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      minArea_ = 0L;
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -491,10 +421,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.group5.ListingFiltersRequest buildPartial() {
       com.group5.ListingFiltersRequest result = new com.group5.ListingFiltersRequest(this);
-      result.postNumber_ = postNumber_;
-      result.imageBase64Data_ = imageBase64Data_;
-      result.imageContentType_ = imageContentType_;
-      result.imageFileName_ = imageFileName_;
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.postNumber_ = postNumber_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxPrice_ = maxPrice_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.minArea_ = minArea_;
+        to_bitField0_ |= 0x00000004;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -543,20 +484,14 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.group5.ListingFiltersRequest other) {
       if (other == com.group5.ListingFiltersRequest.getDefaultInstance()) return this;
-      if (other.getPostNumber() != 0L) {
+      if (other.hasPostNumber()) {
         setPostNumber(other.getPostNumber());
       }
-      if (!other.getImageBase64Data().isEmpty()) {
-        imageBase64Data_ = other.imageBase64Data_;
-        onChanged();
+      if (other.hasMaxPrice()) {
+        setMaxPrice(other.getMaxPrice());
       }
-      if (!other.getImageContentType().isEmpty()) {
-        imageContentType_ = other.imageContentType_;
-        onChanged();
-      }
-      if (!other.getImageFileName().isEmpty()) {
-        imageFileName_ = other.imageFileName_;
-        onChanged();
+      if (other.hasMinArea()) {
+        setMinArea(other.getMinArea());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -586,10 +521,19 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private long postNumber_ ;
     /**
-     * <code>int64 postNumber = 1;</code>
+     * <code>optional int64 postNumber = 1;</code>
+     * @return Whether the postNumber field is set.
+     */
+    @java.lang.Override
+    public boolean hasPostNumber() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional int64 postNumber = 1;</code>
      * @return The postNumber.
      */
     @java.lang.Override
@@ -597,251 +541,101 @@ private static final long serialVersionUID = 0L;
       return postNumber_;
     }
     /**
-     * <code>int64 postNumber = 1;</code>
+     * <code>optional int64 postNumber = 1;</code>
      * @param value The postNumber to set.
      * @return This builder for chaining.
      */
     public Builder setPostNumber(long value) {
-      
+      bitField0_ |= 0x00000001;
       postNumber_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 postNumber = 1;</code>
+     * <code>optional int64 postNumber = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearPostNumber() {
-      
+      bitField0_ = (bitField0_ & ~0x00000001);
       postNumber_ = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object imageBase64Data_ = "";
+    private long maxPrice_ ;
     /**
-     * <code>string imageBase64Data = 2;</code>
-     * @return The imageBase64Data.
+     * <code>optional int64 maxPrice = 2;</code>
+     * @return Whether the maxPrice field is set.
      */
-    public java.lang.String getImageBase64Data() {
-      java.lang.Object ref = imageBase64Data_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        imageBase64Data_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public boolean hasMaxPrice() {
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>string imageBase64Data = 2;</code>
-     * @return The bytes for imageBase64Data.
+     * <code>optional int64 maxPrice = 2;</code>
+     * @return The maxPrice.
      */
-    public com.google.protobuf.ByteString
-        getImageBase64DataBytes() {
-      java.lang.Object ref = imageBase64Data_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        imageBase64Data_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override
+    public long getMaxPrice() {
+      return maxPrice_;
     }
     /**
-     * <code>string imageBase64Data = 2;</code>
-     * @param value The imageBase64Data to set.
+     * <code>optional int64 maxPrice = 2;</code>
+     * @param value The maxPrice to set.
      * @return This builder for chaining.
      */
-    public Builder setImageBase64Data(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      imageBase64Data_ = value;
+    public Builder setMaxPrice(long value) {
+      bitField0_ |= 0x00000002;
+      maxPrice_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string imageBase64Data = 2;</code>
+     * <code>optional int64 maxPrice = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearImageBase64Data() {
-      
-      imageBase64Data_ = getDefaultInstance().getImageBase64Data();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string imageBase64Data = 2;</code>
-     * @param value The bytes for imageBase64Data to set.
-     * @return This builder for chaining.
-     */
-    public Builder setImageBase64DataBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      imageBase64Data_ = value;
+    public Builder clearMaxPrice() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      maxPrice_ = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object imageContentType_ = "";
+    private long minArea_ ;
     /**
-     * <code>string imageContentType = 3;</code>
-     * @return The imageContentType.
+     * <code>optional int64 minArea = 3;</code>
+     * @return Whether the minArea field is set.
      */
-    public java.lang.String getImageContentType() {
-      java.lang.Object ref = imageContentType_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        imageContentType_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public boolean hasMinArea() {
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>string imageContentType = 3;</code>
-     * @return The bytes for imageContentType.
+     * <code>optional int64 minArea = 3;</code>
+     * @return The minArea.
      */
-    public com.google.protobuf.ByteString
-        getImageContentTypeBytes() {
-      java.lang.Object ref = imageContentType_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        imageContentType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override
+    public long getMinArea() {
+      return minArea_;
     }
     /**
-     * <code>string imageContentType = 3;</code>
-     * @param value The imageContentType to set.
+     * <code>optional int64 minArea = 3;</code>
+     * @param value The minArea to set.
      * @return This builder for chaining.
      */
-    public Builder setImageContentType(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      imageContentType_ = value;
+    public Builder setMinArea(long value) {
+      bitField0_ |= 0x00000004;
+      minArea_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string imageContentType = 3;</code>
+     * <code>optional int64 minArea = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearImageContentType() {
-      
-      imageContentType_ = getDefaultInstance().getImageContentType();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string imageContentType = 3;</code>
-     * @param value The bytes for imageContentType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setImageContentTypeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      imageContentType_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object imageFileName_ = "";
-    /**
-     * <code>string imageFileName = 4;</code>
-     * @return The imageFileName.
-     */
-    public java.lang.String getImageFileName() {
-      java.lang.Object ref = imageFileName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        imageFileName_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string imageFileName = 4;</code>
-     * @return The bytes for imageFileName.
-     */
-    public com.google.protobuf.ByteString
-        getImageFileNameBytes() {
-      java.lang.Object ref = imageFileName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        imageFileName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string imageFileName = 4;</code>
-     * @param value The imageFileName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setImageFileName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      imageFileName_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string imageFileName = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearImageFileName() {
-      
-      imageFileName_ = getDefaultInstance().getImageFileName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string imageFileName = 4;</code>
-     * @param value The bytes for imageFileName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setImageFileNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      imageFileName_ = value;
+    public Builder clearMinArea() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      minArea_ = 0L;
       onChanged();
       return this;
     }
