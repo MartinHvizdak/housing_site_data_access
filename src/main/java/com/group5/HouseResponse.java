@@ -4,18 +4,18 @@
 package com.group5;
 
 /**
- * Protobuf type {@code com.group5.CreateHouseListingResponse}
+ * Protobuf type {@code com.group5.HouseResponse}
  */
-public final class CreateHouseListingResponse extends
+public final class HouseResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:com.group5.CreateHouseListingResponse)
-    CreateHouseListingResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:com.group5.HouseResponse)
+    HouseResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use CreateHouseListingResponse.newBuilder() to construct.
-  private CreateHouseListingResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use HouseResponse.newBuilder() to construct.
+  private HouseResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CreateHouseListingResponse() {
+  private HouseResponse() {
     street_ = "";
     city_ = "";
     imageBase64Data_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -28,7 +28,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new CreateHouseListingResponse();
+    return new HouseResponse();
   }
 
   @java.lang.Override
@@ -36,7 +36,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private CreateHouseListingResponse(
+  private HouseResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -177,15 +177,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.group5.HousingSite.internal_static_com_group5_CreateHouseListingResponse_descriptor;
+    return com.group5.HousingSite.internal_static_com_group5_HouseResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.group5.HousingSite.internal_static_com_group5_CreateHouseListingResponse_fieldAccessorTable
+    return com.group5.HousingSite.internal_static_com_group5_HouseResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.group5.CreateHouseListingResponse.class, com.group5.CreateHouseListingResponse.Builder.class);
+            com.group5.HouseResponse.class, com.group5.HouseResponse.Builder.class);
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -653,10 +653,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.group5.CreateHouseListingResponse)) {
+    if (!(obj instanceof com.group5.HouseResponse)) {
       return super.equals(obj);
     }
-    com.group5.CreateHouseListingResponse other = (com.group5.CreateHouseListingResponse) obj;
+    com.group5.HouseResponse other = (com.group5.HouseResponse) obj;
 
     if (getId()
         != other.getId()) return false;
@@ -747,69 +747,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.group5.CreateHouseListingResponse parseFrom(
+  public static com.group5.HouseResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.group5.CreateHouseListingResponse parseFrom(
+  public static com.group5.HouseResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.group5.CreateHouseListingResponse parseFrom(
+  public static com.group5.HouseResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.group5.CreateHouseListingResponse parseFrom(
+  public static com.group5.HouseResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.group5.CreateHouseListingResponse parseFrom(byte[] data)
+  public static com.group5.HouseResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.group5.CreateHouseListingResponse parseFrom(
+  public static com.group5.HouseResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.group5.CreateHouseListingResponse parseFrom(java.io.InputStream input)
+  public static com.group5.HouseResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.group5.CreateHouseListingResponse parseFrom(
+  public static com.group5.HouseResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.group5.CreateHouseListingResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.group5.HouseResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.group5.CreateHouseListingResponse parseDelimitedFrom(
+  public static com.group5.HouseResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.group5.CreateHouseListingResponse parseFrom(
+  public static com.group5.HouseResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.group5.CreateHouseListingResponse parseFrom(
+  public static com.group5.HouseResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -822,7 +822,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.group5.CreateHouseListingResponse prototype) {
+  public static Builder newBuilder(com.group5.HouseResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -838,26 +838,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code com.group5.CreateHouseListingResponse}
+   * Protobuf type {@code com.group5.HouseResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:com.group5.CreateHouseListingResponse)
-      com.group5.CreateHouseListingResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:com.group5.HouseResponse)
+      com.group5.HouseResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.group5.HousingSite.internal_static_com_group5_CreateHouseListingResponse_descriptor;
+      return com.group5.HousingSite.internal_static_com_group5_HouseResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.group5.HousingSite.internal_static_com_group5_CreateHouseListingResponse_fieldAccessorTable
+      return com.group5.HousingSite.internal_static_com_group5_HouseResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.group5.CreateHouseListingResponse.class, com.group5.CreateHouseListingResponse.Builder.class);
+              com.group5.HouseResponse.class, com.group5.HouseResponse.Builder.class);
     }
 
-    // Construct using com.group5.CreateHouseListingResponse.newBuilder()
+    // Construct using com.group5.HouseResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -911,17 +911,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.group5.HousingSite.internal_static_com_group5_CreateHouseListingResponse_descriptor;
+      return com.group5.HousingSite.internal_static_com_group5_HouseResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.group5.CreateHouseListingResponse getDefaultInstanceForType() {
-      return com.group5.CreateHouseListingResponse.getDefaultInstance();
+    public com.group5.HouseResponse getDefaultInstanceForType() {
+      return com.group5.HouseResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.group5.CreateHouseListingResponse build() {
-      com.group5.CreateHouseListingResponse result = buildPartial();
+    public com.group5.HouseResponse build() {
+      com.group5.HouseResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -929,8 +929,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.group5.CreateHouseListingResponse buildPartial() {
-      com.group5.CreateHouseListingResponse result = new com.group5.CreateHouseListingResponse(this);
+    public com.group5.HouseResponse buildPartial() {
+      com.group5.HouseResponse result = new com.group5.HouseResponse(this);
       int from_bitField0_ = bitField0_;
       result.id_ = id_;
       result.street_ = street_;
@@ -997,16 +997,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.group5.CreateHouseListingResponse) {
-        return mergeFrom((com.group5.CreateHouseListingResponse)other);
+      if (other instanceof com.group5.HouseResponse) {
+        return mergeFrom((com.group5.HouseResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.group5.CreateHouseListingResponse other) {
-      if (other == com.group5.CreateHouseListingResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.group5.HouseResponse other) {
+      if (other == com.group5.HouseResponse.getDefaultInstance()) return this;
       if (other.getId() != 0L) {
         setId(other.getId());
       }
@@ -1091,11 +1091,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.group5.CreateHouseListingResponse parsedMessage = null;
+      com.group5.HouseResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.group5.CreateHouseListingResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.group5.HouseResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1955,41 +1955,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:com.group5.CreateHouseListingResponse)
+    // @@protoc_insertion_point(builder_scope:com.group5.HouseResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:com.group5.CreateHouseListingResponse)
-  private static final com.group5.CreateHouseListingResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:com.group5.HouseResponse)
+  private static final com.group5.HouseResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.group5.CreateHouseListingResponse();
+    DEFAULT_INSTANCE = new com.group5.HouseResponse();
   }
 
-  public static com.group5.CreateHouseListingResponse getDefaultInstance() {
+  public static com.group5.HouseResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CreateHouseListingResponse>
-      PARSER = new com.google.protobuf.AbstractParser<CreateHouseListingResponse>() {
+  private static final com.google.protobuf.Parser<HouseResponse>
+      PARSER = new com.google.protobuf.AbstractParser<HouseResponse>() {
     @java.lang.Override
-    public CreateHouseListingResponse parsePartialFrom(
+    public HouseResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CreateHouseListingResponse(input, extensionRegistry);
+      return new HouseResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<CreateHouseListingResponse> parser() {
+  public static com.google.protobuf.Parser<HouseResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CreateHouseListingResponse> getParserForType() {
+  public com.google.protobuf.Parser<HouseResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.group5.CreateHouseListingResponse getDefaultInstanceForType() {
+  public com.group5.HouseResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

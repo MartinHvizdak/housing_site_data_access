@@ -25,15 +25,30 @@ public final class HousingSite {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_group5_GetUserByIdResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_group5_IdRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_group5_IdRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_group5_CreateHouseListingRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_group5_CreateHouseListingRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_group5_CreateHouseListingResponse_descriptor;
+    internal_static_com_group5_HouseResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_group5_CreateHouseListingResponse_fieldAccessorTable;
+      internal_static_com_group5_HouseResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_group5_ListingFiltersRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_group5_ListingFiltersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_group5_ShortListingResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_group5_ShortListingResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -46,28 +61,40 @@ public final class HousingSite {
       "\n\021HousingSite.proto\022\ncom.group5\"$\n\022GetUs" +
       "erByIdRequest\022\016\n\006userId\030\001 \001(\003\"O\n\023GetUser" +
       "ByIdResponse\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\017" +
-      "\n\007surname\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\"\244\002\n\031Creat" +
-      "eHouseListingRequest\022\016\n\006street\030\001 \001(\t\022\022\n\n" +
-      "postNumber\030\002 \001(\005\022\014\n\004city\030\003 \001(\t\022\017\n\007houseN" +
-      "o\030\004 \001(\005\022\030\n\020constructionYear\030\005 \001(\005\022\023\n\013las" +
-      "tRebuilt\030\006 \001(\005\022\025\n\rhasInspection\030\007 \001(\010\022\022\n" +
-      "\ngroundArea\030\010 \001(\001\022\021\n\tfloorArea\030\t \001(\001\022\027\n\017" +
-      "imageBase64Data\030\n \003(\t\022\030\n\020imageContentTyp" +
-      "e\030\013 \003(\t\022\025\n\rimageFileName\030\014 \003(\t\022\r\n\005price\030" +
-      "\r \001(\003\"\307\002\n\032CreateHouseListingResponse\022\n\n\002" +
-      "id\030\001 \001(\003\022\016\n\006street\030\002 \001(\t\022\022\n\npostNumber\030\003" +
-      " \001(\005\022\014\n\004city\030\004 \001(\t\022\017\n\007houseNo\030\005 \001(\005\022\030\n\020c" +
-      "onstructionYear\030\006 \001(\005\022\023\n\013lastRebuilt\030\007 \001" +
-      "(\005\022\025\n\rhasInspection\030\010 \001(\010\022\022\n\ngroundArea\030" +
-      "\t \001(\001\022\021\n\tfloorArea\030\n \001(\001\022\027\n\017imageBase64D" +
-      "ata\030\013 \003(\t\022\030\n\020imageContentType\030\014 \003(\t\022\025\n\ri" +
-      "mageFileName\030\r \003(\t\022\r\n\005price\030\016 \001(\003\022\024\n\014cre" +
-      "ationDate\030\017 \001(\t2]\n\013UserService\022N\n\013getUse" +
-      "rById\022\036.com.group5.GetUserByIdRequest\032\037." +
-      "com.group5.GetUserByIdResponse2p\n\016Listin" +
-      "gService\022^\n\rcreateListing\022%.com.group5.C" +
-      "reateHouseListingRequest\032&.com.group5.Cr" +
-      "eateHouseListingResponseB\002P\001b\006proto3"
+      "\n\007surname\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\"\027\n\tIdRequ" +
+      "est\022\n\n\002Id\030\001 \001(\003\"\244\002\n\031CreateHouseListingRe" +
+      "quest\022\016\n\006street\030\001 \001(\t\022\022\n\npostNumber\030\002 \001(" +
+      "\005\022\014\n\004city\030\003 \001(\t\022\017\n\007houseNo\030\004 \001(\005\022\030\n\020cons" +
+      "tructionYear\030\005 \001(\005\022\023\n\013lastRebuilt\030\006 \001(\005\022" +
+      "\025\n\rhasInspection\030\007 \001(\010\022\022\n\ngroundArea\030\010 \001" +
+      "(\001\022\021\n\tfloorArea\030\t \001(\001\022\027\n\017imageBase64Data" +
+      "\030\n \003(\t\022\030\n\020imageContentType\030\013 \003(\t\022\025\n\rimag" +
+      "eFileName\030\014 \003(\t\022\r\n\005price\030\r \001(\003\"\272\002\n\rHouse" +
+      "Response\022\n\n\002id\030\001 \001(\003\022\016\n\006street\030\002 \001(\t\022\022\n\n" +
+      "postNumber\030\003 \001(\005\022\014\n\004city\030\004 \001(\t\022\017\n\007houseN" +
+      "o\030\005 \001(\005\022\030\n\020constructionYear\030\006 \001(\005\022\023\n\013las" +
+      "tRebuilt\030\007 \001(\005\022\025\n\rhasInspection\030\010 \001(\010\022\022\n" +
+      "\ngroundArea\030\t \001(\001\022\021\n\tfloorArea\030\n \001(\001\022\027\n\017" +
+      "imageBase64Data\030\013 \003(\t\022\030\n\020imageContentTyp" +
+      "e\030\014 \003(\t\022\025\n\rimageFileName\030\r \003(\t\022\r\n\005price\030" +
+      "\016 \001(\003\022\024\n\014creationDate\030\017 \001(\t\"u\n\025ListingFi" +
+      "ltersRequest\022\022\n\npostNumber\030\001 \001(\003\022\027\n\017imag" +
+      "eBase64Data\030\002 \001(\t\022\030\n\020imageContentType\030\003 " +
+      "\001(\t\022\025\n\rimageFileName\030\004 \001(\t\"\262\001\n\024ShortList" +
+      "ingResponse\022\r\n\005price\030\001 \001(\003\022\027\n\017imageBase6" +
+      "4Data\030\002 \001(\t\022\030\n\020imageContentType\030\003 \001(\t\022\025\n" +
+      "\rimageFileName\030\004 \001(\t\022\016\n\006street\030\005 \001(\t\022\022\n\n" +
+      "postNumber\030\006 \001(\005\022\014\n\004city\030\007 \001(\t\022\017\n\007houseN" +
+      "o\030\010 \001(\0052]\n\013UserService\022N\n\013getUserById\022\036." +
+      "com.group5.GetUserByIdRequest\032\037.com.grou" +
+      "p5.GetUserByIdResponse2\205\002\n\016ListingServic" +
+      "e\022Q\n\rcreateListing\022%.com.group5.CreateHo" +
+      "useListingRequest\032\031.com.group5.HouseResp" +
+      "onse\022B\n\016getListingById\022\025.com.group5.IdRe" +
+      "quest\032\031.com.group5.HouseResponse\022\\\n\023getF" +
+      "ilteredListings\022!.com.group5.ListingFilt" +
+      "ersRequest\032 .com.group5.ShortListingResp" +
+      "onse0\001B\002P\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -85,18 +112,36 @@ public final class HousingSite {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_group5_GetUserByIdResponse_descriptor,
         new java.lang.String[] { "Id", "Name", "Surname", "Email", });
-    internal_static_com_group5_CreateHouseListingRequest_descriptor =
+    internal_static_com_group5_IdRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_com_group5_IdRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_group5_IdRequest_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_com_group5_CreateHouseListingRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_com_group5_CreateHouseListingRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_group5_CreateHouseListingRequest_descriptor,
         new java.lang.String[] { "Street", "PostNumber", "City", "HouseNo", "ConstructionYear", "LastRebuilt", "HasInspection", "GroundArea", "FloorArea", "ImageBase64Data", "ImageContentType", "ImageFileName", "Price", });
-    internal_static_com_group5_CreateHouseListingResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_com_group5_CreateHouseListingResponse_fieldAccessorTable = new
+    internal_static_com_group5_HouseResponse_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_com_group5_HouseResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_group5_CreateHouseListingResponse_descriptor,
+        internal_static_com_group5_HouseResponse_descriptor,
         new java.lang.String[] { "Id", "Street", "PostNumber", "City", "HouseNo", "ConstructionYear", "LastRebuilt", "HasInspection", "GroundArea", "FloorArea", "ImageBase64Data", "ImageContentType", "ImageFileName", "Price", "CreationDate", });
+    internal_static_com_group5_ListingFiltersRequest_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_com_group5_ListingFiltersRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_group5_ListingFiltersRequest_descriptor,
+        new java.lang.String[] { "PostNumber", "ImageBase64Data", "ImageContentType", "ImageFileName", });
+    internal_static_com_group5_ShortListingResponse_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_com_group5_ShortListingResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_group5_ShortListingResponse_descriptor,
+        new java.lang.String[] { "Price", "ImageBase64Data", "ImageContentType", "ImageFileName", "Street", "PostNumber", "City", "HouseNo", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

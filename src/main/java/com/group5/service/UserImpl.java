@@ -1,9 +1,6 @@
 package com.group5.service;
-
-import com.group5.GetUserByIdRequest;
-import com.group5.GetUserByIdResponse;
+import com.group5.*;
 import com.group5.Model.User;
-import com.group5.UserServiceGrpc;
 import com.group5.repository.UserRepository;
 import io.grpc.stub.StreamObserver;
 import org.lognet.springboot.grpc.GRpcService;

@@ -3,8 +3,8 @@
 
 package com.group5;
 
-public interface CreateHouseListingResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:com.group5.CreateHouseListingResponse)
+public interface HouseResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:com.group5.HouseResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**

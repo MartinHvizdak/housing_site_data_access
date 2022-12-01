@@ -1,8 +1,6 @@
 package com.group5.service;
+import com.group5.*;
 import com.group5.repository.*;
-import com.group5.CreateHouseListingRequest;
-import com.group5.CreateHouseListingResponse;
-import com.group5.ListingServiceGrpc;
 import com.group5.Model.Address;
 import com.group5.Model.Area;
 import com.group5.Model.HouseListing;
@@ -30,7 +28,7 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
     }
 
     @Override
-    public void createListing(CreateHouseListingRequest request, StreamObserver<CreateHouseListingResponse> responseObserver) {
+    public void createListing(CreateHouseListingRequest request, StreamObserver<HouseResponse> responseObserver) {
         System.out.println("Received Request ====> " + request.toString());
 
         Area area = new Area(request.getPostNumber(), request.getCity());
@@ -62,7 +60,7 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
             imageContentType.add(images.get(index).getImageContentType());
         }
 
-        CreateHouseListingResponse.Builder response = CreateHouseListingResponse.newBuilder().setId(houseListing.getId()).
+        HouseResponse.Builder response = HouseResponse.newBuilder().setId(houseListing.getId()).
                 setStreet(address.getStreet()).setPostNumber(area.getPostNumber()).setCity(area.getCity()).
                 setHouseNo(address.getHouseNumber()).setConstructionYear(houseListing.getConstructionYear())
                 .setLastRebuilt(houseListing.getLastRebuilt()).setHasInspection(houseListing.isHasInspection()).
@@ -70,7 +68,7 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
                 setCreationDate(LocalDate.now().toString()).addAllImageBase64Data(imageBase64Data).addAllImageContentType(imageContentType).
                 addAllImageFileName(imageFileName);
 
-        CreateHouseListingResponse responseText = response.build();
+        HouseResponse responseText = response.build();
         responseObserver.onNext(responseText);
         responseObserver.onCompleted();
     }

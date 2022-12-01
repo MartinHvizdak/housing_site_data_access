@@ -13,6 +13,10 @@ message GetUserByIdResponse {
   string email = 4;
 }
 
+message IdRequest{
+  int64 Id=1;
+}
+
 message CreateHouseListingRequest {
   string street = 1;
   int32 postNumber = 2;
@@ -29,7 +33,7 @@ message CreateHouseListingRequest {
   int64 price = 13;
 }
 
-message CreateHouseListingResponse {
+message HouseResponse {
   int64 id = 1;
   string street = 2;
   int32 postNumber = 3;
@@ -47,10 +51,31 @@ message CreateHouseListingResponse {
   string creationDate = 15;
 }
 
+message ListingFiltersRequest{
+  int64 postNumber=1;
+  string imageBase64Data = 2;
+  string imageContentType = 3;
+  string imageFileName = 4;
+}
+
+message ShortListingResponse{
+  int64 price=1;
+  string imageBase64Data = 2;
+  string imageContentType = 3;
+  string imageFileName = 4;
+  string street = 5;
+  int32 postNumber = 6;
+  string city = 7;
+  int32 houseNo = 8;
+}
+
 service UserService {
   rpc getUserById(GetUserByIdRequest) returns (GetUserByIdResponse);
 }
 
 service ListingService {
-  rpc createListing(CreateHouseListingRequest) returns (CreateHouseListingResponse);
+  rpc createListing(CreateHouseListingRequest) returns (HouseResponse);
+  rpc getListingById(IdRequest) returns (HouseResponse);
+  rpc getFilteredListings(ListingFiltersRequest) returns (stream ShortListingResponse);
 }
+
