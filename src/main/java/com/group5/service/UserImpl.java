@@ -1,5 +1,5 @@
 package com.group5.service;
-import com.group5.*;
+import com.group5.proto.User.*;
 import com.group5.Model.User;
 import com.group5.repository.UserRepository;
 import io.grpc.stub.StreamObserver;

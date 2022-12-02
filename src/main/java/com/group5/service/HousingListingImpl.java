@@ -1,5 +1,5 @@
 package com.group5.service;
-import com.group5.*;
+import com.group5.proto.Listing.*;
 import com.group5.repository.*;
 import com.group5.Model.Address;
 import com.group5.Model.Area;
@@ -38,7 +38,7 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
 
         HouseListing houseListing = houseListingRepository.save(new HouseListing(request.getConstructionYear(),
                 request.getLastRebuilt(), request.getHasInspection(), request.getGroundArea(),
-                request.getFloorArea(), request.getPrice(), address, LocalDate.now().toString()));
+                request.getFloorArea(), (long) request.getPrice(), address, LocalDate.now().toString()));
 
 
         System.out.println(request.getImageBase64DataList().size());

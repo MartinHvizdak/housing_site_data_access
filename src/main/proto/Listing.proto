@@ -1,21 +1,7 @@
 syntax = "proto3";
 option java_multiple_files = true;
-package com.group5;
+package com.group5.proto.Listing;
 
-message GetUserByIdRequest {
-  int64 userId = 1;
-}
-
-message GetUserByIdResponse {
-  int64 id = 1;
-  string name = 2;
-  string surname = 3;
-  string email = 4;
-}
-
-message IdRequest{
-  int64 Id=1;
-}
 
 message CreateHouseListingRequest {
   string street = 1;
@@ -30,7 +16,11 @@ message CreateHouseListingRequest {
   repeated string imageBase64Data = 10;
   repeated string imageContentType = 11;
   repeated string imageFileName = 12;
-  int64 price = 13;
+  double price = 13;
+}
+
+message IdRequest{
+  int64 Id=1;
 }
 
 message HouseResponse {
@@ -47,7 +37,7 @@ message HouseResponse {
   repeated string imageBase64Data = 11;
   repeated string imageContentType = 12;
   repeated string imageFileName = 13;
-  int64 price = 14;
+  double price = 14;
   string creationDate = 15;
 }
 
@@ -68,13 +58,8 @@ message ShortListingResponse{
   int32 houseNo = 8;
 }
 
-service UserService {
-  rpc getUserById(GetUserByIdRequest) returns (GetUserByIdResponse);
-}
-
 service ListingService {
   rpc createListing(CreateHouseListingRequest) returns (HouseResponse);
   rpc getListingById(IdRequest) returns (HouseResponse);
   rpc getFilteredListings(ListingFiltersRequest) returns (stream ShortListingResponse);
 }
-
