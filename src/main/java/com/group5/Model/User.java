@@ -6,14 +6,13 @@ import javax.persistence.*;
 @Table(name = "user_seller")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    long id;
+    @Column(name = "email")
+    String email;
     @Column(name = "name")
     String name;
     @Column(name = "surname")
     String surname;
-    @Column(name = "email")
-    String email;
+
     @Column(name = "password")
     String password;
     protected User(){}
@@ -24,13 +23,6 @@ public class User {
         this.password=password;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -54,5 +46,9 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }

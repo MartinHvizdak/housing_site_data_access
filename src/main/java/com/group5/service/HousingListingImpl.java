@@ -1,10 +1,7 @@
 package com.group5.service;
+import com.group5.Model.*;
 import com.group5.proto.Listing.*;
 import com.group5.repository.*;
-import com.group5.Model.Address;
-import com.group5.Model.Area;
-import com.group5.Model.HouseListing;
-import com.group5.Model.ImageFile;
 import io.grpc.stub.StreamObserver;
 import org.lognet.springboot.grpc.GRpcService;
 
@@ -54,7 +51,7 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
         List<String> imageContentType = new ArrayList<>();
         List<String> imageFileName = new ArrayList<>();
 
-        for(int index = 0; index > images.size(); index++){
+        for(int index = 0; index < images.size(); index++){
             imageBase64Data.add(images.get(index).getBase64data());
             imageFileName.add(images.get(index).getFileName());
             imageContentType.add(images.get(index).getImageContentType());
@@ -116,24 +113,61 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
     @Override
     public void getFilteredListings(ListingFiltersRequest request, StreamObserver<ShortListingResponse> responseObserver)
     {
-        long priceFilter;
-        long postCodeFilter;
-        long areaFilter;
-
+        List<HouseListing> listings= houseListingRepository.findAll();
+        List<ShortListingResponse> filteredListings=new ArrayList<>();
         if(request.hasMaxPrice())
         {
-            priceFilter=request.getMaxPrice();
+            for(HouseListing listing: listings)
+            {
+                if(listing.getPrice()<request.getMaxPrice())
+                {
+                    filteredListings.add(buildShortListing(listing));
+                }
+            }
         }
-        if(request.hasMinArea())
+        else if(request.hasMinArea())
         {
-            areaFilter=request.getMinArea();
+            for(HouseListing listing: listings)
+            {
+                if(listing.getFloorArea()>request.getMinArea())
+                {
+                    filteredListings.add(buildShortListing(listing));
+                }
+            }
         }
-        if(request.hasPostNumber())
+        else if(request.hasPostNumber())
         {
-            postCodeFilter=request.getPostNumber();
+            for(HouseListing listing: listings)
+            {
+                if(listing.getAddress().getArea().getPostNumber()==request.getPostNumber())
+                {
+                    filteredListings.add(buildShortListing(listing));
+                }
+            }
+        }
+        else
+        {
+            for(HouseListing listing: listings)
+            {
+                filteredListings.add(buildShortListing(listing));
+            }
         }
 
+        for(ShortListingResponse response:filteredListings)
+        {
+            responseObserver.onNext(response);
+        }
+        responseObserver.onCompleted();
+    }
 
+    private ShortListingResponse buildShortListing(HouseListing listing) {
+
+        ImageFile image=imageFileRepository.findImageFileByHouseListing(listing);
+        return ShortListingResponse.newBuilder().setPrice(listing.getPrice())
+                .setHouseNo(listing.getAddress().getHouseNumber()).setCity(listing.getAddress().getArea().getCity())
+                .setStreet(listing.getAddress().getStreet()).setPostNumber(listing.getAddress().getArea().getPostNumber())
+                .setImageContentType(image.getImageContentType()).setImageFileName(image.getFileName())
+                .setImageBase64Data(image.getBase64data()).build();
     }
 
 }

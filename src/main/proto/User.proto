@@ -6,13 +6,29 @@ message GetUserByIdRequest {
   int64 userId = 1;
 }
 
-message GetUserByIdResponse {
-  int64 id = 1;
-  string name = 2;
-  string surname = 3;
-  string email = 4;
+message  UserResponse{
+  string name = 1;
+  string surname = 2;
+  string email = 3;
 }
 
+message RegistrationInfo {
+  string name = 1;
+  string surname = 2;
+  string email = 3;
+  string password = 4;
+}
+
+message LoginInfo {
+  string email = 3;
+  string password = 4;
+}
+
+message LoginResponse {
+  bool isValid=1;
+}
 service UserService {
-  rpc getUserById(GetUserByIdRequest) returns (GetUserByIdResponse);
+  rpc getUserById(GetUserByIdRequest) returns (UserResponse);
+  rpc registerUser(RegistrationInfo) returns (UserResponse);
+  rpc checkLoginInfo(LoginInfo) returns (LoginResponse);
 }
