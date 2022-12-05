@@ -84,4 +84,10 @@ public interface ShortListingResponseOrBuilder extends
    * @return The houseNo.
    */
   int getHouseNo();
+
+  /**
+   * <code>int64 id = 9;</code>
+   * @return The id.
+   */
+  long getId();
 }

@@ -5,10 +5,12 @@ public class HouseListingShort {
     private ImageFile image;
     private Address address;
 
-    public HouseListingShort(Long id, ImageFile image, Address address) {
+    private int price;
+    public HouseListingShort(Long id, ImageFile image, Address address,int price) {
         this.id = id;
         this.image = image;
         this.address = address;
+        this.price=price;
     }
     public HouseListingShort(HouseListing listing,ImageFile image) {
         this.id = listing.getId();

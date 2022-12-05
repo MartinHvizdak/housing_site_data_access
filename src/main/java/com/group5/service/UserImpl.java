@@ -52,6 +52,7 @@ public class UserImpl extends UserServiceGrpc.UserServiceImplBase {
         responseStreamObserver.onCompleted();
     }
 
+
     @Override
     public void LoginUser(LoginInfo info, StreamObserver<LoginResponse> responseStreamObserver)
     {

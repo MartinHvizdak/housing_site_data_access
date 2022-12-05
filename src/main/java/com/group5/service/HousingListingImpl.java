@@ -167,7 +167,7 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
                 .setHouseNo(listing.getAddress().getHouseNumber()).setCity(listing.getAddress().getArea().getCity())
                 .setStreet(listing.getAddress().getStreet()).setPostNumber(listing.getAddress().getArea().getPostNumber())
                 .setImageContentType(image.getImageContentType()).setImageFileName(image.getFileName())
-                .setImageBase64Data(image.getBase64data()).build();
+                .setImageBase64Data(image.getBase64data()).setId(listing.getId()).build();
     }
 
 }

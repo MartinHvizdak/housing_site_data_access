@@ -68,20 +68,21 @@ public final class Listing {
       "\001\n\025ListingFiltersRequest\022\027\n\npostNumber\030\001" +
       " \001(\003H\000\210\001\001\022\025\n\010maxPrice\030\002 \001(\003H\001\210\001\001\022\024\n\007minA" +
       "rea\030\003 \001(\003H\002\210\001\001B\r\n\013_postNumberB\013\n\t_maxPri" +
-      "ceB\n\n\010_minArea\"\262\001\n\024ShortListingResponse\022" +
+      "ceB\n\n\010_minArea\"\276\001\n\024ShortListingResponse\022" +
       "\r\n\005price\030\001 \001(\003\022\027\n\017imageBase64Data\030\002 \001(\t\022" +
       "\030\n\020imageContentType\030\003 \001(\t\022\025\n\rimageFileNa" +
       "me\030\004 \001(\t\022\016\n\006street\030\005 \001(\t\022\022\n\npostNumber\030\006" +
-      " \001(\005\022\014\n\004city\030\007 \001(\t\022\017\n\007houseNo\030\010 \001(\0052\331\002\n\016" +
-      "ListingService\022m\n\rcreateListing\0223.com.gr" +
-      "oup5.proto.Listing.CreateHouseListingReq" +
-      "uest\032\'.com.group5.proto.Listing.HouseRes" +
-      "ponse\022^\n\016getListingById\022#.com.group5.pro" +
-      "to.Listing.IdRequest\032\'.com.group5.proto." +
-      "Listing.HouseResponse\022x\n\023getFilteredList" +
-      "ings\022/.com.group5.proto.Listing.ListingF" +
-      "iltersRequest\032..com.group5.proto.Listing" +
-      ".ShortListingResponse0\001B\002P\001b\006proto3"
+      " \001(\005\022\014\n\004city\030\007 \001(\t\022\017\n\007houseNo\030\010 \001(\005\022\n\n\002i" +
+      "d\030\t \001(\0032\331\002\n\016ListingService\022m\n\rcreateList" +
+      "ing\0223.com.group5.proto.Listing.CreateHou" +
+      "seListingRequest\032\'.com.group5.proto.List" +
+      "ing.HouseResponse\022^\n\016getListingById\022#.co" +
+      "m.group5.proto.Listing.IdRequest\032\'.com.g" +
+      "roup5.proto.Listing.HouseResponse\022x\n\023get" +
+      "FilteredListings\022/.com.group5.proto.List" +
+      "ing.ListingFiltersRequest\032..com.group5.p" +
+      "roto.Listing.ShortListingResponse0\001B\002P\001b" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -116,7 +117,7 @@ public final class Listing {
     internal_static_com_group5_proto_Listing_ShortListingResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_group5_proto_Listing_ShortListingResponse_descriptor,
-        new java.lang.String[] { "Price", "ImageBase64Data", "ImageContentType", "ImageFileName", "Street", "PostNumber", "City", "HouseNo", });
+        new java.lang.String[] { "Price", "ImageBase64Data", "ImageContentType", "ImageFileName", "Street", "PostNumber", "City", "HouseNo", "Id", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
