@@ -11,7 +11,7 @@ public interface CreateHouseListingRequestOrBuilder extends
    * <code>string street = 1;</code>
    * @return The street.
    */
-  java.lang.String getStreet();
+  String getStreet();
   /**
    * <code>string street = 1;</code>
    * @return The bytes for street.
@@ -29,7 +29,7 @@ public interface CreateHouseListingRequestOrBuilder extends
    * <code>string city = 3;</code>
    * @return The city.
    */
-  java.lang.String getCity();
+  String getCity();
   /**
    * <code>string city = 3;</code>
    * @return The bytes for city.
@@ -77,7 +77,7 @@ public interface CreateHouseListingRequestOrBuilder extends
    * <code>repeated string imageBase64Data = 10;</code>
    * @return A list containing the imageBase64Data.
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getImageBase64DataList();
   /**
    * <code>repeated string imageBase64Data = 10;</code>
@@ -89,7 +89,7 @@ public interface CreateHouseListingRequestOrBuilder extends
    * @param index The index of the element to return.
    * @return The imageBase64Data at the given index.
    */
-  java.lang.String getImageBase64Data(int index);
+  String getImageBase64Data(int index);
   /**
    * <code>repeated string imageBase64Data = 10;</code>
    * @param index The index of the value to return.
@@ -102,7 +102,7 @@ public interface CreateHouseListingRequestOrBuilder extends
    * <code>repeated string imageContentType = 11;</code>
    * @return A list containing the imageContentType.
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getImageContentTypeList();
   /**
    * <code>repeated string imageContentType = 11;</code>
@@ -114,7 +114,7 @@ public interface CreateHouseListingRequestOrBuilder extends
    * @param index The index of the element to return.
    * @return The imageContentType at the given index.
    */
-  java.lang.String getImageContentType(int index);
+  String getImageContentType(int index);
   /**
    * <code>repeated string imageContentType = 11;</code>
    * @param index The index of the value to return.
@@ -127,7 +127,7 @@ public interface CreateHouseListingRequestOrBuilder extends
    * <code>repeated string imageFileName = 12;</code>
    * @return A list containing the imageFileName.
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getImageFileNameList();
   /**
    * <code>repeated string imageFileName = 12;</code>
@@ -139,7 +139,7 @@ public interface CreateHouseListingRequestOrBuilder extends
    * @param index The index of the element to return.
    * @return The imageFileName at the given index.
    */
-  java.lang.String getImageFileName(int index);
+  String getImageFileName(int index);
   /**
    * <code>repeated string imageFileName = 12;</code>
    * @param index The index of the value to return.
@@ -153,4 +153,16 @@ public interface CreateHouseListingRequestOrBuilder extends
    * @return The price.
    */
   double getPrice();
+
+  /**
+   * <code>string userEmail = 14;</code>
+   * @return The userEmail.
+   */
+  String getUserEmail();
+  /**
+   * <code>string userEmail = 14;</code>
+   * @return The bytes for userEmail.
+   */
+  com.google.protobuf.ByteString
+      getUserEmailBytes();
 }

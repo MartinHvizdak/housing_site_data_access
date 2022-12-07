@@ -38,7 +38,8 @@ message HouseResponse {
   repeated string imageContentType = 12;
   repeated string imageFileName = 13;
   double price = 14;
-  string creationDate = 15;
+  string userEmail = 15;
+  string creationDate= 16;
 }
 
 message ListingFiltersRequest{

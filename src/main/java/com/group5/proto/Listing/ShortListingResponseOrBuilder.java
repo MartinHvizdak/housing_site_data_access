@@ -17,7 +17,7 @@ public interface ShortListingResponseOrBuilder extends
    * <code>string imageBase64Data = 2;</code>
    * @return The imageBase64Data.
    */
-  java.lang.String getImageBase64Data();
+  String getImageBase64Data();
   /**
    * <code>string imageBase64Data = 2;</code>
    * @return The bytes for imageBase64Data.
@@ -29,7 +29,7 @@ public interface ShortListingResponseOrBuilder extends
    * <code>string imageContentType = 3;</code>
    * @return The imageContentType.
    */
-  java.lang.String getImageContentType();
+  String getImageContentType();
   /**
    * <code>string imageContentType = 3;</code>
    * @return The bytes for imageContentType.
@@ -41,7 +41,7 @@ public interface ShortListingResponseOrBuilder extends
    * <code>string imageFileName = 4;</code>
    * @return The imageFileName.
    */
-  java.lang.String getImageFileName();
+  String getImageFileName();
   /**
    * <code>string imageFileName = 4;</code>
    * @return The bytes for imageFileName.
@@ -53,7 +53,7 @@ public interface ShortListingResponseOrBuilder extends
    * <code>string street = 5;</code>
    * @return The street.
    */
-  java.lang.String getStreet();
+  String getStreet();
   /**
    * <code>string street = 5;</code>
    * @return The bytes for street.
@@ -71,7 +71,7 @@ public interface ShortListingResponseOrBuilder extends
    * <code>string city = 7;</code>
    * @return The city.
    */
-  java.lang.String getCity();
+  String getCity();
   /**
    * <code>string city = 7;</code>
    * @return The bytes for city.

@@ -21,17 +21,18 @@ private static final long serialVersionUID = 0L;
     imageBase64Data_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     imageContentType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     imageFileName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    userEmail_ = "";
     creationDate_ = "";
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new HouseResponse();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -42,7 +43,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -61,7 +62,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             street_ = s;
             break;
@@ -72,7 +73,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             city_ = s;
             break;
@@ -108,7 +109,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 90: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               imageBase64Data_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000001;
@@ -117,7 +118,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 98: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               imageContentType_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000002;
@@ -126,7 +127,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 106: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               imageFileName_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000004;
@@ -140,7 +141,13 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 122: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
+
+            userEmail_ = s;
+            break;
+          }
+          case 130: {
+            String s = input.readStringRequireUtf8();
 
             creationDate_ = s;
             break;
@@ -177,15 +184,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_HouseResponse_descriptor;
+    return Listing.internal_static_com_group5_proto_Listing_HouseResponse_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_HouseResponse_fieldAccessorTable
+    return Listing.internal_static_com_group5_proto_Listing_HouseResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.group5.proto.Listing.HouseResponse.class, com.group5.proto.Listing.HouseResponse.Builder.class);
+            HouseResponse.class, Builder.class);
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -194,26 +201,26 @@ private static final long serialVersionUID = 0L;
    * <code>int64 id = 1;</code>
    * @return The id.
    */
-  @java.lang.Override
+  @Override
   public long getId() {
     return id_;
   }
 
   public static final int STREET_FIELD_NUMBER = 2;
-  private volatile java.lang.Object street_;
+  private volatile Object street_;
   /**
    * <code>string street = 2;</code>
    * @return The street.
    */
-  @java.lang.Override
-  public java.lang.String getStreet() {
-    java.lang.Object ref = street_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getStreet() {
+    Object ref = street_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       street_ = s;
       return s;
     }
@@ -222,14 +229,14 @@ private static final long serialVersionUID = 0L;
    * <code>string street = 2;</code>
    * @return The bytes for street.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getStreetBytes() {
-    java.lang.Object ref = street_;
-    if (ref instanceof java.lang.String) {
+    Object ref = street_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       street_ = b;
       return b;
     } else {
@@ -243,26 +250,26 @@ private static final long serialVersionUID = 0L;
    * <code>int32 postNumber = 3;</code>
    * @return The postNumber.
    */
-  @java.lang.Override
+  @Override
   public int getPostNumber() {
     return postNumber_;
   }
 
   public static final int CITY_FIELD_NUMBER = 4;
-  private volatile java.lang.Object city_;
+  private volatile Object city_;
   /**
    * <code>string city = 4;</code>
    * @return The city.
    */
-  @java.lang.Override
-  public java.lang.String getCity() {
-    java.lang.Object ref = city_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getCity() {
+    Object ref = city_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       city_ = s;
       return s;
     }
@@ -271,14 +278,14 @@ private static final long serialVersionUID = 0L;
    * <code>string city = 4;</code>
    * @return The bytes for city.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getCityBytes() {
-    java.lang.Object ref = city_;
-    if (ref instanceof java.lang.String) {
+    Object ref = city_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       city_ = b;
       return b;
     } else {
@@ -292,7 +299,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 houseNo = 5;</code>
    * @return The houseNo.
    */
-  @java.lang.Override
+  @Override
   public int getHouseNo() {
     return houseNo_;
   }
@@ -303,7 +310,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 constructionYear = 6;</code>
    * @return The constructionYear.
    */
-  @java.lang.Override
+  @Override
   public int getConstructionYear() {
     return constructionYear_;
   }
@@ -314,7 +321,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 lastRebuilt = 7;</code>
    * @return The lastRebuilt.
    */
-  @java.lang.Override
+  @Override
   public int getLastRebuilt() {
     return lastRebuilt_;
   }
@@ -325,7 +332,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool hasInspection = 8;</code>
    * @return The hasInspection.
    */
-  @java.lang.Override
+  @Override
   public boolean getHasInspection() {
     return hasInspection_;
   }
@@ -336,7 +343,7 @@ private static final long serialVersionUID = 0L;
    * <code>double groundArea = 9;</code>
    * @return The groundArea.
    */
-  @java.lang.Override
+  @Override
   public double getGroundArea() {
     return groundArea_;
   }
@@ -347,7 +354,7 @@ private static final long serialVersionUID = 0L;
    * <code>double floorArea = 10;</code>
    * @return The floorArea.
    */
-  @java.lang.Override
+  @Override
   public double getFloorArea() {
     return floorArea_;
   }
@@ -374,7 +381,7 @@ private static final long serialVersionUID = 0L;
    * @param index The index of the element to return.
    * @return The imageBase64Data at the given index.
    */
-  public java.lang.String getImageBase64Data(int index) {
+  public String getImageBase64Data(int index) {
     return imageBase64Data_.get(index);
   }
   /**
@@ -409,7 +416,7 @@ private static final long serialVersionUID = 0L;
    * @param index The index of the element to return.
    * @return The imageContentType at the given index.
    */
-  public java.lang.String getImageContentType(int index) {
+  public String getImageContentType(int index) {
     return imageContentType_.get(index);
   }
   /**
@@ -444,7 +451,7 @@ private static final long serialVersionUID = 0L;
    * @param index The index of the element to return.
    * @return The imageFileName at the given index.
    */
-  public java.lang.String getImageFileName(int index) {
+  public String getImageFileName(int index) {
     return imageFileName_.get(index);
   }
   /**
@@ -463,42 +470,80 @@ private static final long serialVersionUID = 0L;
    * <code>double price = 14;</code>
    * @return The price.
    */
-  @java.lang.Override
+  @Override
   public double getPrice() {
     return price_;
   }
 
-  public static final int CREATIONDATE_FIELD_NUMBER = 15;
-  private volatile java.lang.Object creationDate_;
+  public static final int USEREMAIL_FIELD_NUMBER = 15;
+  private volatile Object userEmail_;
   /**
-   * <code>string creationDate = 15;</code>
-   * @return The creationDate.
+   * <code>string userEmail = 15;</code>
+   * @return The userEmail.
    */
-  @java.lang.Override
-  public java.lang.String getCreationDate() {
-    java.lang.Object ref = creationDate_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getUserEmail() {
+    Object ref = userEmail_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
+      userEmail_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string userEmail = 15;</code>
+   * @return The bytes for userEmail.
+   */
+  @Override
+  public com.google.protobuf.ByteString
+      getUserEmailBytes() {
+    Object ref = userEmail_;
+    if (ref instanceof String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (String) ref);
+      userEmail_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CREATIONDATE_FIELD_NUMBER = 16;
+  private volatile Object creationDate_;
+  /**
+   * <code>string creationDate = 16;</code>
+   * @return The creationDate.
+   */
+  @Override
+  public String getCreationDate() {
+    Object ref = creationDate_;
+    if (ref instanceof String) {
+      return (String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      String s = bs.toStringUtf8();
       creationDate_ = s;
       return s;
     }
   }
   /**
-   * <code>string creationDate = 15;</code>
+   * <code>string creationDate = 16;</code>
    * @return The bytes for creationDate.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getCreationDateBytes() {
-    java.lang.Object ref = creationDate_;
-    if (ref instanceof java.lang.String) {
+    Object ref = creationDate_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       creationDate_ = b;
       return b;
     } else {
@@ -507,7 +552,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -517,7 +562,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (id_ != 0L) {
@@ -544,10 +589,10 @@ private static final long serialVersionUID = 0L;
     if (hasInspection_ != false) {
       output.writeBool(8, hasInspection_);
     }
-    if (java.lang.Double.doubleToRawLongBits(groundArea_) != 0) {
+    if (Double.doubleToRawLongBits(groundArea_) != 0) {
       output.writeDouble(9, groundArea_);
     }
-    if (java.lang.Double.doubleToRawLongBits(floorArea_) != 0) {
+    if (Double.doubleToRawLongBits(floorArea_) != 0) {
       output.writeDouble(10, floorArea_);
     }
     for (int i = 0; i < imageBase64Data_.size(); i++) {
@@ -559,16 +604,19 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < imageFileName_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, imageFileName_.getRaw(i));
     }
-    if (java.lang.Double.doubleToRawLongBits(price_) != 0) {
+    if (Double.doubleToRawLongBits(price_) != 0) {
       output.writeDouble(14, price_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userEmail_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, userEmail_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creationDate_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, creationDate_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, creationDate_);
     }
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -604,11 +652,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(8, hasInspection_);
     }
-    if (java.lang.Double.doubleToRawLongBits(groundArea_) != 0) {
+    if (Double.doubleToRawLongBits(groundArea_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(9, groundArea_);
     }
-    if (java.lang.Double.doubleToRawLongBits(floorArea_) != 0) {
+    if (Double.doubleToRawLongBits(floorArea_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(10, floorArea_);
     }
@@ -636,27 +684,30 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getImageFileNameList().size();
     }
-    if (java.lang.Double.doubleToRawLongBits(price_) != 0) {
+    if (Double.doubleToRawLongBits(price_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(14, price_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userEmail_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, userEmail_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creationDate_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, creationDate_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, creationDate_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.group5.proto.Listing.HouseResponse)) {
+    if (!(obj instanceof HouseResponse)) {
       return super.equals(obj);
     }
-    com.group5.proto.Listing.HouseResponse other = (com.group5.proto.Listing.HouseResponse) obj;
+    HouseResponse other = (HouseResponse) obj;
 
     if (getId()
         != other.getId()) return false;
@@ -674,11 +725,11 @@ private static final long serialVersionUID = 0L;
         != other.getLastRebuilt()) return false;
     if (getHasInspection()
         != other.getHasInspection()) return false;
-    if (java.lang.Double.doubleToLongBits(getGroundArea())
-        != java.lang.Double.doubleToLongBits(
+    if (Double.doubleToLongBits(getGroundArea())
+        != Double.doubleToLongBits(
             other.getGroundArea())) return false;
-    if (java.lang.Double.doubleToLongBits(getFloorArea())
-        != java.lang.Double.doubleToLongBits(
+    if (Double.doubleToLongBits(getFloorArea())
+        != Double.doubleToLongBits(
             other.getFloorArea())) return false;
     if (!getImageBase64DataList()
         .equals(other.getImageBase64DataList())) return false;
@@ -686,16 +737,18 @@ private static final long serialVersionUID = 0L;
         .equals(other.getImageContentTypeList())) return false;
     if (!getImageFileNameList()
         .equals(other.getImageFileNameList())) return false;
-    if (java.lang.Double.doubleToLongBits(getPrice())
-        != java.lang.Double.doubleToLongBits(
+    if (Double.doubleToLongBits(getPrice())
+        != Double.doubleToLongBits(
             other.getPrice())) return false;
+    if (!getUserEmail()
+        .equals(other.getUserEmail())) return false;
     if (!getCreationDate()
         .equals(other.getCreationDate())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -722,10 +775,10 @@ private static final long serialVersionUID = 0L;
         getHasInspection());
     hash = (37 * hash) + GROUNDAREA_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getGroundArea()));
+        Double.doubleToLongBits(getGroundArea()));
     hash = (37 * hash) + FLOORAREA_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getFloorArea()));
+        Double.doubleToLongBits(getFloorArea()));
     if (getImageBase64DataCount() > 0) {
       hash = (37 * hash) + IMAGEBASE64DATA_FIELD_NUMBER;
       hash = (53 * hash) + getImageBase64DataList().hashCode();
@@ -740,7 +793,9 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + PRICE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getPrice()));
+        Double.doubleToLongBits(getPrice()));
+    hash = (37 * hash) + USEREMAIL_FIELD_NUMBER;
+    hash = (53 * hash) + getUserEmail().hashCode();
     hash = (37 * hash) + CREATIONDATE_FIELD_NUMBER;
     hash = (53 * hash) + getCreationDate().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -748,69 +803,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.group5.proto.Listing.HouseResponse parseFrom(
+  public static HouseResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.group5.proto.Listing.HouseResponse parseFrom(
+  public static HouseResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.group5.proto.Listing.HouseResponse parseFrom(
+  public static HouseResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.group5.proto.Listing.HouseResponse parseFrom(
+  public static HouseResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.group5.proto.Listing.HouseResponse parseFrom(byte[] data)
+  public static HouseResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.group5.proto.Listing.HouseResponse parseFrom(
+  public static HouseResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.group5.proto.Listing.HouseResponse parseFrom(java.io.InputStream input)
+  public static HouseResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.group5.proto.Listing.HouseResponse parseFrom(
+  public static HouseResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.group5.proto.Listing.HouseResponse parseDelimitedFrom(java.io.InputStream input)
+  public static HouseResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.group5.proto.Listing.HouseResponse parseDelimitedFrom(
+  public static HouseResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.group5.proto.Listing.HouseResponse parseFrom(
+  public static HouseResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.group5.proto.Listing.HouseResponse parseFrom(
+  public static HouseResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -818,23 +873,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.group5.proto.Listing.HouseResponse prototype) {
+  public static Builder newBuilder(HouseResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -844,18 +899,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:com.group5.proto.Listing.HouseResponse)
-      com.group5.proto.Listing.HouseResponseOrBuilder {
+      HouseResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_HouseResponse_descriptor;
+      return Listing.internal_static_com_group5_proto_Listing_HouseResponse_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_HouseResponse_fieldAccessorTable
+      return Listing.internal_static_com_group5_proto_Listing_HouseResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.group5.proto.Listing.HouseResponse.class, com.group5.proto.Listing.HouseResponse.Builder.class);
+              HouseResponse.class, Builder.class);
     }
 
     // Construct using com.group5.proto.Listing.HouseResponse.newBuilder()
@@ -864,7 +919,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -873,7 +928,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       id_ = 0L;
@@ -904,34 +959,36 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000004);
       price_ = 0D;
 
+      userEmail_ = "";
+
       creationDate_ = "";
 
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_HouseResponse_descriptor;
+      return Listing.internal_static_com_group5_proto_Listing_HouseResponse_descriptor;
     }
 
-    @java.lang.Override
-    public com.group5.proto.Listing.HouseResponse getDefaultInstanceForType() {
-      return com.group5.proto.Listing.HouseResponse.getDefaultInstance();
+    @Override
+    public HouseResponse getDefaultInstanceForType() {
+      return HouseResponse.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public com.group5.proto.Listing.HouseResponse build() {
-      com.group5.proto.Listing.HouseResponse result = buildPartial();
+    @Override
+    public HouseResponse build() {
+      HouseResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public com.group5.proto.Listing.HouseResponse buildPartial() {
-      com.group5.proto.Listing.HouseResponse result = new com.group5.proto.Listing.HouseResponse(this);
+    @Override
+    public HouseResponse buildPartial() {
+      HouseResponse result = new HouseResponse(this);
       int from_bitField0_ = bitField0_;
       result.id_ = id_;
       result.street_ = street_;
@@ -959,55 +1016,56 @@ private static final long serialVersionUID = 0L;
       }
       result.imageFileName_ = imageFileName_;
       result.price_ = price_;
+      result.userEmail_ = userEmail_;
       result.creationDate_ = creationDate_;
       onBuilt();
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.group5.proto.Listing.HouseResponse) {
-        return mergeFrom((com.group5.proto.Listing.HouseResponse)other);
+      if (other instanceof HouseResponse) {
+        return mergeFrom((HouseResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.group5.proto.Listing.HouseResponse other) {
-      if (other == com.group5.proto.Listing.HouseResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(HouseResponse other) {
+      if (other == HouseResponse.getDefaultInstance()) return this;
       if (other.getId() != 0L) {
         setId(other.getId());
       }
@@ -1073,6 +1131,10 @@ private static final long serialVersionUID = 0L;
       if (other.getPrice() != 0D) {
         setPrice(other.getPrice());
       }
+      if (!other.getUserEmail().isEmpty()) {
+        userEmail_ = other.userEmail_;
+        onChanged();
+      }
       if (!other.getCreationDate().isEmpty()) {
         creationDate_ = other.creationDate_;
         onChanged();
@@ -1082,21 +1144,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.group5.proto.Listing.HouseResponse parsedMessage = null;
+      HouseResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.group5.proto.Listing.HouseResponse) e.getUnfinishedMessage();
+        parsedMessage = (HouseResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1112,7 +1174,7 @@ private static final long serialVersionUID = 0L;
      * <code>int64 id = 1;</code>
      * @return The id.
      */
-    @java.lang.Override
+    @Override
     public long getId() {
       return id_;
     }
@@ -1138,21 +1200,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object street_ = "";
+    private Object street_ = "";
     /**
      * <code>string street = 2;</code>
      * @return The street.
      */
-    public java.lang.String getStreet() {
-      java.lang.Object ref = street_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getStreet() {
+      Object ref = street_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         street_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -1161,11 +1223,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getStreetBytes() {
-      java.lang.Object ref = street_;
+      Object ref = street_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         street_ = b;
         return b;
       } else {
@@ -1178,7 +1240,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setStreet(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1219,7 +1281,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 postNumber = 3;</code>
      * @return The postNumber.
      */
-    @java.lang.Override
+    @Override
     public int getPostNumber() {
       return postNumber_;
     }
@@ -1245,21 +1307,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object city_ = "";
+    private Object city_ = "";
     /**
      * <code>string city = 4;</code>
      * @return The city.
      */
-    public java.lang.String getCity() {
-      java.lang.Object ref = city_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getCity() {
+      Object ref = city_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         city_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -1268,11 +1330,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getCityBytes() {
-      java.lang.Object ref = city_;
+      Object ref = city_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         city_ = b;
         return b;
       } else {
@@ -1285,7 +1347,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setCity(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1326,7 +1388,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 houseNo = 5;</code>
      * @return The houseNo.
      */
-    @java.lang.Override
+    @Override
     public int getHouseNo() {
       return houseNo_;
     }
@@ -1357,7 +1419,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 constructionYear = 6;</code>
      * @return The constructionYear.
      */
-    @java.lang.Override
+    @Override
     public int getConstructionYear() {
       return constructionYear_;
     }
@@ -1388,7 +1450,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 lastRebuilt = 7;</code>
      * @return The lastRebuilt.
      */
-    @java.lang.Override
+    @Override
     public int getLastRebuilt() {
       return lastRebuilt_;
     }
@@ -1419,7 +1481,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool hasInspection = 8;</code>
      * @return The hasInspection.
      */
-    @java.lang.Override
+    @Override
     public boolean getHasInspection() {
       return hasInspection_;
     }
@@ -1450,7 +1512,7 @@ private static final long serialVersionUID = 0L;
      * <code>double groundArea = 9;</code>
      * @return The groundArea.
      */
-    @java.lang.Override
+    @Override
     public double getGroundArea() {
       return groundArea_;
     }
@@ -1481,7 +1543,7 @@ private static final long serialVersionUID = 0L;
      * <code>double floorArea = 10;</code>
      * @return The floorArea.
      */
-    @java.lang.Override
+    @Override
     public double getFloorArea() {
       return floorArea_;
     }
@@ -1534,7 +1596,7 @@ private static final long serialVersionUID = 0L;
      * @param index The index of the element to return.
      * @return The imageBase64Data at the given index.
      */
-    public java.lang.String getImageBase64Data(int index) {
+    public String getImageBase64Data(int index) {
       return imageBase64Data_.get(index);
     }
     /**
@@ -1553,7 +1615,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setImageBase64Data(
-        int index, java.lang.String value) {
+        int index, String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1568,7 +1630,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder addImageBase64Data(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1583,7 +1645,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder addAllImageBase64Data(
-        java.lang.Iterable<java.lang.String> values) {
+        Iterable<String> values) {
       ensureImageBase64DataIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, imageBase64Data_);
@@ -1644,7 +1706,7 @@ private static final long serialVersionUID = 0L;
      * @param index The index of the element to return.
      * @return The imageContentType at the given index.
      */
-    public java.lang.String getImageContentType(int index) {
+    public String getImageContentType(int index) {
       return imageContentType_.get(index);
     }
     /**
@@ -1663,7 +1725,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setImageContentType(
-        int index, java.lang.String value) {
+        int index, String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1678,7 +1740,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder addImageContentType(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1693,7 +1755,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder addAllImageContentType(
-        java.lang.Iterable<java.lang.String> values) {
+        Iterable<String> values) {
       ensureImageContentTypeIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, imageContentType_);
@@ -1754,7 +1816,7 @@ private static final long serialVersionUID = 0L;
      * @param index The index of the element to return.
      * @return The imageFileName at the given index.
      */
-    public java.lang.String getImageFileName(int index) {
+    public String getImageFileName(int index) {
       return imageFileName_.get(index);
     }
     /**
@@ -1773,7 +1835,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setImageFileName(
-        int index, java.lang.String value) {
+        int index, String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1788,7 +1850,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder addImageFileName(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1803,7 +1865,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder addAllImageFileName(
-        java.lang.Iterable<java.lang.String> values) {
+        Iterable<String> values) {
       ensureImageFileNameIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, imageFileName_);
@@ -1842,7 +1904,7 @@ private static final long serialVersionUID = 0L;
      * <code>double price = 14;</code>
      * @return The price.
      */
-    @java.lang.Override
+    @Override
     public double getPrice() {
       return price_;
     }
@@ -1868,34 +1930,110 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object creationDate_ = "";
+    private Object userEmail_ = "";
     /**
-     * <code>string creationDate = 15;</code>
-     * @return The creationDate.
+     * <code>string userEmail = 15;</code>
+     * @return The userEmail.
      */
-    public java.lang.String getCreationDate() {
-      java.lang.Object ref = creationDate_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getUserEmail() {
+      Object ref = userEmail_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        creationDate_ = s;
+        String s = bs.toStringUtf8();
+        userEmail_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
-     * <code>string creationDate = 15;</code>
+     * <code>string userEmail = 15;</code>
+     * @return The bytes for userEmail.
+     */
+    public com.google.protobuf.ByteString
+        getUserEmailBytes() {
+      Object ref = userEmail_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        userEmail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string userEmail = 15;</code>
+     * @param value The userEmail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserEmail(
+        String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      userEmail_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string userEmail = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserEmail() {
+      
+      userEmail_ = getDefaultInstance().getUserEmail();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string userEmail = 15;</code>
+     * @param value The bytes for userEmail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserEmailBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      userEmail_ = value;
+      onChanged();
+      return this;
+    }
+
+    private Object creationDate_ = "";
+    /**
+     * <code>string creationDate = 16;</code>
+     * @return The creationDate.
+     */
+    public String getCreationDate() {
+      Object ref = creationDate_;
+      if (!(ref instanceof String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        creationDate_ = s;
+        return s;
+      } else {
+        return (String) ref;
+      }
+    }
+    /**
+     * <code>string creationDate = 16;</code>
      * @return The bytes for creationDate.
      */
     public com.google.protobuf.ByteString
         getCreationDateBytes() {
-      java.lang.Object ref = creationDate_;
+      Object ref = creationDate_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         creationDate_ = b;
         return b;
       } else {
@@ -1903,12 +2041,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string creationDate = 15;</code>
+     * <code>string creationDate = 16;</code>
      * @param value The creationDate to set.
      * @return This builder for chaining.
      */
     public Builder setCreationDate(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1918,7 +2056,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string creationDate = 15;</code>
+     * <code>string creationDate = 16;</code>
      * @return This builder for chaining.
      */
     public Builder clearCreationDate() {
@@ -1928,7 +2066,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string creationDate = 15;</code>
+     * <code>string creationDate = 16;</code>
      * @param value The bytes for creationDate to set.
      * @return This builder for chaining.
      */
@@ -1943,13 +2081,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1960,18 +2098,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.group5.proto.Listing.HouseResponse)
-  private static final com.group5.proto.Listing.HouseResponse DEFAULT_INSTANCE;
+  private static final HouseResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.group5.proto.Listing.HouseResponse();
+    DEFAULT_INSTANCE = new HouseResponse();
   }
 
-  public static com.group5.proto.Listing.HouseResponse getDefaultInstance() {
+  public static HouseResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<HouseResponse>
       PARSER = new com.google.protobuf.AbstractParser<HouseResponse>() {
-    @java.lang.Override
+    @Override
     public HouseResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1984,13 +2122,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<HouseResponse> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.group5.proto.Listing.HouseResponse getDefaultInstanceForType() {
+  @Override
+  public HouseResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -82,17 +82,17 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
         {
             if(x.getHouseListing().getId()==request.getId())
             {
-                images.add(x);
+                responseImages.add(x);
             }
         }
         List<String> imageBase64Data = new ArrayList<>();
         List<String> imageContentType = new ArrayList<>();
         List<String> imageFileName = new ArrayList<>();
 
-        for(int index = 0; index > images.size(); index++){
-            imageBase64Data.add(images.get(index).getBase64data());
-            imageFileName.add(images.get(index).getFileName());
-            imageContentType.add(images.get(index).getImageContentType());
+        for(int index = 0; index < responseImages.size(); index++){
+            imageBase64Data.add(responseImages.get(index).getBase64data());
+            imageFileName.add(responseImages.get(index).getFileName());
+            imageContentType.add(responseImages.get(index).getImageContentType());
         }
 
 
@@ -100,9 +100,9 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
                 setStreet(address.getStreet()).setPostNumber(area.getPostNumber()).setCity(area.getCity()).
                 setHouseNo(address.getHouseNumber()).setConstructionYear(houseListing.getConstructionYear())
                 .setLastRebuilt(houseListing.getLastRebuilt()).setHasInspection(houseListing.isHasInspection()).
-                setGroundArea(houseListing.getGroundArea()).setFloorArea(houseListing.getGroundArea()).setPrice(houseListing.getPrice()).
+                setGroundArea(houseListing.getGroundArea()).setFloorArea(houseListing.getFloorArea()).setPrice(houseListing.getPrice()).
                 setCreationDate(LocalDate.now().toString()).addAllImageBase64Data(imageBase64Data).addAllImageContentType(imageContentType).
-                addAllImageFileName(imageFileName)
+                addAllImageFileName(imageFileName).setUserEmail("example@email.com")
                 .build();
 
 
