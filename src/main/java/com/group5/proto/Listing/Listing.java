@@ -39,6 +39,16 @@ public final class Listing {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_group5_proto_Listing_ShortListingResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_group5_proto_Listing_AddressMessage_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_group5_proto_Listing_AddressMessage_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_group5_proto_Listing_ImageFileMessage_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_group5_proto_Listing_ImageFileMessage_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -49,41 +59,44 @@ public final class Listing {
   static {
     String[] descriptorData = {
       "\n\rListing.proto\022\030com.group5.proto.Listin" +
-      "g\"\267\002\n\031CreateHouseListingRequest\022\016\n\006stree" +
-      "t\030\001 \001(\t\022\022\n\npostNumber\030\002 \001(\005\022\014\n\004city\030\003 \001(" +
-      "\t\022\017\n\007houseNo\030\004 \001(\005\022\030\n\020constructionYear\030\005" +
-      " \001(\005\022\023\n\013lastRebuilt\030\006 \001(\005\022\025\n\rhasInspecti" +
-      "on\030\007 \001(\010\022\022\n\ngroundArea\030\010 \001(\001\022\021\n\tfloorAre" +
-      "a\030\t \001(\001\022\027\n\017imageBase64Data\030\n \003(\t\022\030\n\020imag" +
-      "eContentType\030\013 \003(\t\022\025\n\rimageFileName\030\014 \003(" +
-      "\t\022\r\n\005price\030\r \001(\001\022\021\n\tuserEmail\030\016 \001(\t\"\027\n\tI" +
-      "dRequest\022\n\n\002Id\030\001 \001(\003\"\315\002\n\rHouseResponse\022\n" +
-      "\n\002id\030\001 \001(\003\022\016\n\006street\030\002 \001(\t\022\022\n\npostNumber" +
-      "\030\003 \001(\005\022\014\n\004city\030\004 \001(\t\022\017\n\007houseNo\030\005 \001(\005\022\030\n" +
-      "\020constructionYear\030\006 \001(\005\022\023\n\013lastRebuilt\030\007" +
-      " \001(\005\022\025\n\rhasInspection\030\010 \001(\010\022\022\n\ngroundAre" +
-      "a\030\t \001(\001\022\021\n\tfloorArea\030\n \001(\001\022\027\n\017imageBase6" +
-      "4Data\030\013 \003(\t\022\030\n\020imageContentType\030\014 \003(\t\022\025\n" +
-      "\rimageFileName\030\r \003(\t\022\r\n\005price\030\016 \001(\001\022\021\n\tu" +
-      "serEmail\030\017 \001(\t\022\024\n\014creationDate\030\020 \001(\t\"\205\001\n" +
-      "\025ListingFiltersRequest\022\027\n\npostNumber\030\001 \001" +
-      "(\003H\000\210\001\001\022\025\n\010maxPrice\030\002 \001(\003H\001\210\001\001\022\024\n\007minAre" +
-      "a\030\003 \001(\003H\002\210\001\001B\r\n\013_postNumberB\013\n\t_maxPrice" +
-      "B\n\n\010_minArea\"\276\001\n\024ShortListingResponse\022\r\n" +
-      "\005price\030\001 \001(\003\022\027\n\017imageBase64Data\030\002 \001(\t\022\030\n" +
-      "\020imageContentType\030\003 \001(\t\022\025\n\rimageFileName" +
-      "\030\004 \001(\t\022\016\n\006street\030\005 \001(\t\022\022\n\npostNumber\030\006 \001" +
-      "(\005\022\014\n\004city\030\007 \001(\t\022\017\n\007houseNo\030\010 \001(\005\022\n\n\002id\030" +
-      "\t \001(\0032\331\002\n\016ListingService\022m\n\rcreateListin" +
-      "g\0223.com.group5.proto.Listing.CreateHouse" +
-      "ListingRequest\032\'.com.group5.proto.Listin" +
-      "g.HouseResponse\022^\n\016getListingById\022#.com." +
-      "group5.proto.Listing.IdRequest\032\'.com.gro" +
-      "up5.proto.Listing.HouseResponse\022x\n\023getFi" +
-      "lteredListings\022/.com.group5.proto.Listin" +
-      "g.ListingFiltersRequest\032..com.group5.pro" +
-      "to.Listing.ShortListingResponse0\001B\002P\001b\006p" +
-      "roto3"
+      "g\"\266\002\n\031CreateHouseListingRequest\0229\n\007addre" +
+      "ss\030\001 \001(\0132(.com.group5.proto.Listing.Addr" +
+      "essMessage\022\030\n\020constructionYear\030\002 \001(\005\022\023\n\013" +
+      "lastRebuilt\030\003 \001(\005\022\025\n\rhasInspection\030\004 \001(\010" +
+      "\022\022\n\ngroundArea\030\005 \001(\001\022\021\n\tfloorArea\030\006 \001(\001\022" +
+      ":\n\006images\030\007 \003(\0132*.com.group5.proto.Listi" +
+      "ng.ImageFileMessage\022\r\n\005price\030\010 \001(\001\022\021\n\tus" +
+      "erEmail\030\t \001(\t\022\023\n\013description\030\n \001(\t\"\027\n\tId" +
+      "Request\022\n\n\002Id\030\001 \001(\003\"\314\002\n\rHouseResponse\022\n\n" +
+      "\002id\030\001 \001(\003\0229\n\007address\030\002 \001(\0132(.com.group5." +
+      "proto.Listing.AddressMessage\022\030\n\020construc" +
+      "tionYear\030\003 \001(\005\022\023\n\013lastRebuilt\030\004 \001(\005\022\025\n\rh" +
+      "asInspection\030\005 \001(\010\022\022\n\ngroundArea\030\006 \001(\001\022\021" +
+      "\n\tfloorArea\030\007 \001(\001\022:\n\006images\030\010 \003(\0132*.com." +
+      "group5.proto.Listing.ImageFileMessage\022\r\n" +
+      "\005price\030\t \001(\001\022\021\n\tuserEmail\030\n \001(\t\022\024\n\014creat" +
+      "ionDate\030\014 \001(\t\022\023\n\013description\030\r \001(\t\"\205\001\n\025L" +
+      "istingFiltersRequest\022\027\n\npostNumber\030\001 \001(\003" +
+      "H\000\210\001\001\022\025\n\010maxPrice\030\002 \001(\003H\001\210\001\001\022\024\n\007minArea\030" +
+      "\003 \001(\003H\002\210\001\001B\r\n\013_postNumberB\013\n\t_maxPriceB\n" +
+      "\n\010_minArea\"\247\001\n\024ShortListingResponse\022\r\n\005p" +
+      "rice\030\001 \001(\003\0229\n\005image\030\002 \001(\0132*.com.group5.p" +
+      "roto.Listing.ImageFileMessage\0229\n\007address" +
+      "\030\003 \001(\0132(.com.group5.proto.Listing.Addres" +
+      "sMessage\022\n\n\002id\030\004 \001(\003\"S\n\016AddressMessage\022\016" +
+      "\n\006street\030\001 \001(\t\022\022\n\npostNumber\030\002 \001(\005\022\014\n\004ci" +
+      "ty\030\003 \001(\t\022\017\n\007houseNo\030\004 \001(\005\"\\\n\020ImageFileMe" +
+      "ssage\022\027\n\017imageBase64Data\030\001 \001(\t\022\030\n\020imageC" +
+      "ontentType\030\002 \001(\t\022\025\n\rimageFileName\030\003 \001(\t2" +
+      "\331\002\n\016ListingService\022m\n\rcreateListing\0223.co" +
+      "m.group5.proto.Listing.CreateHouseListin" +
+      "gRequest\032\'.com.group5.proto.Listing.Hous" +
+      "eResponse\022^\n\016getListingById\022#.com.group5" +
+      ".proto.Listing.IdRequest\032\'.com.group5.pr" +
+      "oto.Listing.HouseResponse\022x\n\023getFiltered" +
+      "Listings\022/.com.group5.proto.Listing.List" +
+      "ingFiltersRequest\032..com.group5.proto.Lis" +
+      "ting.ShortListingResponse0\001B\002P\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -94,7 +107,7 @@ public final class Listing {
     internal_static_com_group5_proto_Listing_CreateHouseListingRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_group5_proto_Listing_CreateHouseListingRequest_descriptor,
-        new String[] { "Street", "PostNumber", "City", "HouseNo", "ConstructionYear", "LastRebuilt", "HasInspection", "GroundArea", "FloorArea", "ImageBase64Data", "ImageContentType", "ImageFileName", "Price", "UserEmail", });
+        new String[] { "Address", "ConstructionYear", "LastRebuilt", "HasInspection", "GroundArea", "FloorArea", "Images", "Price", "UserEmail", "Description", });
     internal_static_com_group5_proto_Listing_IdRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_group5_proto_Listing_IdRequest_fieldAccessorTable = new
@@ -106,7 +119,7 @@ public final class Listing {
     internal_static_com_group5_proto_Listing_HouseResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_group5_proto_Listing_HouseResponse_descriptor,
-        new String[] { "Id", "Street", "PostNumber", "City", "HouseNo", "ConstructionYear", "LastRebuilt", "HasInspection", "GroundArea", "FloorArea", "ImageBase64Data", "ImageContentType", "ImageFileName", "Price", "UserEmail", "CreationDate", });
+        new String[] { "Id", "Address", "ConstructionYear", "LastRebuilt", "HasInspection", "GroundArea", "FloorArea", "Images", "Price", "UserEmail", "CreationDate", "Description", });
     internal_static_com_group5_proto_Listing_ListingFiltersRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_group5_proto_Listing_ListingFiltersRequest_fieldAccessorTable = new
@@ -118,7 +131,19 @@ public final class Listing {
     internal_static_com_group5_proto_Listing_ShortListingResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_group5_proto_Listing_ShortListingResponse_descriptor,
-        new String[] { "Price", "ImageBase64Data", "ImageContentType", "ImageFileName", "Street", "PostNumber", "City", "HouseNo", "Id", });
+        new String[] { "Price", "Image", "Address", "Id", });
+    internal_static_com_group5_proto_Listing_AddressMessage_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_com_group5_proto_Listing_AddressMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_group5_proto_Listing_AddressMessage_descriptor,
+        new String[] { "Street", "PostNumber", "City", "HouseNo", });
+    internal_static_com_group5_proto_Listing_ImageFileMessage_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_com_group5_proto_Listing_ImageFileMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_group5_proto_Listing_ImageFileMessage_descriptor,
+        new String[] { "ImageBase64Data", "ImageContentType", "ImageFileName", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

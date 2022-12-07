@@ -8,161 +8,101 @@ public interface CreateHouseListingRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string street = 1;</code>
-   * @return The street.
+   * <code>.com.group5.proto.Listing.AddressMessage address = 1;</code>
+   * @return Whether the address field is set.
    */
-  String getStreet();
+  boolean hasAddress();
   /**
-   * <code>string street = 1;</code>
-   * @return The bytes for street.
+   * <code>.com.group5.proto.Listing.AddressMessage address = 1;</code>
+   * @return The address.
    */
-  com.google.protobuf.ByteString
-      getStreetBytes();
+  AddressMessage getAddress();
+  /**
+   * <code>.com.group5.proto.Listing.AddressMessage address = 1;</code>
+   */
+  AddressMessageOrBuilder getAddressOrBuilder();
 
   /**
-   * <code>int32 postNumber = 2;</code>
-   * @return The postNumber.
-   */
-  int getPostNumber();
-
-  /**
-   * <code>string city = 3;</code>
-   * @return The city.
-   */
-  String getCity();
-  /**
-   * <code>string city = 3;</code>
-   * @return The bytes for city.
-   */
-  com.google.protobuf.ByteString
-      getCityBytes();
-
-  /**
-   * <code>int32 houseNo = 4;</code>
-   * @return The houseNo.
-   */
-  int getHouseNo();
-
-  /**
-   * <code>int32 constructionYear = 5;</code>
+   * <code>int32 constructionYear = 2;</code>
    * @return The constructionYear.
    */
   int getConstructionYear();
 
   /**
-   * <code>int32 lastRebuilt = 6;</code>
+   * <code>int32 lastRebuilt = 3;</code>
    * @return The lastRebuilt.
    */
   int getLastRebuilt();
 
   /**
-   * <code>bool hasInspection = 7;</code>
+   * <code>bool hasInspection = 4;</code>
    * @return The hasInspection.
    */
   boolean getHasInspection();
 
   /**
-   * <code>double groundArea = 8;</code>
+   * <code>double groundArea = 5;</code>
    * @return The groundArea.
    */
   double getGroundArea();
 
   /**
-   * <code>double floorArea = 9;</code>
+   * <code>double floorArea = 6;</code>
    * @return The floorArea.
    */
   double getFloorArea();
 
   /**
-   * <code>repeated string imageBase64Data = 10;</code>
-   * @return A list containing the imageBase64Data.
+   * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 7;</code>
    */
-  java.util.List<String>
-      getImageBase64DataList();
+  java.util.List<ImageFileMessage>
+      getImagesList();
   /**
-   * <code>repeated string imageBase64Data = 10;</code>
-   * @return The count of imageBase64Data.
+   * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 7;</code>
    */
-  int getImageBase64DataCount();
+  ImageFileMessage getImages(int index);
   /**
-   * <code>repeated string imageBase64Data = 10;</code>
-   * @param index The index of the element to return.
-   * @return The imageBase64Data at the given index.
+   * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 7;</code>
    */
-  String getImageBase64Data(int index);
+  int getImagesCount();
   /**
-   * <code>repeated string imageBase64Data = 10;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the imageBase64Data at the given index.
+   * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getImageBase64DataBytes(int index);
+  java.util.List<? extends ImageFileMessageOrBuilder>
+      getImagesOrBuilderList();
+  /**
+   * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 7;</code>
+   */
+  ImageFileMessageOrBuilder getImagesOrBuilder(
+      int index);
 
   /**
-   * <code>repeated string imageContentType = 11;</code>
-   * @return A list containing the imageContentType.
-   */
-  java.util.List<String>
-      getImageContentTypeList();
-  /**
-   * <code>repeated string imageContentType = 11;</code>
-   * @return The count of imageContentType.
-   */
-  int getImageContentTypeCount();
-  /**
-   * <code>repeated string imageContentType = 11;</code>
-   * @param index The index of the element to return.
-   * @return The imageContentType at the given index.
-   */
-  String getImageContentType(int index);
-  /**
-   * <code>repeated string imageContentType = 11;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the imageContentType at the given index.
-   */
-  com.google.protobuf.ByteString
-      getImageContentTypeBytes(int index);
-
-  /**
-   * <code>repeated string imageFileName = 12;</code>
-   * @return A list containing the imageFileName.
-   */
-  java.util.List<String>
-      getImageFileNameList();
-  /**
-   * <code>repeated string imageFileName = 12;</code>
-   * @return The count of imageFileName.
-   */
-  int getImageFileNameCount();
-  /**
-   * <code>repeated string imageFileName = 12;</code>
-   * @param index The index of the element to return.
-   * @return The imageFileName at the given index.
-   */
-  String getImageFileName(int index);
-  /**
-   * <code>repeated string imageFileName = 12;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the imageFileName at the given index.
-   */
-  com.google.protobuf.ByteString
-      getImageFileNameBytes(int index);
-
-  /**
-   * <code>double price = 13;</code>
+   * <code>double price = 8;</code>
    * @return The price.
    */
   double getPrice();
 
   /**
-   * <code>string userEmail = 14;</code>
+   * <code>string userEmail = 9;</code>
    * @return The userEmail.
    */
   String getUserEmail();
   /**
-   * <code>string userEmail = 14;</code>
+   * <code>string userEmail = 9;</code>
    * @return The bytes for userEmail.
    */
   com.google.protobuf.ByteString
       getUserEmailBytes();
+
+  /**
+   * <code>string description = 10;</code>
+   * @return The description.
+   */
+  String getDescription();
+  /**
+   * <code>string description = 10;</code>
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString
+      getDescriptionBytes();
 }

@@ -1,5 +1,8 @@
 package com.group5.Model;
+import com.group5.proto.Listing.ImageFileMessage;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -26,7 +29,9 @@ public class HouseListing {
 
     String creationDate;
 
-    public HouseListing(int constructionYear, int lastRebuilt, boolean hasInspection, double groundArea, double floorArea, long price, Address address, String creationsDate) {
+    @Column (name= "description")
+    String description;
+    public HouseListing(int constructionYear, int lastRebuilt, boolean hasInspection, double groundArea, double floorArea, long price, Address address, String creationsDate, String description) {
         this.constructionYear = constructionYear;
         this.lastRebuilt = lastRebuilt;
         this.hasInspection = hasInspection;
@@ -35,6 +40,7 @@ public class HouseListing {
         this.price = price;
         this.address = address;
         this.creationDate = creationsDate;
+        this.description = description;
     }
 
     protected HouseListing() {
@@ -112,5 +118,21 @@ public class HouseListing {
     public void setAddress(Address address) {
         this.address = address;
     }
-
+    public List<ImageFileMessage> getAllImageFileMessages(List<ImageFile> images)
+    {
+        List<ImageFileMessage> base=new ArrayList<>();
+        for (ImageFile image:images) {
+            base.add(ImageFileMessage.newBuilder().setImageFileName(image.getFileName()).setImageContentType(image.getImageContentType())
+                    .setImageBase64Data(image.getBase64data()).build());
+        }
+        return base;
+    }
+    public List<ImageFile> getAllImageFiles(List<ImageFileMessage> images,HouseListing listing)
+    {
+        List<ImageFile> base=new ArrayList<>();
+        for (ImageFileMessage image:images) {
+            base.add(new ImageFile(image.getImageBase64Data(), image.getImageContentType(), image.getImageFileName(), listing ));
+        }
+        return base;
+    }
 }

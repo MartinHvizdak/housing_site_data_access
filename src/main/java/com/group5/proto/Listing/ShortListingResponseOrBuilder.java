@@ -14,79 +14,37 @@ public interface ShortListingResponseOrBuilder extends
   long getPrice();
 
   /**
-   * <code>string imageBase64Data = 2;</code>
-   * @return The imageBase64Data.
+   * <code>.com.group5.proto.Listing.ImageFileMessage image = 2;</code>
+   * @return Whether the image field is set.
    */
-  String getImageBase64Data();
+  boolean hasImage();
   /**
-   * <code>string imageBase64Data = 2;</code>
-   * @return The bytes for imageBase64Data.
+   * <code>.com.group5.proto.Listing.ImageFileMessage image = 2;</code>
+   * @return The image.
    */
-  com.google.protobuf.ByteString
-      getImageBase64DataBytes();
+  ImageFileMessage getImage();
+  /**
+   * <code>.com.group5.proto.Listing.ImageFileMessage image = 2;</code>
+   */
+  ImageFileMessageOrBuilder getImageOrBuilder();
 
   /**
-   * <code>string imageContentType = 3;</code>
-   * @return The imageContentType.
+   * <code>.com.group5.proto.Listing.AddressMessage address = 3;</code>
+   * @return Whether the address field is set.
    */
-  String getImageContentType();
+  boolean hasAddress();
   /**
-   * <code>string imageContentType = 3;</code>
-   * @return The bytes for imageContentType.
+   * <code>.com.group5.proto.Listing.AddressMessage address = 3;</code>
+   * @return The address.
    */
-  com.google.protobuf.ByteString
-      getImageContentTypeBytes();
+  AddressMessage getAddress();
+  /**
+   * <code>.com.group5.proto.Listing.AddressMessage address = 3;</code>
+   */
+  AddressMessageOrBuilder getAddressOrBuilder();
 
   /**
-   * <code>string imageFileName = 4;</code>
-   * @return The imageFileName.
-   */
-  String getImageFileName();
-  /**
-   * <code>string imageFileName = 4;</code>
-   * @return The bytes for imageFileName.
-   */
-  com.google.protobuf.ByteString
-      getImageFileNameBytes();
-
-  /**
-   * <code>string street = 5;</code>
-   * @return The street.
-   */
-  String getStreet();
-  /**
-   * <code>string street = 5;</code>
-   * @return The bytes for street.
-   */
-  com.google.protobuf.ByteString
-      getStreetBytes();
-
-  /**
-   * <code>int32 postNumber = 6;</code>
-   * @return The postNumber.
-   */
-  int getPostNumber();
-
-  /**
-   * <code>string city = 7;</code>
-   * @return The city.
-   */
-  String getCity();
-  /**
-   * <code>string city = 7;</code>
-   * @return The bytes for city.
-   */
-  com.google.protobuf.ByteString
-      getCityBytes();
-
-  /**
-   * <code>int32 houseNo = 8;</code>
-   * @return The houseNo.
-   */
-  int getHouseNo();
-
-  /**
-   * <code>int64 id = 9;</code>
+   * <code>int64 id = 4;</code>
    * @return The id.
    */
   long getId();

@@ -16,13 +16,10 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private HouseResponse() {
-    street_ = "";
-    city_ = "";
-    imageBase64Data_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    imageContentType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    imageFileName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    images_ = java.util.Collections.emptyList();
     userEmail_ = "";
     creationDate_ = "";
+    description_ = "";
   }
 
   @Override
@@ -62,94 +59,73 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            String s = input.readStringRequireUtf8();
+            AddressMessage.Builder subBuilder = null;
+            if (address_ != null) {
+              subBuilder = address_.toBuilder();
+            }
+            address_ = input.readMessage(AddressMessage.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(address_);
+              address_ = subBuilder.buildPartial();
+            }
 
-            street_ = s;
             break;
           }
           case 24: {
 
-            postNumber_ = input.readInt32();
-            break;
-          }
-          case 34: {
-            String s = input.readStringRequireUtf8();
-
-            city_ = s;
-            break;
-          }
-          case 40: {
-
-            houseNo_ = input.readInt32();
-            break;
-          }
-          case 48: {
-
             constructionYear_ = input.readInt32();
             break;
           }
-          case 56: {
+          case 32: {
 
             lastRebuilt_ = input.readInt32();
             break;
           }
-          case 64: {
+          case 40: {
 
             hasInspection_ = input.readBool();
             break;
           }
-          case 73: {
+          case 49: {
 
             groundArea_ = input.readDouble();
             break;
           }
-          case 81: {
+          case 57: {
 
             floorArea_ = input.readDouble();
             break;
           }
-          case 90: {
-            String s = input.readStringRequireUtf8();
+          case 66: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              imageBase64Data_ = new com.google.protobuf.LazyStringArrayList();
+              images_ = new java.util.ArrayList<ImageFileMessage>();
               mutable_bitField0_ |= 0x00000001;
             }
-            imageBase64Data_.add(s);
+            images_.add(
+                input.readMessage(ImageFileMessage.parser(), extensionRegistry));
             break;
           }
-          case 98: {
-            String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-              imageContentType_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
-            }
-            imageContentType_.add(s);
-            break;
-          }
-          case 106: {
-            String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-              imageFileName_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000004;
-            }
-            imageFileName_.add(s);
-            break;
-          }
-          case 113: {
+          case 73: {
 
             price_ = input.readDouble();
             break;
           }
-          case 122: {
+          case 82: {
             String s = input.readStringRequireUtf8();
 
             userEmail_ = s;
             break;
           }
-          case 130: {
+          case 98: {
             String s = input.readStringRequireUtf8();
 
             creationDate_ = s;
+            break;
+          }
+          case 106: {
+            String s = input.readStringRequireUtf8();
+
+            description_ = s;
             break;
           }
           default: {
@@ -170,13 +146,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        imageBase64Data_ = imageBase64Data_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        imageContentType_ = imageContentType_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        imageFileName_ = imageFileName_.getUnmodifiableView();
+        images_ = java.util.Collections.unmodifiableList(images_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -206,108 +176,36 @@ private static final long serialVersionUID = 0L;
     return id_;
   }
 
-  public static final int STREET_FIELD_NUMBER = 2;
-  private volatile Object street_;
+  public static final int ADDRESS_FIELD_NUMBER = 2;
+  private AddressMessage address_;
   /**
-   * <code>string street = 2;</code>
-   * @return The street.
+   * <code>.com.group5.proto.Listing.AddressMessage address = 2;</code>
+   * @return Whether the address field is set.
    */
   @Override
-  public String getStreet() {
-    Object ref = street_;
-    if (ref instanceof String) {
-      return (String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
-      street_ = s;
-      return s;
-    }
+  public boolean hasAddress() {
+    return address_ != null;
   }
   /**
-   * <code>string street = 2;</code>
-   * @return The bytes for street.
+   * <code>.com.group5.proto.Listing.AddressMessage address = 2;</code>
+   * @return The address.
    */
   @Override
-  public com.google.protobuf.ByteString
-      getStreetBytes() {
-    Object ref = street_;
-    if (ref instanceof String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
-      street_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public AddressMessage getAddress() {
+    return address_ == null ? AddressMessage.getDefaultInstance() : address_;
+  }
+  /**
+   * <code>.com.group5.proto.Listing.AddressMessage address = 2;</code>
+   */
+  @Override
+  public AddressMessageOrBuilder getAddressOrBuilder() {
+    return getAddress();
   }
 
-  public static final int POSTNUMBER_FIELD_NUMBER = 3;
-  private int postNumber_;
-  /**
-   * <code>int32 postNumber = 3;</code>
-   * @return The postNumber.
-   */
-  @Override
-  public int getPostNumber() {
-    return postNumber_;
-  }
-
-  public static final int CITY_FIELD_NUMBER = 4;
-  private volatile Object city_;
-  /**
-   * <code>string city = 4;</code>
-   * @return The city.
-   */
-  @Override
-  public String getCity() {
-    Object ref = city_;
-    if (ref instanceof String) {
-      return (String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
-      city_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string city = 4;</code>
-   * @return The bytes for city.
-   */
-  @Override
-  public com.google.protobuf.ByteString
-      getCityBytes() {
-    Object ref = city_;
-    if (ref instanceof String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
-      city_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int HOUSENO_FIELD_NUMBER = 5;
-  private int houseNo_;
-  /**
-   * <code>int32 houseNo = 5;</code>
-   * @return The houseNo.
-   */
-  @Override
-  public int getHouseNo() {
-    return houseNo_;
-  }
-
-  public static final int CONSTRUCTIONYEAR_FIELD_NUMBER = 6;
+  public static final int CONSTRUCTIONYEAR_FIELD_NUMBER = 3;
   private int constructionYear_;
   /**
-   * <code>int32 constructionYear = 6;</code>
+   * <code>int32 constructionYear = 3;</code>
    * @return The constructionYear.
    */
   @Override
@@ -315,10 +213,10 @@ private static final long serialVersionUID = 0L;
     return constructionYear_;
   }
 
-  public static final int LASTREBUILT_FIELD_NUMBER = 7;
+  public static final int LASTREBUILT_FIELD_NUMBER = 4;
   private int lastRebuilt_;
   /**
-   * <code>int32 lastRebuilt = 7;</code>
+   * <code>int32 lastRebuilt = 4;</code>
    * @return The lastRebuilt.
    */
   @Override
@@ -326,10 +224,10 @@ private static final long serialVersionUID = 0L;
     return lastRebuilt_;
   }
 
-  public static final int HASINSPECTION_FIELD_NUMBER = 8;
+  public static final int HASINSPECTION_FIELD_NUMBER = 5;
   private boolean hasInspection_;
   /**
-   * <code>bool hasInspection = 8;</code>
+   * <code>bool hasInspection = 5;</code>
    * @return The hasInspection.
    */
   @Override
@@ -337,10 +235,10 @@ private static final long serialVersionUID = 0L;
     return hasInspection_;
   }
 
-  public static final int GROUNDAREA_FIELD_NUMBER = 9;
+  public static final int GROUNDAREA_FIELD_NUMBER = 6;
   private double groundArea_;
   /**
-   * <code>double groundArea = 9;</code>
+   * <code>double groundArea = 6;</code>
    * @return The groundArea.
    */
   @Override
@@ -348,10 +246,10 @@ private static final long serialVersionUID = 0L;
     return groundArea_;
   }
 
-  public static final int FLOORAREA_FIELD_NUMBER = 10;
+  public static final int FLOORAREA_FIELD_NUMBER = 7;
   private double floorArea_;
   /**
-   * <code>double floorArea = 10;</code>
+   * <code>double floorArea = 7;</code>
    * @return The floorArea.
    */
   @Override
@@ -359,115 +257,50 @@ private static final long serialVersionUID = 0L;
     return floorArea_;
   }
 
-  public static final int IMAGEBASE64DATA_FIELD_NUMBER = 11;
-  private com.google.protobuf.LazyStringList imageBase64Data_;
+  public static final int IMAGES_FIELD_NUMBER = 8;
+  private java.util.List<ImageFileMessage> images_;
   /**
-   * <code>repeated string imageBase64Data = 11;</code>
-   * @return A list containing the imageBase64Data.
+   * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getImageBase64DataList() {
-    return imageBase64Data_;
+  @Override
+  public java.util.List<ImageFileMessage> getImagesList() {
+    return images_;
   }
   /**
-   * <code>repeated string imageBase64Data = 11;</code>
-   * @return The count of imageBase64Data.
+   * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
    */
-  public int getImageBase64DataCount() {
-    return imageBase64Data_.size();
+  @Override
+  public java.util.List<? extends ImageFileMessageOrBuilder>
+      getImagesOrBuilderList() {
+    return images_;
   }
   /**
-   * <code>repeated string imageBase64Data = 11;</code>
-   * @param index The index of the element to return.
-   * @return The imageBase64Data at the given index.
+   * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
    */
-  public String getImageBase64Data(int index) {
-    return imageBase64Data_.get(index);
+  @Override
+  public int getImagesCount() {
+    return images_.size();
   }
   /**
-   * <code>repeated string imageBase64Data = 11;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the imageBase64Data at the given index.
+   * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
    */
-  public com.google.protobuf.ByteString
-      getImageBase64DataBytes(int index) {
-    return imageBase64Data_.getByteString(index);
-  }
-
-  public static final int IMAGECONTENTTYPE_FIELD_NUMBER = 12;
-  private com.google.protobuf.LazyStringList imageContentType_;
-  /**
-   * <code>repeated string imageContentType = 12;</code>
-   * @return A list containing the imageContentType.
-   */
-  public com.google.protobuf.ProtocolStringList
-      getImageContentTypeList() {
-    return imageContentType_;
+  @Override
+  public ImageFileMessage getImages(int index) {
+    return images_.get(index);
   }
   /**
-   * <code>repeated string imageContentType = 12;</code>
-   * @return The count of imageContentType.
+   * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
    */
-  public int getImageContentTypeCount() {
-    return imageContentType_.size();
-  }
-  /**
-   * <code>repeated string imageContentType = 12;</code>
-   * @param index The index of the element to return.
-   * @return The imageContentType at the given index.
-   */
-  public String getImageContentType(int index) {
-    return imageContentType_.get(index);
-  }
-  /**
-   * <code>repeated string imageContentType = 12;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the imageContentType at the given index.
-   */
-  public com.google.protobuf.ByteString
-      getImageContentTypeBytes(int index) {
-    return imageContentType_.getByteString(index);
+  @Override
+  public ImageFileMessageOrBuilder getImagesOrBuilder(
+      int index) {
+    return images_.get(index);
   }
 
-  public static final int IMAGEFILENAME_FIELD_NUMBER = 13;
-  private com.google.protobuf.LazyStringList imageFileName_;
-  /**
-   * <code>repeated string imageFileName = 13;</code>
-   * @return A list containing the imageFileName.
-   */
-  public com.google.protobuf.ProtocolStringList
-      getImageFileNameList() {
-    return imageFileName_;
-  }
-  /**
-   * <code>repeated string imageFileName = 13;</code>
-   * @return The count of imageFileName.
-   */
-  public int getImageFileNameCount() {
-    return imageFileName_.size();
-  }
-  /**
-   * <code>repeated string imageFileName = 13;</code>
-   * @param index The index of the element to return.
-   * @return The imageFileName at the given index.
-   */
-  public String getImageFileName(int index) {
-    return imageFileName_.get(index);
-  }
-  /**
-   * <code>repeated string imageFileName = 13;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the imageFileName at the given index.
-   */
-  public com.google.protobuf.ByteString
-      getImageFileNameBytes(int index) {
-    return imageFileName_.getByteString(index);
-  }
-
-  public static final int PRICE_FIELD_NUMBER = 14;
+  public static final int PRICE_FIELD_NUMBER = 9;
   private double price_;
   /**
-   * <code>double price = 14;</code>
+   * <code>double price = 9;</code>
    * @return The price.
    */
   @Override
@@ -475,10 +308,10 @@ private static final long serialVersionUID = 0L;
     return price_;
   }
 
-  public static final int USEREMAIL_FIELD_NUMBER = 15;
+  public static final int USEREMAIL_FIELD_NUMBER = 10;
   private volatile Object userEmail_;
   /**
-   * <code>string userEmail = 15;</code>
+   * <code>string userEmail = 10;</code>
    * @return The userEmail.
    */
   @Override
@@ -495,7 +328,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string userEmail = 15;</code>
+   * <code>string userEmail = 10;</code>
    * @return The bytes for userEmail.
    */
   @Override
@@ -513,10 +346,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CREATIONDATE_FIELD_NUMBER = 16;
+  public static final int CREATIONDATE_FIELD_NUMBER = 12;
   private volatile Object creationDate_;
   /**
-   * <code>string creationDate = 16;</code>
+   * <code>string creationDate = 12;</code>
    * @return The creationDate.
    */
   @Override
@@ -533,7 +366,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string creationDate = 16;</code>
+   * <code>string creationDate = 12;</code>
    * @return The bytes for creationDate.
    */
   @Override
@@ -545,6 +378,44 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (String) ref);
       creationDate_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 13;
+  private volatile Object description_;
+  /**
+   * <code>string description = 13;</code>
+   * @return The description.
+   */
+  @Override
+  public String getDescription() {
+    Object ref = description_;
+    if (ref instanceof String) {
+      return (String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string description = 13;</code>
+   * @return The bytes for description.
+   */
+  @Override
+  public com.google.protobuf.ByteString
+      getDescriptionBytes() {
+    Object ref = description_;
+    if (ref instanceof String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (String) ref);
+      description_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -568,50 +439,38 @@ private static final long serialVersionUID = 0L;
     if (id_ != 0L) {
       output.writeInt64(1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(street_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, street_);
-    }
-    if (postNumber_ != 0) {
-      output.writeInt32(3, postNumber_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(city_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, city_);
-    }
-    if (houseNo_ != 0) {
-      output.writeInt32(5, houseNo_);
+    if (address_ != null) {
+      output.writeMessage(2, getAddress());
     }
     if (constructionYear_ != 0) {
-      output.writeInt32(6, constructionYear_);
+      output.writeInt32(3, constructionYear_);
     }
     if (lastRebuilt_ != 0) {
-      output.writeInt32(7, lastRebuilt_);
+      output.writeInt32(4, lastRebuilt_);
     }
     if (hasInspection_ != false) {
-      output.writeBool(8, hasInspection_);
+      output.writeBool(5, hasInspection_);
     }
     if (Double.doubleToRawLongBits(groundArea_) != 0) {
-      output.writeDouble(9, groundArea_);
+      output.writeDouble(6, groundArea_);
     }
     if (Double.doubleToRawLongBits(floorArea_) != 0) {
-      output.writeDouble(10, floorArea_);
+      output.writeDouble(7, floorArea_);
     }
-    for (int i = 0; i < imageBase64Data_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, imageBase64Data_.getRaw(i));
-    }
-    for (int i = 0; i < imageContentType_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, imageContentType_.getRaw(i));
-    }
-    for (int i = 0; i < imageFileName_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, imageFileName_.getRaw(i));
+    for (int i = 0; i < images_.size(); i++) {
+      output.writeMessage(8, images_.get(i));
     }
     if (Double.doubleToRawLongBits(price_) != 0) {
-      output.writeDouble(14, price_);
+      output.writeDouble(9, price_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userEmail_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, userEmail_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, userEmail_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creationDate_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, creationDate_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, creationDate_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, description_);
     }
     unknownFields.writeTo(output);
   }
@@ -626,73 +485,46 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(street_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, street_);
-    }
-    if (postNumber_ != 0) {
+    if (address_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, postNumber_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(city_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, city_);
-    }
-    if (houseNo_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(5, houseNo_);
+        .computeMessageSize(2, getAddress());
     }
     if (constructionYear_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, constructionYear_);
+        .computeInt32Size(3, constructionYear_);
     }
     if (lastRebuilt_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(7, lastRebuilt_);
+        .computeInt32Size(4, lastRebuilt_);
     }
     if (hasInspection_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(8, hasInspection_);
+        .computeBoolSize(5, hasInspection_);
     }
     if (Double.doubleToRawLongBits(groundArea_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(9, groundArea_);
+        .computeDoubleSize(6, groundArea_);
     }
     if (Double.doubleToRawLongBits(floorArea_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(10, floorArea_);
+        .computeDoubleSize(7, floorArea_);
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < imageBase64Data_.size(); i++) {
-        dataSize += computeStringSizeNoTag(imageBase64Data_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getImageBase64DataList().size();
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < imageContentType_.size(); i++) {
-        dataSize += computeStringSizeNoTag(imageContentType_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getImageContentTypeList().size();
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < imageFileName_.size(); i++) {
-        dataSize += computeStringSizeNoTag(imageFileName_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getImageFileNameList().size();
+    for (int i = 0; i < images_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, images_.get(i));
     }
     if (Double.doubleToRawLongBits(price_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(14, price_);
+        .computeDoubleSize(9, price_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userEmail_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, userEmail_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, userEmail_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creationDate_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, creationDate_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, creationDate_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, description_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -711,14 +543,11 @@ private static final long serialVersionUID = 0L;
 
     if (getId()
         != other.getId()) return false;
-    if (!getStreet()
-        .equals(other.getStreet())) return false;
-    if (getPostNumber()
-        != other.getPostNumber()) return false;
-    if (!getCity()
-        .equals(other.getCity())) return false;
-    if (getHouseNo()
-        != other.getHouseNo()) return false;
+    if (hasAddress() != other.hasAddress()) return false;
+    if (hasAddress()) {
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+    }
     if (getConstructionYear()
         != other.getConstructionYear()) return false;
     if (getLastRebuilt()
@@ -731,12 +560,8 @@ private static final long serialVersionUID = 0L;
     if (Double.doubleToLongBits(getFloorArea())
         != Double.doubleToLongBits(
             other.getFloorArea())) return false;
-    if (!getImageBase64DataList()
-        .equals(other.getImageBase64DataList())) return false;
-    if (!getImageContentTypeList()
-        .equals(other.getImageContentTypeList())) return false;
-    if (!getImageFileNameList()
-        .equals(other.getImageFileNameList())) return false;
+    if (!getImagesList()
+        .equals(other.getImagesList())) return false;
     if (Double.doubleToLongBits(getPrice())
         != Double.doubleToLongBits(
             other.getPrice())) return false;
@@ -744,6 +569,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUserEmail())) return false;
     if (!getCreationDate()
         .equals(other.getCreationDate())) return false;
+    if (!getDescription()
+        .equals(other.getDescription())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -758,14 +585,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getId());
-    hash = (37 * hash) + STREET_FIELD_NUMBER;
-    hash = (53 * hash) + getStreet().hashCode();
-    hash = (37 * hash) + POSTNUMBER_FIELD_NUMBER;
-    hash = (53 * hash) + getPostNumber();
-    hash = (37 * hash) + CITY_FIELD_NUMBER;
-    hash = (53 * hash) + getCity().hashCode();
-    hash = (37 * hash) + HOUSENO_FIELD_NUMBER;
-    hash = (53 * hash) + getHouseNo();
+    if (hasAddress()) {
+      hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getAddress().hashCode();
+    }
     hash = (37 * hash) + CONSTRUCTIONYEAR_FIELD_NUMBER;
     hash = (53 * hash) + getConstructionYear();
     hash = (37 * hash) + LASTREBUILT_FIELD_NUMBER;
@@ -779,17 +602,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + FLOORAREA_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         Double.doubleToLongBits(getFloorArea()));
-    if (getImageBase64DataCount() > 0) {
-      hash = (37 * hash) + IMAGEBASE64DATA_FIELD_NUMBER;
-      hash = (53 * hash) + getImageBase64DataList().hashCode();
-    }
-    if (getImageContentTypeCount() > 0) {
-      hash = (37 * hash) + IMAGECONTENTTYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getImageContentTypeList().hashCode();
-    }
-    if (getImageFileNameCount() > 0) {
-      hash = (37 * hash) + IMAGEFILENAME_FIELD_NUMBER;
-      hash = (53 * hash) + getImageFileNameList().hashCode();
+    if (getImagesCount() > 0) {
+      hash = (37 * hash) + IMAGES_FIELD_NUMBER;
+      hash = (53 * hash) + getImagesList().hashCode();
     }
     hash = (37 * hash) + PRICE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
@@ -798,6 +613,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getUserEmail().hashCode();
     hash = (37 * hash) + CREATIONDATE_FIELD_NUMBER;
     hash = (53 * hash) + getCreationDate().hashCode();
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -926,6 +743,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getImagesFieldBuilder();
       }
     }
     @Override
@@ -933,14 +751,12 @@ private static final long serialVersionUID = 0L;
       super.clear();
       id_ = 0L;
 
-      street_ = "";
-
-      postNumber_ = 0;
-
-      city_ = "";
-
-      houseNo_ = 0;
-
+      if (addressBuilder_ == null) {
+        address_ = null;
+      } else {
+        address_ = null;
+        addressBuilder_ = null;
+      }
       constructionYear_ = 0;
 
       lastRebuilt_ = 0;
@@ -951,17 +767,19 @@ private static final long serialVersionUID = 0L;
 
       floorArea_ = 0D;
 
-      imageBase64Data_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      imageContentType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      imageFileName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      if (imagesBuilder_ == null) {
+        images_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        imagesBuilder_.clear();
+      }
       price_ = 0D;
 
       userEmail_ = "";
 
       creationDate_ = "";
+
+      description_ = "";
 
       return this;
     }
@@ -991,33 +809,29 @@ private static final long serialVersionUID = 0L;
       HouseResponse result = new HouseResponse(this);
       int from_bitField0_ = bitField0_;
       result.id_ = id_;
-      result.street_ = street_;
-      result.postNumber_ = postNumber_;
-      result.city_ = city_;
-      result.houseNo_ = houseNo_;
+      if (addressBuilder_ == null) {
+        result.address_ = address_;
+      } else {
+        result.address_ = addressBuilder_.build();
+      }
       result.constructionYear_ = constructionYear_;
       result.lastRebuilt_ = lastRebuilt_;
       result.hasInspection_ = hasInspection_;
       result.groundArea_ = groundArea_;
       result.floorArea_ = floorArea_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        imageBase64Data_ = imageBase64Data_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (imagesBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          images_ = java.util.Collections.unmodifiableList(images_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.images_ = images_;
+      } else {
+        result.images_ = imagesBuilder_.build();
       }
-      result.imageBase64Data_ = imageBase64Data_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        imageContentType_ = imageContentType_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.imageContentType_ = imageContentType_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        imageFileName_ = imageFileName_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.imageFileName_ = imageFileName_;
       result.price_ = price_;
       result.userEmail_ = userEmail_;
       result.creationDate_ = creationDate_;
+      result.description_ = description_;
       onBuilt();
       return result;
     }
@@ -1069,19 +883,8 @@ private static final long serialVersionUID = 0L;
       if (other.getId() != 0L) {
         setId(other.getId());
       }
-      if (!other.getStreet().isEmpty()) {
-        street_ = other.street_;
-        onChanged();
-      }
-      if (other.getPostNumber() != 0) {
-        setPostNumber(other.getPostNumber());
-      }
-      if (!other.getCity().isEmpty()) {
-        city_ = other.city_;
-        onChanged();
-      }
-      if (other.getHouseNo() != 0) {
-        setHouseNo(other.getHouseNo());
+      if (other.hasAddress()) {
+        mergeAddress(other.getAddress());
       }
       if (other.getConstructionYear() != 0) {
         setConstructionYear(other.getConstructionYear());
@@ -1098,35 +901,31 @@ private static final long serialVersionUID = 0L;
       if (other.getFloorArea() != 0D) {
         setFloorArea(other.getFloorArea());
       }
-      if (!other.imageBase64Data_.isEmpty()) {
-        if (imageBase64Data_.isEmpty()) {
-          imageBase64Data_ = other.imageBase64Data_;
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          ensureImageBase64DataIsMutable();
-          imageBase64Data_.addAll(other.imageBase64Data_);
+      if (imagesBuilder_ == null) {
+        if (!other.images_.isEmpty()) {
+          if (images_.isEmpty()) {
+            images_ = other.images_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureImagesIsMutable();
+            images_.addAll(other.images_);
+          }
+          onChanged();
         }
-        onChanged();
-      }
-      if (!other.imageContentType_.isEmpty()) {
-        if (imageContentType_.isEmpty()) {
-          imageContentType_ = other.imageContentType_;
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          ensureImageContentTypeIsMutable();
-          imageContentType_.addAll(other.imageContentType_);
+      } else {
+        if (!other.images_.isEmpty()) {
+          if (imagesBuilder_.isEmpty()) {
+            imagesBuilder_.dispose();
+            imagesBuilder_ = null;
+            images_ = other.images_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            imagesBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getImagesFieldBuilder() : null;
+          } else {
+            imagesBuilder_.addAllMessages(other.images_);
+          }
         }
-        onChanged();
-      }
-      if (!other.imageFileName_.isEmpty()) {
-        if (imageFileName_.isEmpty()) {
-          imageFileName_ = other.imageFileName_;
-          bitField0_ = (bitField0_ & ~0x00000004);
-        } else {
-          ensureImageFileNameIsMutable();
-          imageFileName_.addAll(other.imageFileName_);
-        }
-        onChanged();
       }
       if (other.getPrice() != 0D) {
         setPrice(other.getPrice());
@@ -1137,6 +936,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getCreationDate().isEmpty()) {
         creationDate_ = other.creationDate_;
+        onChanged();
+      }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1200,223 +1003,128 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object street_ = "";
+    private AddressMessage address_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        AddressMessage, AddressMessage.Builder, AddressMessageOrBuilder> addressBuilder_;
     /**
-     * <code>string street = 2;</code>
-     * @return The street.
+     * <code>.com.group5.proto.Listing.AddressMessage address = 2;</code>
+     * @return Whether the address field is set.
      */
-    public String getStreet() {
-      Object ref = street_;
-      if (!(ref instanceof String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        street_ = s;
-        return s;
+    public boolean hasAddress() {
+      return addressBuilder_ != null || address_ != null;
+    }
+    /**
+     * <code>.com.group5.proto.Listing.AddressMessage address = 2;</code>
+     * @return The address.
+     */
+    public AddressMessage getAddress() {
+      if (addressBuilder_ == null) {
+        return address_ == null ? AddressMessage.getDefaultInstance() : address_;
       } else {
-        return (String) ref;
+        return addressBuilder_.getMessage();
       }
     }
     /**
-     * <code>string street = 2;</code>
-     * @return The bytes for street.
+     * <code>.com.group5.proto.Listing.AddressMessage address = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getStreetBytes() {
-      Object ref = street_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        street_ = b;
-        return b;
+    public Builder setAddress(AddressMessage value) {
+      if (addressBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        address_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        addressBuilder_.setMessage(value);
       }
-    }
-    /**
-     * <code>string street = 2;</code>
-     * @param value The street to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStreet(
-        String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      street_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string street = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearStreet() {
-      
-      street_ = getDefaultInstance().getStreet();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string street = 2;</code>
-     * @param value The bytes for street to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStreetBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      street_ = value;
-      onChanged();
-      return this;
-    }
 
-    private int postNumber_ ;
-    /**
-     * <code>int32 postNumber = 3;</code>
-     * @return The postNumber.
-     */
-    @Override
-    public int getPostNumber() {
-      return postNumber_;
-    }
-    /**
-     * <code>int32 postNumber = 3;</code>
-     * @param value The postNumber to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPostNumber(int value) {
-      
-      postNumber_ = value;
-      onChanged();
       return this;
     }
     /**
-     * <code>int32 postNumber = 3;</code>
-     * @return This builder for chaining.
+     * <code>.com.group5.proto.Listing.AddressMessage address = 2;</code>
      */
-    public Builder clearPostNumber() {
-      
-      postNumber_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private Object city_ = "";
-    /**
-     * <code>string city = 4;</code>
-     * @return The city.
-     */
-    public String getCity() {
-      Object ref = city_;
-      if (!(ref instanceof String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        city_ = s;
-        return s;
+    public Builder setAddress(
+        AddressMessage.Builder builderForValue) {
+      if (addressBuilder_ == null) {
+        address_ = builderForValue.build();
+        onChanged();
       } else {
-        return (String) ref;
+        addressBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.group5.proto.Listing.AddressMessage address = 2;</code>
+     */
+    public Builder mergeAddress(AddressMessage value) {
+      if (addressBuilder_ == null) {
+        if (address_ != null) {
+          address_ =
+            AddressMessage.newBuilder(address_).mergeFrom(value).buildPartial();
+        } else {
+          address_ = value;
+        }
+        onChanged();
+      } else {
+        addressBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.group5.proto.Listing.AddressMessage address = 2;</code>
+     */
+    public Builder clearAddress() {
+      if (addressBuilder_ == null) {
+        address_ = null;
+        onChanged();
+      } else {
+        address_ = null;
+        addressBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.group5.proto.Listing.AddressMessage address = 2;</code>
+     */
+    public AddressMessage.Builder getAddressBuilder() {
+      
+      onChanged();
+      return getAddressFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.com.group5.proto.Listing.AddressMessage address = 2;</code>
+     */
+    public AddressMessageOrBuilder getAddressOrBuilder() {
+      if (addressBuilder_ != null) {
+        return addressBuilder_.getMessageOrBuilder();
+      } else {
+        return address_ == null ?
+            AddressMessage.getDefaultInstance() : address_;
       }
     }
     /**
-     * <code>string city = 4;</code>
-     * @return The bytes for city.
+     * <code>.com.group5.proto.Listing.AddressMessage address = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getCityBytes() {
-      Object ref = city_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        city_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        AddressMessage, AddressMessage.Builder, AddressMessageOrBuilder>
+        getAddressFieldBuilder() {
+      if (addressBuilder_ == null) {
+        addressBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            AddressMessage, AddressMessage.Builder, AddressMessageOrBuilder>(
+                getAddress(),
+                getParentForChildren(),
+                isClean());
+        address_ = null;
       }
-    }
-    /**
-     * <code>string city = 4;</code>
-     * @param value The city to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCity(
-        String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      city_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string city = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCity() {
-      
-      city_ = getDefaultInstance().getCity();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string city = 4;</code>
-     * @param value The bytes for city to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCityBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      city_ = value;
-      onChanged();
-      return this;
-    }
-
-    private int houseNo_ ;
-    /**
-     * <code>int32 houseNo = 5;</code>
-     * @return The houseNo.
-     */
-    @Override
-    public int getHouseNo() {
-      return houseNo_;
-    }
-    /**
-     * <code>int32 houseNo = 5;</code>
-     * @param value The houseNo to set.
-     * @return This builder for chaining.
-     */
-    public Builder setHouseNo(int value) {
-      
-      houseNo_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int32 houseNo = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearHouseNo() {
-      
-      houseNo_ = 0;
-      onChanged();
-      return this;
+      return addressBuilder_;
     }
 
     private int constructionYear_ ;
     /**
-     * <code>int32 constructionYear = 6;</code>
+     * <code>int32 constructionYear = 3;</code>
      * @return The constructionYear.
      */
     @Override
@@ -1424,7 +1132,7 @@ private static final long serialVersionUID = 0L;
       return constructionYear_;
     }
     /**
-     * <code>int32 constructionYear = 6;</code>
+     * <code>int32 constructionYear = 3;</code>
      * @param value The constructionYear to set.
      * @return This builder for chaining.
      */
@@ -1435,7 +1143,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 constructionYear = 6;</code>
+     * <code>int32 constructionYear = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearConstructionYear() {
@@ -1447,7 +1155,7 @@ private static final long serialVersionUID = 0L;
 
     private int lastRebuilt_ ;
     /**
-     * <code>int32 lastRebuilt = 7;</code>
+     * <code>int32 lastRebuilt = 4;</code>
      * @return The lastRebuilt.
      */
     @Override
@@ -1455,7 +1163,7 @@ private static final long serialVersionUID = 0L;
       return lastRebuilt_;
     }
     /**
-     * <code>int32 lastRebuilt = 7;</code>
+     * <code>int32 lastRebuilt = 4;</code>
      * @param value The lastRebuilt to set.
      * @return This builder for chaining.
      */
@@ -1466,7 +1174,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 lastRebuilt = 7;</code>
+     * <code>int32 lastRebuilt = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearLastRebuilt() {
@@ -1478,7 +1186,7 @@ private static final long serialVersionUID = 0L;
 
     private boolean hasInspection_ ;
     /**
-     * <code>bool hasInspection = 8;</code>
+     * <code>bool hasInspection = 5;</code>
      * @return The hasInspection.
      */
     @Override
@@ -1486,7 +1194,7 @@ private static final long serialVersionUID = 0L;
       return hasInspection_;
     }
     /**
-     * <code>bool hasInspection = 8;</code>
+     * <code>bool hasInspection = 5;</code>
      * @param value The hasInspection to set.
      * @return This builder for chaining.
      */
@@ -1497,7 +1205,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool hasInspection = 8;</code>
+     * <code>bool hasInspection = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearHasInspection() {
@@ -1509,7 +1217,7 @@ private static final long serialVersionUID = 0L;
 
     private double groundArea_ ;
     /**
-     * <code>double groundArea = 9;</code>
+     * <code>double groundArea = 6;</code>
      * @return The groundArea.
      */
     @Override
@@ -1517,7 +1225,7 @@ private static final long serialVersionUID = 0L;
       return groundArea_;
     }
     /**
-     * <code>double groundArea = 9;</code>
+     * <code>double groundArea = 6;</code>
      * @param value The groundArea to set.
      * @return This builder for chaining.
      */
@@ -1528,7 +1236,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>double groundArea = 9;</code>
+     * <code>double groundArea = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearGroundArea() {
@@ -1540,7 +1248,7 @@ private static final long serialVersionUID = 0L;
 
     private double floorArea_ ;
     /**
-     * <code>double floorArea = 10;</code>
+     * <code>double floorArea = 7;</code>
      * @return The floorArea.
      */
     @Override
@@ -1548,7 +1256,7 @@ private static final long serialVersionUID = 0L;
       return floorArea_;
     }
     /**
-     * <code>double floorArea = 10;</code>
+     * <code>double floorArea = 7;</code>
      * @param value The floorArea to set.
      * @return This builder for chaining.
      */
@@ -1559,7 +1267,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>double floorArea = 10;</code>
+     * <code>double floorArea = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearFloorArea() {
@@ -1569,339 +1277,249 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.LazyStringList imageBase64Data_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureImageBase64DataIsMutable() {
+    private java.util.List<ImageFileMessage> images_ =
+      java.util.Collections.emptyList();
+    private void ensureImagesIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        imageBase64Data_ = new com.google.protobuf.LazyStringArrayList(imageBase64Data_);
+        images_ = new java.util.ArrayList<ImageFileMessage>(images_);
         bitField0_ |= 0x00000001;
        }
     }
-    /**
-     * <code>repeated string imageBase64Data = 11;</code>
-     * @return A list containing the imageBase64Data.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getImageBase64DataList() {
-      return imageBase64Data_.getUnmodifiableView();
-    }
-    /**
-     * <code>repeated string imageBase64Data = 11;</code>
-     * @return The count of imageBase64Data.
-     */
-    public int getImageBase64DataCount() {
-      return imageBase64Data_.size();
-    }
-    /**
-     * <code>repeated string imageBase64Data = 11;</code>
-     * @param index The index of the element to return.
-     * @return The imageBase64Data at the given index.
-     */
-    public String getImageBase64Data(int index) {
-      return imageBase64Data_.get(index);
-    }
-    /**
-     * <code>repeated string imageBase64Data = 11;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the imageBase64Data at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getImageBase64DataBytes(int index) {
-      return imageBase64Data_.getByteString(index);
-    }
-    /**
-     * <code>repeated string imageBase64Data = 11;</code>
-     * @param index The index to set the value at.
-     * @param value The imageBase64Data to set.
-     * @return This builder for chaining.
-     */
-    public Builder setImageBase64Data(
-        int index, String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureImageBase64DataIsMutable();
-      imageBase64Data_.set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string imageBase64Data = 11;</code>
-     * @param value The imageBase64Data to add.
-     * @return This builder for chaining.
-     */
-    public Builder addImageBase64Data(
-        String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureImageBase64DataIsMutable();
-      imageBase64Data_.add(value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string imageBase64Data = 11;</code>
-     * @param values The imageBase64Data to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllImageBase64Data(
-        Iterable<String> values) {
-      ensureImageBase64DataIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, imageBase64Data_);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string imageBase64Data = 11;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearImageBase64Data() {
-      imageBase64Data_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string imageBase64Data = 11;</code>
-     * @param value The bytes of the imageBase64Data to add.
-     * @return This builder for chaining.
-     */
-    public Builder addImageBase64DataBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureImageBase64DataIsMutable();
-      imageBase64Data_.add(value);
-      onChanged();
-      return this;
-    }
 
-    private com.google.protobuf.LazyStringList imageContentType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureImageContentTypeIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
-        imageContentType_ = new com.google.protobuf.LazyStringArrayList(imageContentType_);
-        bitField0_ |= 0x00000002;
-       }
-    }
-    /**
-     * <code>repeated string imageContentType = 12;</code>
-     * @return A list containing the imageContentType.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getImageContentTypeList() {
-      return imageContentType_.getUnmodifiableView();
-    }
-    /**
-     * <code>repeated string imageContentType = 12;</code>
-     * @return The count of imageContentType.
-     */
-    public int getImageContentTypeCount() {
-      return imageContentType_.size();
-    }
-    /**
-     * <code>repeated string imageContentType = 12;</code>
-     * @param index The index of the element to return.
-     * @return The imageContentType at the given index.
-     */
-    public String getImageContentType(int index) {
-      return imageContentType_.get(index);
-    }
-    /**
-     * <code>repeated string imageContentType = 12;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the imageContentType at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getImageContentTypeBytes(int index) {
-      return imageContentType_.getByteString(index);
-    }
-    /**
-     * <code>repeated string imageContentType = 12;</code>
-     * @param index The index to set the value at.
-     * @param value The imageContentType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setImageContentType(
-        int index, String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureImageContentTypeIsMutable();
-      imageContentType_.set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string imageContentType = 12;</code>
-     * @param value The imageContentType to add.
-     * @return This builder for chaining.
-     */
-    public Builder addImageContentType(
-        String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureImageContentTypeIsMutable();
-      imageContentType_.add(value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string imageContentType = 12;</code>
-     * @param values The imageContentType to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllImageContentType(
-        Iterable<String> values) {
-      ensureImageContentTypeIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, imageContentType_);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string imageContentType = 12;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearImageContentType() {
-      imageContentType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string imageContentType = 12;</code>
-     * @param value The bytes of the imageContentType to add.
-     * @return This builder for chaining.
-     */
-    public Builder addImageContentTypeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureImageContentTypeIsMutable();
-      imageContentType_.add(value);
-      onChanged();
-      return this;
-    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        ImageFileMessage, ImageFileMessage.Builder, ImageFileMessageOrBuilder> imagesBuilder_;
 
-    private com.google.protobuf.LazyStringList imageFileName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureImageFileNameIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
-        imageFileName_ = new com.google.protobuf.LazyStringArrayList(imageFileName_);
-        bitField0_ |= 0x00000004;
-       }
+    /**
+     * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
+     */
+    public java.util.List<ImageFileMessage> getImagesList() {
+      if (imagesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(images_);
+      } else {
+        return imagesBuilder_.getMessageList();
+      }
     }
     /**
-     * <code>repeated string imageFileName = 13;</code>
-     * @return A list containing the imageFileName.
+     * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getImageFileNameList() {
-      return imageFileName_.getUnmodifiableView();
+    public int getImagesCount() {
+      if (imagesBuilder_ == null) {
+        return images_.size();
+      } else {
+        return imagesBuilder_.getCount();
+      }
     }
     /**
-     * <code>repeated string imageFileName = 13;</code>
-     * @return The count of imageFileName.
+     * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
      */
-    public int getImageFileNameCount() {
-      return imageFileName_.size();
+    public ImageFileMessage getImages(int index) {
+      if (imagesBuilder_ == null) {
+        return images_.get(index);
+      } else {
+        return imagesBuilder_.getMessage(index);
+      }
     }
     /**
-     * <code>repeated string imageFileName = 13;</code>
-     * @param index The index of the element to return.
-     * @return The imageFileName at the given index.
+     * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
      */
-    public String getImageFileName(int index) {
-      return imageFileName_.get(index);
-    }
-    /**
-     * <code>repeated string imageFileName = 13;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the imageFileName at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getImageFileNameBytes(int index) {
-      return imageFileName_.getByteString(index);
-    }
-    /**
-     * <code>repeated string imageFileName = 13;</code>
-     * @param index The index to set the value at.
-     * @param value The imageFileName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setImageFileName(
-        int index, String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureImageFileNameIsMutable();
-      imageFileName_.set(index, value);
-      onChanged();
+    public Builder setImages(
+        int index, ImageFileMessage value) {
+      if (imagesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureImagesIsMutable();
+        images_.set(index, value);
+        onChanged();
+      } else {
+        imagesBuilder_.setMessage(index, value);
+      }
       return this;
     }
     /**
-     * <code>repeated string imageFileName = 13;</code>
-     * @param value The imageFileName to add.
-     * @return This builder for chaining.
+     * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
      */
-    public Builder addImageFileName(
-        String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureImageFileNameIsMutable();
-      imageFileName_.add(value);
-      onChanged();
+    public Builder setImages(
+        int index, ImageFileMessage.Builder builderForValue) {
+      if (imagesBuilder_ == null) {
+        ensureImagesIsMutable();
+        images_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        imagesBuilder_.setMessage(index, builderForValue.build());
+      }
       return this;
     }
     /**
-     * <code>repeated string imageFileName = 13;</code>
-     * @param values The imageFileName to add.
-     * @return This builder for chaining.
+     * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
      */
-    public Builder addAllImageFileName(
-        Iterable<String> values) {
-      ensureImageFileNameIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, imageFileName_);
-      onChanged();
+    public Builder addImages(ImageFileMessage value) {
+      if (imagesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureImagesIsMutable();
+        images_.add(value);
+        onChanged();
+      } else {
+        imagesBuilder_.addMessage(value);
+      }
       return this;
     }
     /**
-     * <code>repeated string imageFileName = 13;</code>
-     * @return This builder for chaining.
+     * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
      */
-    public Builder clearImageFileName() {
-      imageFileName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
-      onChanged();
+    public Builder addImages(
+        int index, ImageFileMessage value) {
+      if (imagesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureImagesIsMutable();
+        images_.add(index, value);
+        onChanged();
+      } else {
+        imagesBuilder_.addMessage(index, value);
+      }
       return this;
     }
     /**
-     * <code>repeated string imageFileName = 13;</code>
-     * @param value The bytes of the imageFileName to add.
-     * @return This builder for chaining.
+     * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
      */
-    public Builder addImageFileNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureImageFileNameIsMutable();
-      imageFileName_.add(value);
-      onChanged();
+    public Builder addImages(
+        ImageFileMessage.Builder builderForValue) {
+      if (imagesBuilder_ == null) {
+        ensureImagesIsMutable();
+        images_.add(builderForValue.build());
+        onChanged();
+      } else {
+        imagesBuilder_.addMessage(builderForValue.build());
+      }
       return this;
+    }
+    /**
+     * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
+     */
+    public Builder addImages(
+        int index, ImageFileMessage.Builder builderForValue) {
+      if (imagesBuilder_ == null) {
+        ensureImagesIsMutable();
+        images_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        imagesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
+     */
+    public Builder addAllImages(
+        Iterable<? extends ImageFileMessage> values) {
+      if (imagesBuilder_ == null) {
+        ensureImagesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, images_);
+        onChanged();
+      } else {
+        imagesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
+     */
+    public Builder clearImages() {
+      if (imagesBuilder_ == null) {
+        images_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        imagesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
+     */
+    public Builder removeImages(int index) {
+      if (imagesBuilder_ == null) {
+        ensureImagesIsMutable();
+        images_.remove(index);
+        onChanged();
+      } else {
+        imagesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
+     */
+    public ImageFileMessage.Builder getImagesBuilder(
+        int index) {
+      return getImagesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
+     */
+    public ImageFileMessageOrBuilder getImagesOrBuilder(
+        int index) {
+      if (imagesBuilder_ == null) {
+        return images_.get(index);  } else {
+        return imagesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
+     */
+    public java.util.List<? extends ImageFileMessageOrBuilder>
+         getImagesOrBuilderList() {
+      if (imagesBuilder_ != null) {
+        return imagesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(images_);
+      }
+    }
+    /**
+     * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
+     */
+    public ImageFileMessage.Builder addImagesBuilder() {
+      return getImagesFieldBuilder().addBuilder(
+          ImageFileMessage.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
+     */
+    public ImageFileMessage.Builder addImagesBuilder(
+        int index) {
+      return getImagesFieldBuilder().addBuilder(
+          index, ImageFileMessage.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
+     */
+    public java.util.List<ImageFileMessage.Builder>
+         getImagesBuilderList() {
+      return getImagesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        ImageFileMessage, ImageFileMessage.Builder, ImageFileMessageOrBuilder>
+        getImagesFieldBuilder() {
+      if (imagesBuilder_ == null) {
+        imagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            ImageFileMessage, ImageFileMessage.Builder, ImageFileMessageOrBuilder>(
+                images_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        images_ = null;
+      }
+      return imagesBuilder_;
     }
 
     private double price_ ;
     /**
-     * <code>double price = 14;</code>
+     * <code>double price = 9;</code>
      * @return The price.
      */
     @Override
@@ -1909,7 +1527,7 @@ private static final long serialVersionUID = 0L;
       return price_;
     }
     /**
-     * <code>double price = 14;</code>
+     * <code>double price = 9;</code>
      * @param value The price to set.
      * @return This builder for chaining.
      */
@@ -1920,7 +1538,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>double price = 14;</code>
+     * <code>double price = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearPrice() {
@@ -1932,7 +1550,7 @@ private static final long serialVersionUID = 0L;
 
     private Object userEmail_ = "";
     /**
-     * <code>string userEmail = 15;</code>
+     * <code>string userEmail = 10;</code>
      * @return The userEmail.
      */
     public String getUserEmail() {
@@ -1948,7 +1566,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string userEmail = 15;</code>
+     * <code>string userEmail = 10;</code>
      * @return The bytes for userEmail.
      */
     public com.google.protobuf.ByteString
@@ -1965,7 +1583,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string userEmail = 15;</code>
+     * <code>string userEmail = 10;</code>
      * @param value The userEmail to set.
      * @return This builder for chaining.
      */
@@ -1980,7 +1598,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string userEmail = 15;</code>
+     * <code>string userEmail = 10;</code>
      * @return This builder for chaining.
      */
     public Builder clearUserEmail() {
@@ -1990,7 +1608,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string userEmail = 15;</code>
+     * <code>string userEmail = 10;</code>
      * @param value The bytes for userEmail to set.
      * @return This builder for chaining.
      */
@@ -2008,7 +1626,7 @@ private static final long serialVersionUID = 0L;
 
     private Object creationDate_ = "";
     /**
-     * <code>string creationDate = 16;</code>
+     * <code>string creationDate = 12;</code>
      * @return The creationDate.
      */
     public String getCreationDate() {
@@ -2024,7 +1642,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string creationDate = 16;</code>
+     * <code>string creationDate = 12;</code>
      * @return The bytes for creationDate.
      */
     public com.google.protobuf.ByteString
@@ -2041,7 +1659,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string creationDate = 16;</code>
+     * <code>string creationDate = 12;</code>
      * @param value The creationDate to set.
      * @return This builder for chaining.
      */
@@ -2056,7 +1674,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string creationDate = 16;</code>
+     * <code>string creationDate = 12;</code>
      * @return This builder for chaining.
      */
     public Builder clearCreationDate() {
@@ -2066,7 +1684,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string creationDate = 16;</code>
+     * <code>string creationDate = 12;</code>
      * @param value The bytes for creationDate to set.
      * @return This builder for chaining.
      */
@@ -2078,6 +1696,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       creationDate_ = value;
+      onChanged();
+      return this;
+    }
+
+    private Object description_ = "";
+    /**
+     * <code>string description = 13;</code>
+     * @return The description.
+     */
+    public String getDescription() {
+      Object ref = description_;
+      if (!(ref instanceof String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (String) ref;
+      }
+    }
+    /**
+     * <code>string description = 13;</code>
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string description = 13;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(
+        String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string description = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string description = 13;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      description_ = value;
       onChanged();
       return this;
     }
