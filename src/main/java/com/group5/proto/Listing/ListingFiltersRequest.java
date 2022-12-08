@@ -16,16 +16,17 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListingFiltersRequest() {
+    city_ = "";
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new ListingFiltersRequest();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +37,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -49,9 +50,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 10: {
+            String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            postNumber_ = input.readInt64();
+            city_ = s;
             break;
           }
           case 16: {
@@ -87,35 +89,62 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_ListingFiltersRequest_descriptor;
+    return Listing.internal_static_com_group5_proto_Listing_ListingFiltersRequest_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_ListingFiltersRequest_fieldAccessorTable
+    return Listing.internal_static_com_group5_proto_Listing_ListingFiltersRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.group5.proto.Listing.ListingFiltersRequest.class, com.group5.proto.Listing.ListingFiltersRequest.Builder.class);
+            ListingFiltersRequest.class, Builder.class);
   }
 
   private int bitField0_;
-  public static final int POSTNUMBER_FIELD_NUMBER = 1;
-  private long postNumber_;
+  public static final int CITY_FIELD_NUMBER = 1;
+  private volatile Object city_;
   /**
-   * <code>optional int64 postNumber = 1;</code>
-   * @return Whether the postNumber field is set.
+   * <code>optional string city = 1;</code>
+   * @return Whether the city field is set.
    */
-  @java.lang.Override
-  public boolean hasPostNumber() {
+  @Override
+  public boolean hasCity() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>optional int64 postNumber = 1;</code>
-   * @return The postNumber.
+   * <code>optional string city = 1;</code>
+   * @return The city.
    */
-  @java.lang.Override
-  public long getPostNumber() {
-    return postNumber_;
+  @Override
+  public String getCity() {
+    Object ref = city_;
+    if (ref instanceof String) {
+      return (String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      String s = bs.toStringUtf8();
+      city_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string city = 1;</code>
+   * @return The bytes for city.
+   */
+  @Override
+  public com.google.protobuf.ByteString
+      getCityBytes() {
+    Object ref = city_;
+    if (ref instanceof String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (String) ref);
+      city_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int MAXPRICE_FIELD_NUMBER = 2;
@@ -124,7 +153,7 @@ private static final long serialVersionUID = 0L;
    * <code>optional int64 maxPrice = 2;</code>
    * @return Whether the maxPrice field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasMaxPrice() {
     return ((bitField0_ & 0x00000002) != 0);
   }
@@ -132,7 +161,7 @@ private static final long serialVersionUID = 0L;
    * <code>optional int64 maxPrice = 2;</code>
    * @return The maxPrice.
    */
-  @java.lang.Override
+  @Override
   public long getMaxPrice() {
     return maxPrice_;
   }
@@ -143,7 +172,7 @@ private static final long serialVersionUID = 0L;
    * <code>optional int64 minArea = 3;</code>
    * @return Whether the minArea field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasMinArea() {
     return ((bitField0_ & 0x00000004) != 0);
   }
@@ -151,13 +180,13 @@ private static final long serialVersionUID = 0L;
    * <code>optional int64 minArea = 3;</code>
    * @return The minArea.
    */
-  @java.lang.Override
+  @Override
   public long getMinArea() {
     return minArea_;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -167,11 +196,11 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeInt64(1, postNumber_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, city_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt64(2, maxPrice_);
@@ -182,15 +211,14 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, postNumber_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, city_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -205,20 +233,20 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.group5.proto.Listing.ListingFiltersRequest)) {
+    if (!(obj instanceof ListingFiltersRequest)) {
       return super.equals(obj);
     }
-    com.group5.proto.Listing.ListingFiltersRequest other = (com.group5.proto.Listing.ListingFiltersRequest) obj;
+    ListingFiltersRequest other = (ListingFiltersRequest) obj;
 
-    if (hasPostNumber() != other.hasPostNumber()) return false;
-    if (hasPostNumber()) {
-      if (getPostNumber()
-          != other.getPostNumber()) return false;
+    if (hasCity() != other.hasCity()) return false;
+    if (hasCity()) {
+      if (!getCity()
+          .equals(other.getCity())) return false;
     }
     if (hasMaxPrice() != other.hasMaxPrice()) return false;
     if (hasMaxPrice()) {
@@ -234,17 +262,16 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasPostNumber()) {
-      hash = (37 * hash) + POSTNUMBER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getPostNumber());
+    if (hasCity()) {
+      hash = (37 * hash) + CITY_FIELD_NUMBER;
+      hash = (53 * hash) + getCity().hashCode();
     }
     if (hasMaxPrice()) {
       hash = (37 * hash) + MAXPRICE_FIELD_NUMBER;
@@ -261,69 +288,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.group5.proto.Listing.ListingFiltersRequest parseFrom(
+  public static ListingFiltersRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.group5.proto.Listing.ListingFiltersRequest parseFrom(
+  public static ListingFiltersRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.group5.proto.Listing.ListingFiltersRequest parseFrom(
+  public static ListingFiltersRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.group5.proto.Listing.ListingFiltersRequest parseFrom(
+  public static ListingFiltersRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.group5.proto.Listing.ListingFiltersRequest parseFrom(byte[] data)
+  public static ListingFiltersRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.group5.proto.Listing.ListingFiltersRequest parseFrom(
+  public static ListingFiltersRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.group5.proto.Listing.ListingFiltersRequest parseFrom(java.io.InputStream input)
+  public static ListingFiltersRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.group5.proto.Listing.ListingFiltersRequest parseFrom(
+  public static ListingFiltersRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.group5.proto.Listing.ListingFiltersRequest parseDelimitedFrom(java.io.InputStream input)
+  public static ListingFiltersRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.group5.proto.Listing.ListingFiltersRequest parseDelimitedFrom(
+  public static ListingFiltersRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.group5.proto.Listing.ListingFiltersRequest parseFrom(
+  public static ListingFiltersRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.group5.proto.Listing.ListingFiltersRequest parseFrom(
+  public static ListingFiltersRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -331,23 +358,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.group5.proto.Listing.ListingFiltersRequest prototype) {
+  public static Builder newBuilder(ListingFiltersRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -357,18 +384,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:com.group5.proto.Listing.ListingFiltersRequest)
-      com.group5.proto.Listing.ListingFiltersRequestOrBuilder {
+      ListingFiltersRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_ListingFiltersRequest_descriptor;
+      return Listing.internal_static_com_group5_proto_Listing_ListingFiltersRequest_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_ListingFiltersRequest_fieldAccessorTable
+      return Listing.internal_static_com_group5_proto_Listing_ListingFiltersRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.group5.proto.Listing.ListingFiltersRequest.class, com.group5.proto.Listing.ListingFiltersRequest.Builder.class);
+              ListingFiltersRequest.class, Builder.class);
     }
 
     // Construct using com.group5.proto.Listing.ListingFiltersRequest.newBuilder()
@@ -377,7 +404,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -386,10 +413,10 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
-      postNumber_ = 0L;
+      city_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       maxPrice_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -398,35 +425,35 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_ListingFiltersRequest_descriptor;
+      return Listing.internal_static_com_group5_proto_Listing_ListingFiltersRequest_descriptor;
     }
 
-    @java.lang.Override
-    public com.group5.proto.Listing.ListingFiltersRequest getDefaultInstanceForType() {
-      return com.group5.proto.Listing.ListingFiltersRequest.getDefaultInstance();
+    @Override
+    public ListingFiltersRequest getDefaultInstanceForType() {
+      return ListingFiltersRequest.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public com.group5.proto.Listing.ListingFiltersRequest build() {
-      com.group5.proto.Listing.ListingFiltersRequest result = buildPartial();
+    @Override
+    public ListingFiltersRequest build() {
+      ListingFiltersRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public com.group5.proto.Listing.ListingFiltersRequest buildPartial() {
-      com.group5.proto.Listing.ListingFiltersRequest result = new com.group5.proto.Listing.ListingFiltersRequest(this);
+    @Override
+    public ListingFiltersRequest buildPartial() {
+      ListingFiltersRequest result = new ListingFiltersRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.postNumber_ = postNumber_;
         to_bitField0_ |= 0x00000001;
       }
+      result.city_ = city_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.maxPrice_ = maxPrice_;
         to_bitField0_ |= 0x00000002;
@@ -440,52 +467,54 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.group5.proto.Listing.ListingFiltersRequest) {
-        return mergeFrom((com.group5.proto.Listing.ListingFiltersRequest)other);
+      if (other instanceof ListingFiltersRequest) {
+        return mergeFrom((ListingFiltersRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.group5.proto.Listing.ListingFiltersRequest other) {
-      if (other == com.group5.proto.Listing.ListingFiltersRequest.getDefaultInstance()) return this;
-      if (other.hasPostNumber()) {
-        setPostNumber(other.getPostNumber());
+    public Builder mergeFrom(ListingFiltersRequest other) {
+      if (other == ListingFiltersRequest.getDefaultInstance()) return this;
+      if (other.hasCity()) {
+        bitField0_ |= 0x00000001;
+        city_ = other.city_;
+        onChanged();
       }
       if (other.hasMaxPrice()) {
         setMaxPrice(other.getMaxPrice());
@@ -498,21 +527,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.group5.proto.Listing.ListingFiltersRequest parsedMessage = null;
+      ListingFiltersRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.group5.proto.Listing.ListingFiltersRequest) e.getUnfinishedMessage();
+        parsedMessage = (ListingFiltersRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -523,41 +552,85 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private long postNumber_ ;
+    private Object city_ = "";
     /**
-     * <code>optional int64 postNumber = 1;</code>
-     * @return Whether the postNumber field is set.
+     * <code>optional string city = 1;</code>
+     * @return Whether the city field is set.
      */
-    @java.lang.Override
-    public boolean hasPostNumber() {
+    public boolean hasCity() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>optional int64 postNumber = 1;</code>
-     * @return The postNumber.
+     * <code>optional string city = 1;</code>
+     * @return The city.
      */
-    @java.lang.Override
-    public long getPostNumber() {
-      return postNumber_;
+    public String getCity() {
+      Object ref = city_;
+      if (!(ref instanceof String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        city_ = s;
+        return s;
+      } else {
+        return (String) ref;
+      }
     }
     /**
-     * <code>optional int64 postNumber = 1;</code>
-     * @param value The postNumber to set.
+     * <code>optional string city = 1;</code>
+     * @return The bytes for city.
+     */
+    public com.google.protobuf.ByteString
+        getCityBytes() {
+      Object ref = city_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        city_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string city = 1;</code>
+     * @param value The city to set.
      * @return This builder for chaining.
      */
-    public Builder setPostNumber(long value) {
-      bitField0_ |= 0x00000001;
-      postNumber_ = value;
+    public Builder setCity(
+        String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+      city_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional int64 postNumber = 1;</code>
+     * <code>optional string city = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearPostNumber() {
+    public Builder clearCity() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      postNumber_ = 0L;
+      city_ = getDefaultInstance().getCity();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string city = 1;</code>
+     * @param value The bytes for city to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCityBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      city_ = value;
       onChanged();
       return this;
     }
@@ -567,7 +640,7 @@ private static final long serialVersionUID = 0L;
      * <code>optional int64 maxPrice = 2;</code>
      * @return Whether the maxPrice field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasMaxPrice() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -575,7 +648,7 @@ private static final long serialVersionUID = 0L;
      * <code>optional int64 maxPrice = 2;</code>
      * @return The maxPrice.
      */
-    @java.lang.Override
+    @Override
     public long getMaxPrice() {
       return maxPrice_;
     }
@@ -606,7 +679,7 @@ private static final long serialVersionUID = 0L;
      * <code>optional int64 minArea = 3;</code>
      * @return Whether the minArea field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasMinArea() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -614,7 +687,7 @@ private static final long serialVersionUID = 0L;
      * <code>optional int64 minArea = 3;</code>
      * @return The minArea.
      */
-    @java.lang.Override
+    @Override
     public long getMinArea() {
       return minArea_;
     }
@@ -639,13 +712,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -656,18 +729,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.group5.proto.Listing.ListingFiltersRequest)
-  private static final com.group5.proto.Listing.ListingFiltersRequest DEFAULT_INSTANCE;
+  private static final ListingFiltersRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.group5.proto.Listing.ListingFiltersRequest();
+    DEFAULT_INSTANCE = new ListingFiltersRequest();
   }
 
-  public static com.group5.proto.Listing.ListingFiltersRequest getDefaultInstance() {
+  public static ListingFiltersRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<ListingFiltersRequest>
       PARSER = new com.google.protobuf.AbstractParser<ListingFiltersRequest>() {
-    @java.lang.Override
+    @Override
     public ListingFiltersRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -680,13 +753,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<ListingFiltersRequest> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.group5.proto.Listing.ListingFiltersRequest getDefaultInstanceForType() {
+  @Override
+  public ListingFiltersRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

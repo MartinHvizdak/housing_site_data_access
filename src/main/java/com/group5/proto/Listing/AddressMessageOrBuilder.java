@@ -11,7 +11,7 @@ public interface AddressMessageOrBuilder extends
    * <code>string street = 1;</code>
    * @return The street.
    */
-  java.lang.String getStreet();
+  String getStreet();
   /**
    * <code>string street = 1;</code>
    * @return The bytes for street.
@@ -29,7 +29,7 @@ public interface AddressMessageOrBuilder extends
    * <code>string city = 3;</code>
    * @return The city.
    */
-  java.lang.String getCity();
+  String getCity();
   /**
    * <code>string city = 3;</code>
    * @return The bytes for city.

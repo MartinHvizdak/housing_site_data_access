@@ -7,5 +7,5 @@ import com.group5.Model.ImageFile;
 
 @Repository
 public interface ImageFileRepository extends JpaRepository<ImageFile,Long> {
-public ImageFile findImageFileByHouseListing(HouseListing houseListing);
+public ImageFile findFirstByHouseListing(HouseListing houseListing);
 }

@@ -8,15 +8,21 @@ public interface ListingFiltersRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>optional int64 postNumber = 1;</code>
-   * @return Whether the postNumber field is set.
+   * <code>optional string city = 1;</code>
+   * @return Whether the city field is set.
    */
-  boolean hasPostNumber();
+  boolean hasCity();
   /**
-   * <code>optional int64 postNumber = 1;</code>
-   * @return The postNumber.
+   * <code>optional string city = 1;</code>
+   * @return The city.
    */
-  long getPostNumber();
+  String getCity();
+  /**
+   * <code>optional string city = 1;</code>
+   * @return The bytes for city.
+   */
+  com.google.protobuf.ByteString
+      getCityBytes();
 
   /**
    * <code>optional int64 maxPrice = 2;</code>

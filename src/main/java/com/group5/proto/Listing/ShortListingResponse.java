@@ -18,14 +18,14 @@ private static final long serialVersionUID = 0L;
   private ShortListingResponse() {
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new ShortListingResponse();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +36,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -54,11 +54,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            com.group5.proto.Listing.ImageFileMessage.Builder subBuilder = null;
+            ImageFileMessage.Builder subBuilder = null;
             if (image_ != null) {
               subBuilder = image_.toBuilder();
             }
-            image_ = input.readMessage(com.group5.proto.Listing.ImageFileMessage.parser(), extensionRegistry);
+            image_ = input.readMessage(ImageFileMessage.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(image_);
               image_ = subBuilder.buildPartial();
@@ -67,11 +67,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            com.group5.proto.Listing.AddressMessage.Builder subBuilder = null;
+            AddressMessage.Builder subBuilder = null;
             if (address_ != null) {
               subBuilder = address_.toBuilder();
             }
-            address_ = input.readMessage(com.group5.proto.Listing.AddressMessage.parser(), extensionRegistry);
+            address_ = input.readMessage(AddressMessage.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(address_);
               address_ = subBuilder.buildPartial();
@@ -107,15 +107,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_ShortListingResponse_descriptor;
+    return Listing.internal_static_com_group5_proto_Listing_ShortListingResponse_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_ShortListingResponse_fieldAccessorTable
+    return Listing.internal_static_com_group5_proto_Listing_ShortListingResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.group5.proto.Listing.ShortListingResponse.class, com.group5.proto.Listing.ShortListingResponse.Builder.class);
+            ShortListingResponse.class, Builder.class);
   }
 
   public static final int PRICE_FIELD_NUMBER = 1;
@@ -124,18 +124,18 @@ private static final long serialVersionUID = 0L;
    * <code>int64 price = 1;</code>
    * @return The price.
    */
-  @java.lang.Override
+  @Override
   public long getPrice() {
     return price_;
   }
 
   public static final int IMAGE_FIELD_NUMBER = 2;
-  private com.group5.proto.Listing.ImageFileMessage image_;
+  private ImageFileMessage image_;
   /**
    * <code>.com.group5.proto.Listing.ImageFileMessage image = 2;</code>
    * @return Whether the image field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasImage() {
     return image_ != null;
   }
@@ -143,25 +143,25 @@ private static final long serialVersionUID = 0L;
    * <code>.com.group5.proto.Listing.ImageFileMessage image = 2;</code>
    * @return The image.
    */
-  @java.lang.Override
-  public com.group5.proto.Listing.ImageFileMessage getImage() {
-    return image_ == null ? com.group5.proto.Listing.ImageFileMessage.getDefaultInstance() : image_;
+  @Override
+  public ImageFileMessage getImage() {
+    return image_ == null ? ImageFileMessage.getDefaultInstance() : image_;
   }
   /**
    * <code>.com.group5.proto.Listing.ImageFileMessage image = 2;</code>
    */
-  @java.lang.Override
-  public com.group5.proto.Listing.ImageFileMessageOrBuilder getImageOrBuilder() {
+  @Override
+  public ImageFileMessageOrBuilder getImageOrBuilder() {
     return getImage();
   }
 
   public static final int ADDRESS_FIELD_NUMBER = 3;
-  private com.group5.proto.Listing.AddressMessage address_;
+  private AddressMessage address_;
   /**
    * <code>.com.group5.proto.Listing.AddressMessage address = 3;</code>
    * @return Whether the address field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasAddress() {
     return address_ != null;
   }
@@ -169,15 +169,15 @@ private static final long serialVersionUID = 0L;
    * <code>.com.group5.proto.Listing.AddressMessage address = 3;</code>
    * @return The address.
    */
-  @java.lang.Override
-  public com.group5.proto.Listing.AddressMessage getAddress() {
-    return address_ == null ? com.group5.proto.Listing.AddressMessage.getDefaultInstance() : address_;
+  @Override
+  public AddressMessage getAddress() {
+    return address_ == null ? AddressMessage.getDefaultInstance() : address_;
   }
   /**
    * <code>.com.group5.proto.Listing.AddressMessage address = 3;</code>
    */
-  @java.lang.Override
-  public com.group5.proto.Listing.AddressMessageOrBuilder getAddressOrBuilder() {
+  @Override
+  public AddressMessageOrBuilder getAddressOrBuilder() {
     return getAddress();
   }
 
@@ -187,13 +187,13 @@ private static final long serialVersionUID = 0L;
    * <code>int64 id = 4;</code>
    * @return The id.
    */
-  @java.lang.Override
+  @Override
   public long getId() {
     return id_;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -203,7 +203,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (price_ != 0L) {
@@ -221,7 +221,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -248,15 +248,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.group5.proto.Listing.ShortListingResponse)) {
+    if (!(obj instanceof ShortListingResponse)) {
       return super.equals(obj);
     }
-    com.group5.proto.Listing.ShortListingResponse other = (com.group5.proto.Listing.ShortListingResponse) obj;
+    ShortListingResponse other = (ShortListingResponse) obj;
 
     if (getPrice()
         != other.getPrice()) return false;
@@ -276,7 +276,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -302,69 +302,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.group5.proto.Listing.ShortListingResponse parseFrom(
+  public static ShortListingResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.group5.proto.Listing.ShortListingResponse parseFrom(
+  public static ShortListingResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.group5.proto.Listing.ShortListingResponse parseFrom(
+  public static ShortListingResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.group5.proto.Listing.ShortListingResponse parseFrom(
+  public static ShortListingResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.group5.proto.Listing.ShortListingResponse parseFrom(byte[] data)
+  public static ShortListingResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.group5.proto.Listing.ShortListingResponse parseFrom(
+  public static ShortListingResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.group5.proto.Listing.ShortListingResponse parseFrom(java.io.InputStream input)
+  public static ShortListingResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.group5.proto.Listing.ShortListingResponse parseFrom(
+  public static ShortListingResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.group5.proto.Listing.ShortListingResponse parseDelimitedFrom(java.io.InputStream input)
+  public static ShortListingResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.group5.proto.Listing.ShortListingResponse parseDelimitedFrom(
+  public static ShortListingResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.group5.proto.Listing.ShortListingResponse parseFrom(
+  public static ShortListingResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.group5.proto.Listing.ShortListingResponse parseFrom(
+  public static ShortListingResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -372,23 +372,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.group5.proto.Listing.ShortListingResponse prototype) {
+  public static Builder newBuilder(ShortListingResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -398,18 +398,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:com.group5.proto.Listing.ShortListingResponse)
-      com.group5.proto.Listing.ShortListingResponseOrBuilder {
+      ShortListingResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_ShortListingResponse_descriptor;
+      return Listing.internal_static_com_group5_proto_Listing_ShortListingResponse_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_ShortListingResponse_fieldAccessorTable
+      return Listing.internal_static_com_group5_proto_Listing_ShortListingResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.group5.proto.Listing.ShortListingResponse.class, com.group5.proto.Listing.ShortListingResponse.Builder.class);
+              ShortListingResponse.class, Builder.class);
     }
 
     // Construct using com.group5.proto.Listing.ShortListingResponse.newBuilder()
@@ -418,7 +418,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -427,7 +427,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       price_ = 0L;
@@ -449,29 +449,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_ShortListingResponse_descriptor;
+      return Listing.internal_static_com_group5_proto_Listing_ShortListingResponse_descriptor;
     }
 
-    @java.lang.Override
-    public com.group5.proto.Listing.ShortListingResponse getDefaultInstanceForType() {
-      return com.group5.proto.Listing.ShortListingResponse.getDefaultInstance();
+    @Override
+    public ShortListingResponse getDefaultInstanceForType() {
+      return ShortListingResponse.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public com.group5.proto.Listing.ShortListingResponse build() {
-      com.group5.proto.Listing.ShortListingResponse result = buildPartial();
+    @Override
+    public ShortListingResponse build() {
+      ShortListingResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public com.group5.proto.Listing.ShortListingResponse buildPartial() {
-      com.group5.proto.Listing.ShortListingResponse result = new com.group5.proto.Listing.ShortListingResponse(this);
+    @Override
+    public ShortListingResponse buildPartial() {
+      ShortListingResponse result = new ShortListingResponse(this);
       result.price_ = price_;
       if (imageBuilder_ == null) {
         result.image_ = image_;
@@ -488,50 +488,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.group5.proto.Listing.ShortListingResponse) {
-        return mergeFrom((com.group5.proto.Listing.ShortListingResponse)other);
+      if (other instanceof ShortListingResponse) {
+        return mergeFrom((ShortListingResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.group5.proto.Listing.ShortListingResponse other) {
-      if (other == com.group5.proto.Listing.ShortListingResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(ShortListingResponse other) {
+      if (other == ShortListingResponse.getDefaultInstance()) return this;
       if (other.getPrice() != 0L) {
         setPrice(other.getPrice());
       }
@@ -549,21 +549,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.group5.proto.Listing.ShortListingResponse parsedMessage = null;
+      ShortListingResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.group5.proto.Listing.ShortListingResponse) e.getUnfinishedMessage();
+        parsedMessage = (ShortListingResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -578,7 +578,7 @@ private static final long serialVersionUID = 0L;
      * <code>int64 price = 1;</code>
      * @return The price.
      */
-    @java.lang.Override
+    @Override
     public long getPrice() {
       return price_;
     }
@@ -604,9 +604,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.group5.proto.Listing.ImageFileMessage image_;
+    private ImageFileMessage image_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.group5.proto.Listing.ImageFileMessage, com.group5.proto.Listing.ImageFileMessage.Builder, com.group5.proto.Listing.ImageFileMessageOrBuilder> imageBuilder_;
+        ImageFileMessage, ImageFileMessage.Builder, ImageFileMessageOrBuilder> imageBuilder_;
     /**
      * <code>.com.group5.proto.Listing.ImageFileMessage image = 2;</code>
      * @return Whether the image field is set.
@@ -618,9 +618,9 @@ private static final long serialVersionUID = 0L;
      * <code>.com.group5.proto.Listing.ImageFileMessage image = 2;</code>
      * @return The image.
      */
-    public com.group5.proto.Listing.ImageFileMessage getImage() {
+    public ImageFileMessage getImage() {
       if (imageBuilder_ == null) {
-        return image_ == null ? com.group5.proto.Listing.ImageFileMessage.getDefaultInstance() : image_;
+        return image_ == null ? ImageFileMessage.getDefaultInstance() : image_;
       } else {
         return imageBuilder_.getMessage();
       }
@@ -628,7 +628,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.group5.proto.Listing.ImageFileMessage image = 2;</code>
      */
-    public Builder setImage(com.group5.proto.Listing.ImageFileMessage value) {
+    public Builder setImage(ImageFileMessage value) {
       if (imageBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -645,7 +645,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.group5.proto.Listing.ImageFileMessage image = 2;</code>
      */
     public Builder setImage(
-        com.group5.proto.Listing.ImageFileMessage.Builder builderForValue) {
+        ImageFileMessage.Builder builderForValue) {
       if (imageBuilder_ == null) {
         image_ = builderForValue.build();
         onChanged();
@@ -658,11 +658,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.group5.proto.Listing.ImageFileMessage image = 2;</code>
      */
-    public Builder mergeImage(com.group5.proto.Listing.ImageFileMessage value) {
+    public Builder mergeImage(ImageFileMessage value) {
       if (imageBuilder_ == null) {
         if (image_ != null) {
           image_ =
-            com.group5.proto.Listing.ImageFileMessage.newBuilder(image_).mergeFrom(value).buildPartial();
+            ImageFileMessage.newBuilder(image_).mergeFrom(value).buildPartial();
         } else {
           image_ = value;
         }
@@ -690,7 +690,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.group5.proto.Listing.ImageFileMessage image = 2;</code>
      */
-    public com.group5.proto.Listing.ImageFileMessage.Builder getImageBuilder() {
+    public ImageFileMessage.Builder getImageBuilder() {
       
       onChanged();
       return getImageFieldBuilder().getBuilder();
@@ -698,23 +698,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.group5.proto.Listing.ImageFileMessage image = 2;</code>
      */
-    public com.group5.proto.Listing.ImageFileMessageOrBuilder getImageOrBuilder() {
+    public ImageFileMessageOrBuilder getImageOrBuilder() {
       if (imageBuilder_ != null) {
         return imageBuilder_.getMessageOrBuilder();
       } else {
         return image_ == null ?
-            com.group5.proto.Listing.ImageFileMessage.getDefaultInstance() : image_;
+            ImageFileMessage.getDefaultInstance() : image_;
       }
     }
     /**
      * <code>.com.group5.proto.Listing.ImageFileMessage image = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.group5.proto.Listing.ImageFileMessage, com.group5.proto.Listing.ImageFileMessage.Builder, com.group5.proto.Listing.ImageFileMessageOrBuilder> 
+        ImageFileMessage, ImageFileMessage.Builder, ImageFileMessageOrBuilder>
         getImageFieldBuilder() {
       if (imageBuilder_ == null) {
         imageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.group5.proto.Listing.ImageFileMessage, com.group5.proto.Listing.ImageFileMessage.Builder, com.group5.proto.Listing.ImageFileMessageOrBuilder>(
+            ImageFileMessage, ImageFileMessage.Builder, ImageFileMessageOrBuilder>(
                 getImage(),
                 getParentForChildren(),
                 isClean());
@@ -723,9 +723,9 @@ private static final long serialVersionUID = 0L;
       return imageBuilder_;
     }
 
-    private com.group5.proto.Listing.AddressMessage address_;
+    private AddressMessage address_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.group5.proto.Listing.AddressMessage, com.group5.proto.Listing.AddressMessage.Builder, com.group5.proto.Listing.AddressMessageOrBuilder> addressBuilder_;
+        AddressMessage, AddressMessage.Builder, AddressMessageOrBuilder> addressBuilder_;
     /**
      * <code>.com.group5.proto.Listing.AddressMessage address = 3;</code>
      * @return Whether the address field is set.
@@ -737,9 +737,9 @@ private static final long serialVersionUID = 0L;
      * <code>.com.group5.proto.Listing.AddressMessage address = 3;</code>
      * @return The address.
      */
-    public com.group5.proto.Listing.AddressMessage getAddress() {
+    public AddressMessage getAddress() {
       if (addressBuilder_ == null) {
-        return address_ == null ? com.group5.proto.Listing.AddressMessage.getDefaultInstance() : address_;
+        return address_ == null ? AddressMessage.getDefaultInstance() : address_;
       } else {
         return addressBuilder_.getMessage();
       }
@@ -747,7 +747,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.group5.proto.Listing.AddressMessage address = 3;</code>
      */
-    public Builder setAddress(com.group5.proto.Listing.AddressMessage value) {
+    public Builder setAddress(AddressMessage value) {
       if (addressBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -764,7 +764,7 @@ private static final long serialVersionUID = 0L;
      * <code>.com.group5.proto.Listing.AddressMessage address = 3;</code>
      */
     public Builder setAddress(
-        com.group5.proto.Listing.AddressMessage.Builder builderForValue) {
+        AddressMessage.Builder builderForValue) {
       if (addressBuilder_ == null) {
         address_ = builderForValue.build();
         onChanged();
@@ -777,11 +777,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.group5.proto.Listing.AddressMessage address = 3;</code>
      */
-    public Builder mergeAddress(com.group5.proto.Listing.AddressMessage value) {
+    public Builder mergeAddress(AddressMessage value) {
       if (addressBuilder_ == null) {
         if (address_ != null) {
           address_ =
-            com.group5.proto.Listing.AddressMessage.newBuilder(address_).mergeFrom(value).buildPartial();
+            AddressMessage.newBuilder(address_).mergeFrom(value).buildPartial();
         } else {
           address_ = value;
         }
@@ -809,7 +809,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.group5.proto.Listing.AddressMessage address = 3;</code>
      */
-    public com.group5.proto.Listing.AddressMessage.Builder getAddressBuilder() {
+    public AddressMessage.Builder getAddressBuilder() {
       
       onChanged();
       return getAddressFieldBuilder().getBuilder();
@@ -817,23 +817,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.com.group5.proto.Listing.AddressMessage address = 3;</code>
      */
-    public com.group5.proto.Listing.AddressMessageOrBuilder getAddressOrBuilder() {
+    public AddressMessageOrBuilder getAddressOrBuilder() {
       if (addressBuilder_ != null) {
         return addressBuilder_.getMessageOrBuilder();
       } else {
         return address_ == null ?
-            com.group5.proto.Listing.AddressMessage.getDefaultInstance() : address_;
+            AddressMessage.getDefaultInstance() : address_;
       }
     }
     /**
      * <code>.com.group5.proto.Listing.AddressMessage address = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.group5.proto.Listing.AddressMessage, com.group5.proto.Listing.AddressMessage.Builder, com.group5.proto.Listing.AddressMessageOrBuilder> 
+        AddressMessage, AddressMessage.Builder, AddressMessageOrBuilder>
         getAddressFieldBuilder() {
       if (addressBuilder_ == null) {
         addressBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.group5.proto.Listing.AddressMessage, com.group5.proto.Listing.AddressMessage.Builder, com.group5.proto.Listing.AddressMessageOrBuilder>(
+            AddressMessage, AddressMessage.Builder, AddressMessageOrBuilder>(
                 getAddress(),
                 getParentForChildren(),
                 isClean());
@@ -847,7 +847,7 @@ private static final long serialVersionUID = 0L;
      * <code>int64 id = 4;</code>
      * @return The id.
      */
-    @java.lang.Override
+    @Override
     public long getId() {
       return id_;
     }
@@ -872,13 +872,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -889,18 +889,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.group5.proto.Listing.ShortListingResponse)
-  private static final com.group5.proto.Listing.ShortListingResponse DEFAULT_INSTANCE;
+  private static final ShortListingResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.group5.proto.Listing.ShortListingResponse();
+    DEFAULT_INSTANCE = new ShortListingResponse();
   }
 
-  public static com.group5.proto.Listing.ShortListingResponse getDefaultInstance() {
+  public static ShortListingResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<ShortListingResponse>
       PARSER = new com.google.protobuf.AbstractParser<ShortListingResponse>() {
-    @java.lang.Override
+    @Override
     public ShortListingResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -913,13 +913,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<ShortListingResponse> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.group5.proto.Listing.ShortListingResponse getDefaultInstanceForType() {
+  @Override
+  public ShortListingResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

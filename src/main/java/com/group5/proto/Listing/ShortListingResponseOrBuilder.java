@@ -22,11 +22,11 @@ public interface ShortListingResponseOrBuilder extends
    * <code>.com.group5.proto.Listing.ImageFileMessage image = 2;</code>
    * @return The image.
    */
-  com.group5.proto.Listing.ImageFileMessage getImage();
+  ImageFileMessage getImage();
   /**
    * <code>.com.group5.proto.Listing.ImageFileMessage image = 2;</code>
    */
-  com.group5.proto.Listing.ImageFileMessageOrBuilder getImageOrBuilder();
+  ImageFileMessageOrBuilder getImageOrBuilder();
 
   /**
    * <code>.com.group5.proto.Listing.AddressMessage address = 3;</code>
@@ -37,11 +37,11 @@ public interface ShortListingResponseOrBuilder extends
    * <code>.com.group5.proto.Listing.AddressMessage address = 3;</code>
    * @return The address.
    */
-  com.group5.proto.Listing.AddressMessage getAddress();
+  AddressMessage getAddress();
   /**
    * <code>.com.group5.proto.Listing.AddressMessage address = 3;</code>
    */
-  com.group5.proto.Listing.AddressMessageOrBuilder getAddressOrBuilder();
+  AddressMessageOrBuilder getAddressOrBuilder();
 
   /**
    * <code>int64 id = 4;</code>

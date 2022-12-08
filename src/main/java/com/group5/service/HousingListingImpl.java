@@ -48,7 +48,7 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
                 .addAllImages(houseListing.getAllImageFileMessages(images)).setConstructionYear(houseListing.getConstructionYear())
                 .setLastRebuilt(houseListing.getLastRebuilt()).setHasInspection(houseListing.isHasInspection()).
                 setGroundArea(houseListing.getGroundArea()).setFloorArea(houseListing.getGroundArea()).setPrice(houseListing.getPrice()).
-                setCreationDate(LocalDate.now().toString());
+                setCreationDate(LocalDate.now().toString()).setDescription(houseListing.getDescription());
 
         HouseResponse responseText = response.build();
         responseObserver.onNext(responseText);
@@ -78,8 +78,8 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
                         .setCity(houseListing.getAddress().getArea().getCity()).setPostNumber(houseListing.getAddress().getArea().getPostNumber()).build())
                 .addAllImages(responseImages).setConstructionYear(houseListing.getConstructionYear())
                 .setLastRebuilt(houseListing.getLastRebuilt()).setHasInspection(houseListing.isHasInspection()).
-                setGroundArea(houseListing.getGroundArea()).setFloorArea(houseListing.getGroundArea()).setPrice(houseListing.getPrice()).
-                setCreationDate(LocalDate.now().toString()).build();
+                setGroundArea(houseListing.getGroundArea()).setFloorArea(houseListing.getFloorArea()).setPrice(houseListing.getPrice()).
+                setCreationDate(LocalDate.now().toString()).setDescription(houseListing.getDescription()).build();
 
 
         responseObserver.onNext(response);
@@ -89,45 +89,37 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
     @Override
     public void getFilteredListings(ListingFiltersRequest request, StreamObserver<ShortListingResponse> responseObserver)
     {
-        List<HouseListing> listings= houseListingRepository.findAll();
-        List<ShortListingResponse> filteredListings=new ArrayList<>();
+        long priceFilter=999999999;
+        long areaFilter=0;
         if(request.hasMaxPrice())
         {
+            priceFilter=request.getMaxPrice();
+        }
+        if(request.hasMinArea())
+        {
+            areaFilter=request.getMinArea();
+        }
+        List<HouseListing> listings= houseListingRepository.findAll();
+        List<ShortListingResponse> filteredListings=new ArrayList<>();
+        if(request.hasCity())
+        {
             for(HouseListing listing: listings)
             {
-                if(listing.getPrice()<request.getMaxPrice())
-                {
+                if(listing.getAddress().getArea().getCity().equals(request.getCity())&&listing.getPrice()<priceFilter&&listing.getFloorArea()>areaFilter) {
                     filteredListings.add(buildShortListing(listing));
                 }
             }
         }
-        else if(request.hasMinArea())
-        {
-            for(HouseListing listing: listings)
+        else {
+            for (HouseListing listing : listings)
             {
-                if(listing.getFloorArea()>request.getMinArea())
-                {
-                    filteredListings.add(buildShortListing(listing));
+                    if(listing.getPrice()<priceFilter&&listing.getFloorArea()>areaFilter) {
+                        filteredListings.add(buildShortListing(listing));
+                    }
                 }
             }
-        }
-        else if(request.hasPostNumber())
-        {
-            for(HouseListing listing: listings)
-            {
-                if(listing.getAddress().getArea().getPostNumber()==request.getPostNumber())
-                {
-                    filteredListings.add(buildShortListing(listing));
-                }
-            }
-        }
-        else
-        {
-            for(HouseListing listing: listings)
-            {
-                filteredListings.add(buildShortListing(listing));
-            }
-        }
+
+
 
         for(ShortListingResponse response:filteredListings)
         {
@@ -138,7 +130,7 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
 
     private ShortListingResponse buildShortListing(HouseListing listing) {
 
-        ImageFile image=imageFileRepository.findImageFileByHouseListing(listing);
+        ImageFile image=imageFileRepository.findFirstByHouseListing(listing);
         return ShortListingResponse.newBuilder().setPrice(listing.getPrice()).setAddress(AddressMessage.newBuilder()
                 .setHouseNo(listing.getAddress().getHouseNumber()).setCity(listing.getAddress().getArea().getCity())
                 .setStreet(listing.getAddress().getStreet()).setPostNumber(listing.getAddress().getArea().getPostNumber()).build())

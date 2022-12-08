@@ -22,11 +22,11 @@ public interface HouseResponseOrBuilder extends
    * <code>.com.group5.proto.Listing.AddressMessage address = 2;</code>
    * @return The address.
    */
-  com.group5.proto.Listing.AddressMessage getAddress();
+  AddressMessage getAddress();
   /**
    * <code>.com.group5.proto.Listing.AddressMessage address = 2;</code>
    */
-  com.group5.proto.Listing.AddressMessageOrBuilder getAddressOrBuilder();
+  AddressMessageOrBuilder getAddressOrBuilder();
 
   /**
    * <code>int32 constructionYear = 3;</code>
@@ -61,12 +61,12 @@ public interface HouseResponseOrBuilder extends
   /**
    * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
    */
-  java.util.List<com.group5.proto.Listing.ImageFileMessage> 
+  java.util.List<ImageFileMessage>
       getImagesList();
   /**
    * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
    */
-  com.group5.proto.Listing.ImageFileMessage getImages(int index);
+  ImageFileMessage getImages(int index);
   /**
    * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
    */
@@ -74,12 +74,12 @@ public interface HouseResponseOrBuilder extends
   /**
    * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
    */
-  java.util.List<? extends com.group5.proto.Listing.ImageFileMessageOrBuilder> 
+  java.util.List<? extends ImageFileMessageOrBuilder>
       getImagesOrBuilderList();
   /**
    * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 8;</code>
    */
-  com.group5.proto.Listing.ImageFileMessageOrBuilder getImagesOrBuilder(
+  ImageFileMessageOrBuilder getImagesOrBuilder(
       int index);
 
   /**
@@ -92,7 +92,7 @@ public interface HouseResponseOrBuilder extends
    * <code>string userEmail = 10;</code>
    * @return The userEmail.
    */
-  java.lang.String getUserEmail();
+  String getUserEmail();
   /**
    * <code>string userEmail = 10;</code>
    * @return The bytes for userEmail.
@@ -104,7 +104,7 @@ public interface HouseResponseOrBuilder extends
    * <code>string creationDate = 12;</code>
    * @return The creationDate.
    */
-  java.lang.String getCreationDate();
+  String getCreationDate();
   /**
    * <code>string creationDate = 12;</code>
    * @return The bytes for creationDate.
@@ -116,7 +116,7 @@ public interface HouseResponseOrBuilder extends
    * <code>string description = 13;</code>
    * @return The description.
    */
-  java.lang.String getDescription();
+  String getDescription();
   /**
    * <code>string description = 13;</code>
    * @return The bytes for description.

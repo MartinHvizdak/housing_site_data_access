@@ -14,29 +14,29 @@ public final class ListingServiceGrpc {
   public static final String SERVICE_NAME = "com.group5.proto.Listing.ListingService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.group5.proto.Listing.CreateHouseListingRequest,
-      com.group5.proto.Listing.HouseResponse> getCreateListingMethod;
+  private static volatile io.grpc.MethodDescriptor<CreateHouseListingRequest,
+      HouseResponse> getCreateListingMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "createListing",
-      requestType = com.group5.proto.Listing.CreateHouseListingRequest.class,
-      responseType = com.group5.proto.Listing.HouseResponse.class,
+      requestType = CreateHouseListingRequest.class,
+      responseType = HouseResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.group5.proto.Listing.CreateHouseListingRequest,
-      com.group5.proto.Listing.HouseResponse> getCreateListingMethod() {
-    io.grpc.MethodDescriptor<com.group5.proto.Listing.CreateHouseListingRequest, com.group5.proto.Listing.HouseResponse> getCreateListingMethod;
+  public static io.grpc.MethodDescriptor<CreateHouseListingRequest,
+      HouseResponse> getCreateListingMethod() {
+    io.grpc.MethodDescriptor<CreateHouseListingRequest, HouseResponse> getCreateListingMethod;
     if ((getCreateListingMethod = ListingServiceGrpc.getCreateListingMethod) == null) {
       synchronized (ListingServiceGrpc.class) {
         if ((getCreateListingMethod = ListingServiceGrpc.getCreateListingMethod) == null) {
           ListingServiceGrpc.getCreateListingMethod = getCreateListingMethod =
-              io.grpc.MethodDescriptor.<com.group5.proto.Listing.CreateHouseListingRequest, com.group5.proto.Listing.HouseResponse>newBuilder()
+              io.grpc.MethodDescriptor.<CreateHouseListingRequest, HouseResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "createListing"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.group5.proto.Listing.CreateHouseListingRequest.getDefaultInstance()))
+                  CreateHouseListingRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.group5.proto.Listing.HouseResponse.getDefaultInstance()))
+                  HouseResponse.getDefaultInstance()))
               .setSchemaDescriptor(new ListingServiceMethodDescriptorSupplier("createListing"))
               .build();
         }
@@ -45,29 +45,29 @@ public final class ListingServiceGrpc {
     return getCreateListingMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.group5.proto.Listing.IdRequest,
-      com.group5.proto.Listing.HouseResponse> getGetListingByIdMethod;
+  private static volatile io.grpc.MethodDescriptor<IdRequest,
+      HouseResponse> getGetListingByIdMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getListingById",
-      requestType = com.group5.proto.Listing.IdRequest.class,
-      responseType = com.group5.proto.Listing.HouseResponse.class,
+      requestType = IdRequest.class,
+      responseType = HouseResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.group5.proto.Listing.IdRequest,
-      com.group5.proto.Listing.HouseResponse> getGetListingByIdMethod() {
-    io.grpc.MethodDescriptor<com.group5.proto.Listing.IdRequest, com.group5.proto.Listing.HouseResponse> getGetListingByIdMethod;
+  public static io.grpc.MethodDescriptor<IdRequest,
+      HouseResponse> getGetListingByIdMethod() {
+    io.grpc.MethodDescriptor<IdRequest, HouseResponse> getGetListingByIdMethod;
     if ((getGetListingByIdMethod = ListingServiceGrpc.getGetListingByIdMethod) == null) {
       synchronized (ListingServiceGrpc.class) {
         if ((getGetListingByIdMethod = ListingServiceGrpc.getGetListingByIdMethod) == null) {
           ListingServiceGrpc.getGetListingByIdMethod = getGetListingByIdMethod =
-              io.grpc.MethodDescriptor.<com.group5.proto.Listing.IdRequest, com.group5.proto.Listing.HouseResponse>newBuilder()
+              io.grpc.MethodDescriptor.<IdRequest, HouseResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getListingById"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.group5.proto.Listing.IdRequest.getDefaultInstance()))
+                  IdRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.group5.proto.Listing.HouseResponse.getDefaultInstance()))
+                  HouseResponse.getDefaultInstance()))
               .setSchemaDescriptor(new ListingServiceMethodDescriptorSupplier("getListingById"))
               .build();
         }
@@ -76,29 +76,29 @@ public final class ListingServiceGrpc {
     return getGetListingByIdMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.group5.proto.Listing.ListingFiltersRequest,
-      com.group5.proto.Listing.ShortListingResponse> getGetFilteredListingsMethod;
+  private static volatile io.grpc.MethodDescriptor<ListingFiltersRequest,
+      ShortListingResponse> getGetFilteredListingsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getFilteredListings",
-      requestType = com.group5.proto.Listing.ListingFiltersRequest.class,
-      responseType = com.group5.proto.Listing.ShortListingResponse.class,
+      requestType = ListingFiltersRequest.class,
+      responseType = ShortListingResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-  public static io.grpc.MethodDescriptor<com.group5.proto.Listing.ListingFiltersRequest,
-      com.group5.proto.Listing.ShortListingResponse> getGetFilteredListingsMethod() {
-    io.grpc.MethodDescriptor<com.group5.proto.Listing.ListingFiltersRequest, com.group5.proto.Listing.ShortListingResponse> getGetFilteredListingsMethod;
+  public static io.grpc.MethodDescriptor<ListingFiltersRequest,
+      ShortListingResponse> getGetFilteredListingsMethod() {
+    io.grpc.MethodDescriptor<ListingFiltersRequest, ShortListingResponse> getGetFilteredListingsMethod;
     if ((getGetFilteredListingsMethod = ListingServiceGrpc.getGetFilteredListingsMethod) == null) {
       synchronized (ListingServiceGrpc.class) {
         if ((getGetFilteredListingsMethod = ListingServiceGrpc.getGetFilteredListingsMethod) == null) {
           ListingServiceGrpc.getGetFilteredListingsMethod = getGetFilteredListingsMethod =
-              io.grpc.MethodDescriptor.<com.group5.proto.Listing.ListingFiltersRequest, com.group5.proto.Listing.ShortListingResponse>newBuilder()
+              io.grpc.MethodDescriptor.<ListingFiltersRequest, ShortListingResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getFilteredListings"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.group5.proto.Listing.ListingFiltersRequest.getDefaultInstance()))
+                  ListingFiltersRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.group5.proto.Listing.ShortListingResponse.getDefaultInstance()))
+                  ShortListingResponse.getDefaultInstance()))
               .setSchemaDescriptor(new ListingServiceMethodDescriptorSupplier("getFilteredListings"))
               .build();
         }
@@ -113,7 +113,7 @@ public final class ListingServiceGrpc {
   public static ListingServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ListingServiceStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<ListingServiceStub>() {
-        @java.lang.Override
+        @Override
         public ListingServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new ListingServiceStub(channel, callOptions);
         }
@@ -128,7 +128,7 @@ public final class ListingServiceGrpc {
       io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ListingServiceBlockingStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<ListingServiceBlockingStub>() {
-        @java.lang.Override
+        @Override
         public ListingServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new ListingServiceBlockingStub(channel, callOptions);
         }
@@ -143,7 +143,7 @@ public final class ListingServiceGrpc {
       io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ListingServiceFutureStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<ListingServiceFutureStub>() {
-        @java.lang.Override
+        @Override
         public ListingServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new ListingServiceFutureStub(channel, callOptions);
         }
@@ -157,47 +157,47 @@ public final class ListingServiceGrpc {
 
     /**
      */
-    public void createListing(com.group5.proto.Listing.CreateHouseListingRequest request,
-        io.grpc.stub.StreamObserver<com.group5.proto.Listing.HouseResponse> responseObserver) {
+    public void createListing(CreateHouseListingRequest request,
+                              io.grpc.stub.StreamObserver<HouseResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateListingMethod(), responseObserver);
     }
 
     /**
      */
-    public void getListingById(com.group5.proto.Listing.IdRequest request,
-        io.grpc.stub.StreamObserver<com.group5.proto.Listing.HouseResponse> responseObserver) {
+    public void getListingById(IdRequest request,
+                               io.grpc.stub.StreamObserver<HouseResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetListingByIdMethod(), responseObserver);
     }
 
     /**
      */
-    public void getFilteredListings(com.group5.proto.Listing.ListingFiltersRequest request,
-        io.grpc.stub.StreamObserver<com.group5.proto.Listing.ShortListingResponse> responseObserver) {
+    public void getFilteredListings(ListingFiltersRequest request,
+                                    io.grpc.stub.StreamObserver<ShortListingResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetFilteredListingsMethod(), responseObserver);
     }
 
-    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+    @Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getCreateListingMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.group5.proto.Listing.CreateHouseListingRequest,
-                com.group5.proto.Listing.HouseResponse>(
+                CreateHouseListingRequest,
+                HouseResponse>(
                   this, METHODID_CREATE_LISTING)))
           .addMethod(
             getGetListingByIdMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.group5.proto.Listing.IdRequest,
-                com.group5.proto.Listing.HouseResponse>(
+                IdRequest,
+                HouseResponse>(
                   this, METHODID_GET_LISTING_BY_ID)))
           .addMethod(
             getGetFilteredListingsMethod(),
             io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
-                com.group5.proto.Listing.ListingFiltersRequest,
-                com.group5.proto.Listing.ShortListingResponse>(
+                ListingFiltersRequest,
+                ShortListingResponse>(
                   this, METHODID_GET_FILTERED_LISTINGS)))
           .build();
     }
@@ -211,7 +211,7 @@ public final class ListingServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected ListingServiceStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new ListingServiceStub(channel, callOptions);
@@ -219,24 +219,24 @@ public final class ListingServiceGrpc {
 
     /**
      */
-    public void createListing(com.group5.proto.Listing.CreateHouseListingRequest request,
-        io.grpc.stub.StreamObserver<com.group5.proto.Listing.HouseResponse> responseObserver) {
+    public void createListing(CreateHouseListingRequest request,
+                              io.grpc.stub.StreamObserver<HouseResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateListingMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void getListingById(com.group5.proto.Listing.IdRequest request,
-        io.grpc.stub.StreamObserver<com.group5.proto.Listing.HouseResponse> responseObserver) {
+    public void getListingById(IdRequest request,
+                               io.grpc.stub.StreamObserver<HouseResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetListingByIdMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void getFilteredListings(com.group5.proto.Listing.ListingFiltersRequest request,
-        io.grpc.stub.StreamObserver<com.group5.proto.Listing.ShortListingResponse> responseObserver) {
+    public void getFilteredListings(ListingFiltersRequest request,
+                                    io.grpc.stub.StreamObserver<ShortListingResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getGetFilteredListingsMethod(), getCallOptions()), request, responseObserver);
     }
@@ -250,7 +250,7 @@ public final class ListingServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected ListingServiceBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new ListingServiceBlockingStub(channel, callOptions);
@@ -258,22 +258,22 @@ public final class ListingServiceGrpc {
 
     /**
      */
-    public com.group5.proto.Listing.HouseResponse createListing(com.group5.proto.Listing.CreateHouseListingRequest request) {
+    public HouseResponse createListing(CreateHouseListingRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateListingMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.group5.proto.Listing.HouseResponse getListingById(com.group5.proto.Listing.IdRequest request) {
+    public HouseResponse getListingById(IdRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetListingByIdMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public java.util.Iterator<com.group5.proto.Listing.ShortListingResponse> getFilteredListings(
-        com.group5.proto.Listing.ListingFiltersRequest request) {
+    public java.util.Iterator<ShortListingResponse> getFilteredListings(
+        ListingFiltersRequest request) {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getGetFilteredListingsMethod(), getCallOptions(), request);
     }
@@ -287,7 +287,7 @@ public final class ListingServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected ListingServiceFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new ListingServiceFutureStub(channel, callOptions);
@@ -295,16 +295,16 @@ public final class ListingServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.group5.proto.Listing.HouseResponse> createListing(
-        com.group5.proto.Listing.CreateHouseListingRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<HouseResponse> createListing(
+        CreateHouseListingRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateListingMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.group5.proto.Listing.HouseResponse> getListingById(
-        com.group5.proto.Listing.IdRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<HouseResponse> getListingById(
+        IdRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetListingByIdMethod(), getCallOptions()), request);
     }
@@ -327,29 +327,29 @@ public final class ListingServiceGrpc {
       this.methodId = methodId;
     }
 
-    @java.lang.Override
-    @java.lang.SuppressWarnings("unchecked")
+    @Override
+    @SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_CREATE_LISTING:
-          serviceImpl.createListing((com.group5.proto.Listing.CreateHouseListingRequest) request,
-              (io.grpc.stub.StreamObserver<com.group5.proto.Listing.HouseResponse>) responseObserver);
+          serviceImpl.createListing((CreateHouseListingRequest) request,
+              (io.grpc.stub.StreamObserver<HouseResponse>) responseObserver);
           break;
         case METHODID_GET_LISTING_BY_ID:
-          serviceImpl.getListingById((com.group5.proto.Listing.IdRequest) request,
-              (io.grpc.stub.StreamObserver<com.group5.proto.Listing.HouseResponse>) responseObserver);
+          serviceImpl.getListingById((IdRequest) request,
+              (io.grpc.stub.StreamObserver<HouseResponse>) responseObserver);
           break;
         case METHODID_GET_FILTERED_LISTINGS:
-          serviceImpl.getFilteredListings((com.group5.proto.Listing.ListingFiltersRequest) request,
-              (io.grpc.stub.StreamObserver<com.group5.proto.Listing.ShortListingResponse>) responseObserver);
+          serviceImpl.getFilteredListings((ListingFiltersRequest) request,
+              (io.grpc.stub.StreamObserver<ShortListingResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
       }
     }
 
-    @java.lang.Override
-    @java.lang.SuppressWarnings("unchecked")
+    @Override
+    @SuppressWarnings("unchecked")
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
@@ -363,12 +363,12 @@ public final class ListingServiceGrpc {
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     ListingServiceBaseDescriptorSupplier() {}
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.group5.proto.Listing.Listing.getDescriptor();
+      return Listing.getDescriptor();
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
       return getFileDescriptor().findServiceByName("ListingService");
     }
@@ -388,7 +388,7 @@ public final class ListingServiceGrpc {
       this.methodName = methodName;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
       return getServiceDescriptor().findMethodByName(methodName);
     }

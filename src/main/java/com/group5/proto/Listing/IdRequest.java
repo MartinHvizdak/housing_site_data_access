@@ -18,14 +18,14 @@ private static final long serialVersionUID = 0L;
   private IdRequest() {
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new IdRequest();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +36,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -76,15 +76,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_IdRequest_descriptor;
+    return Listing.internal_static_com_group5_proto_Listing_IdRequest_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_IdRequest_fieldAccessorTable
+    return Listing.internal_static_com_group5_proto_Listing_IdRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.group5.proto.Listing.IdRequest.class, com.group5.proto.Listing.IdRequest.Builder.class);
+            IdRequest.class, Builder.class);
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -93,13 +93,13 @@ private static final long serialVersionUID = 0L;
    * <code>int64 Id = 1;</code>
    * @return The id.
    */
-  @java.lang.Override
+  @Override
   public long getId() {
     return id_;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -109,7 +109,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (id_ != 0L) {
@@ -118,7 +118,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -133,15 +133,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.group5.proto.Listing.IdRequest)) {
+    if (!(obj instanceof IdRequest)) {
       return super.equals(obj);
     }
-    com.group5.proto.Listing.IdRequest other = (com.group5.proto.Listing.IdRequest) obj;
+    IdRequest other = (IdRequest) obj;
 
     if (getId()
         != other.getId()) return false;
@@ -149,7 +149,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -164,69 +164,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.group5.proto.Listing.IdRequest parseFrom(
+  public static IdRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.group5.proto.Listing.IdRequest parseFrom(
+  public static IdRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.group5.proto.Listing.IdRequest parseFrom(
+  public static IdRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.group5.proto.Listing.IdRequest parseFrom(
+  public static IdRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.group5.proto.Listing.IdRequest parseFrom(byte[] data)
+  public static IdRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.group5.proto.Listing.IdRequest parseFrom(
+  public static IdRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.group5.proto.Listing.IdRequest parseFrom(java.io.InputStream input)
+  public static IdRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.group5.proto.Listing.IdRequest parseFrom(
+  public static IdRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.group5.proto.Listing.IdRequest parseDelimitedFrom(java.io.InputStream input)
+  public static IdRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.group5.proto.Listing.IdRequest parseDelimitedFrom(
+  public static IdRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.group5.proto.Listing.IdRequest parseFrom(
+  public static IdRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.group5.proto.Listing.IdRequest parseFrom(
+  public static IdRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -234,23 +234,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.group5.proto.Listing.IdRequest prototype) {
+  public static Builder newBuilder(IdRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -260,18 +260,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:com.group5.proto.Listing.IdRequest)
-      com.group5.proto.Listing.IdRequestOrBuilder {
+      IdRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_IdRequest_descriptor;
+      return Listing.internal_static_com_group5_proto_Listing_IdRequest_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_IdRequest_fieldAccessorTable
+      return Listing.internal_static_com_group5_proto_Listing_IdRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.group5.proto.Listing.IdRequest.class, com.group5.proto.Listing.IdRequest.Builder.class);
+              IdRequest.class, Builder.class);
     }
 
     // Construct using com.group5.proto.Listing.IdRequest.newBuilder()
@@ -280,7 +280,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -289,7 +289,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       id_ = 0L;
@@ -297,78 +297,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_IdRequest_descriptor;
+      return Listing.internal_static_com_group5_proto_Listing_IdRequest_descriptor;
     }
 
-    @java.lang.Override
-    public com.group5.proto.Listing.IdRequest getDefaultInstanceForType() {
-      return com.group5.proto.Listing.IdRequest.getDefaultInstance();
+    @Override
+    public IdRequest getDefaultInstanceForType() {
+      return IdRequest.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public com.group5.proto.Listing.IdRequest build() {
-      com.group5.proto.Listing.IdRequest result = buildPartial();
+    @Override
+    public IdRequest build() {
+      IdRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public com.group5.proto.Listing.IdRequest buildPartial() {
-      com.group5.proto.Listing.IdRequest result = new com.group5.proto.Listing.IdRequest(this);
+    @Override
+    public IdRequest buildPartial() {
+      IdRequest result = new IdRequest(this);
       result.id_ = id_;
       onBuilt();
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.group5.proto.Listing.IdRequest) {
-        return mergeFrom((com.group5.proto.Listing.IdRequest)other);
+      if (other instanceof IdRequest) {
+        return mergeFrom((IdRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.group5.proto.Listing.IdRequest other) {
-      if (other == com.group5.proto.Listing.IdRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(IdRequest other) {
+      if (other == IdRequest.getDefaultInstance()) return this;
       if (other.getId() != 0L) {
         setId(other.getId());
       }
@@ -377,21 +377,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.group5.proto.Listing.IdRequest parsedMessage = null;
+      IdRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.group5.proto.Listing.IdRequest) e.getUnfinishedMessage();
+        parsedMessage = (IdRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -406,7 +406,7 @@ private static final long serialVersionUID = 0L;
      * <code>int64 Id = 1;</code>
      * @return The id.
      */
-    @java.lang.Override
+    @Override
     public long getId() {
       return id_;
     }
@@ -431,13 +431,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -448,18 +448,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.group5.proto.Listing.IdRequest)
-  private static final com.group5.proto.Listing.IdRequest DEFAULT_INSTANCE;
+  private static final IdRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.group5.proto.Listing.IdRequest();
+    DEFAULT_INSTANCE = new IdRequest();
   }
 
-  public static com.group5.proto.Listing.IdRequest getDefaultInstance() {
+  public static IdRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<IdRequest>
       PARSER = new com.google.protobuf.AbstractParser<IdRequest>() {
-    @java.lang.Override
+    @Override
     public IdRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -472,13 +472,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<IdRequest> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.group5.proto.Listing.IdRequest getDefaultInstanceForType() {
+  @Override
+  public IdRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

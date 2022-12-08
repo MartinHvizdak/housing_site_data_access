@@ -11,7 +11,7 @@ public interface ImageFileMessageOrBuilder extends
    * <code>string imageBase64Data = 1;</code>
    * @return The imageBase64Data.
    */
-  java.lang.String getImageBase64Data();
+  String getImageBase64Data();
   /**
    * <code>string imageBase64Data = 1;</code>
    * @return The bytes for imageBase64Data.
@@ -23,7 +23,7 @@ public interface ImageFileMessageOrBuilder extends
    * <code>string imageContentType = 2;</code>
    * @return The imageContentType.
    */
-  java.lang.String getImageContentType();
+  String getImageContentType();
   /**
    * <code>string imageContentType = 2;</code>
    * @return The bytes for imageContentType.
@@ -35,7 +35,7 @@ public interface ImageFileMessageOrBuilder extends
    * <code>string imageFileName = 3;</code>
    * @return The imageFileName.
    */
-  java.lang.String getImageFileName();
+  String getImageFileName();
   /**
    * <code>string imageFileName = 3;</code>
    * @return The bytes for imageFileName.

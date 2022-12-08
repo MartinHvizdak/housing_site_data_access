@@ -135,4 +135,8 @@ public class HouseListing {
         }
         return base;
     }
+
+    public String getDescription() {
+        return description;
+    }
 }
