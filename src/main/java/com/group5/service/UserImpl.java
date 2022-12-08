@@ -36,25 +36,10 @@ public class UserImpl extends UserServiceGrpc.UserServiceImplBase {
             throw new RuntimeException(e);
         }
     }*/
-    @Override
-    public void RegisterUser(RegistrationInfo info, StreamObserver<UserResponse> responseStreamObserver)
-    {
-        if(userRepository.findById(info.getEmail()).isPresent())
-        {
-            throw new RuntimeException();
-        }
-        User user = new User(info.getName(),info.getSurname(),info.getEmail(),info.getPassword());
-        userRepository.save(user);
-        UserResponse response=UserResponse.newBuilder().setEmail(user.getEmail()).setName(user.getName()).setSurname(user.getSurname())
-                .build();
-
-        responseStreamObserver.onNext(response);
-        responseStreamObserver.onCompleted();
-    }
 
 
     @Override
-    public void LoginUser(LoginInfo info, StreamObserver<LoginResponse> responseStreamObserver)
+    public void checkLoginInfo(LoginInfo info, StreamObserver<LoginResponse> responseStreamObserver)
     {
         Optional<User> user=userRepository.findById(info.getEmail());
         LoginResponse loginResponse;
@@ -69,4 +54,20 @@ public class UserImpl extends UserServiceGrpc.UserServiceImplBase {
         responseStreamObserver.onNext(loginResponse);
         responseStreamObserver.onCompleted();
     }
+
+    @Override
+    public void registerUser(RegistrationInfo info, StreamObserver<UserResponse> responseStreamObserver) {
+        if(userRepository.findById(info.getEmail()).isPresent())
+        {
+            throw new RuntimeException();
+        }
+        User user = new User(info.getName(),info.getSurname(),info.getEmail(),info.getPassword());
+        userRepository.save(user);
+        UserResponse response=UserResponse.newBuilder().setEmail(user.getEmail()).setName(user.getName()).setSurname(user.getSurname())
+                .build();
+
+        responseStreamObserver.onNext(response);
+        responseStreamObserver.onCompleted();
+    }
+
 }

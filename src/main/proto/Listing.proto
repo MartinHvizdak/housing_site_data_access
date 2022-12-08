@@ -4,19 +4,16 @@ package com.group5.proto.Listing;
 
 
 message CreateHouseListingRequest {
-  string street = 1;
-  int32 postNumber = 2;
-  string city = 3;
-  int32 houseNo = 4;
-  int32 constructionYear = 5;
-  int32 lastRebuilt = 6;
-  bool hasInspection = 7;
-  double groundArea = 8;
-  double floorArea = 9;
-  repeated string imageBase64Data = 10;
-  repeated string imageContentType = 11;
-  repeated string imageFileName = 12;
-  double price = 13;
+  AddressMessage address= 1;
+  int32 constructionYear = 2;
+  int32 lastRebuilt = 3;
+  bool hasInspection = 4;
+  double groundArea = 5;
+  double floorArea = 6;
+  repeated ImageFileMessage images= 7;
+  double price = 8;
+  string userEmail = 9;
+  string description = 10;
 }
 
 message IdRequest{
@@ -25,21 +22,17 @@ message IdRequest{
 
 message HouseResponse {
   int64 id = 1;
-  string street = 2;
-  int32 postNumber = 3;
-  string city = 4;
-  int32 houseNo = 5;
-  int32 constructionYear = 6;
-  int32 lastRebuilt = 7;
-  bool hasInspection = 8;
-  double groundArea = 9;
-  double floorArea = 10;
-  repeated string imageBase64Data = 11;
-  repeated string imageContentType = 12;
-  repeated string imageFileName = 13;
-  double price = 14;
-  string userEmail = 15;
-  string creationDate= 16;
+  AddressMessage address= 2;
+  int32 constructionYear = 3;
+  int32 lastRebuilt = 4;
+  bool hasInspection = 5;
+  double groundArea = 6;
+  double floorArea = 7;
+  repeated ImageFileMessage images=8;
+  double price = 9;
+  string userEmail = 10;
+  string creationDate = 12;
+  string description = 13;
 }
 
 message ListingFiltersRequest{
@@ -50,16 +43,22 @@ message ListingFiltersRequest{
 
 message ShortListingResponse{
   int64 price=1;
-  string imageBase64Data = 2;
-  string imageContentType = 3;
-  string imageFileName = 4;
-  string street = 5;
-  int32 postNumber = 6;
-  string city = 7;
-  int32 houseNo = 8;
-  int64 id = 9;
+  ImageFileMessage image=2;
+  AddressMessage address=3;
+  int64 id = 4;
 }
 
+message AddressMessage{
+  string street = 1;
+  int32 postNumber = 2;
+  string city = 3;
+  int32 houseNo = 4;
+}
+message ImageFileMessage{
+  string imageBase64Data = 1;
+  string imageContentType = 2;
+  string imageFileName = 3;
+}
 service ListingService {
   rpc createListing(CreateHouseListingRequest) returns (HouseResponse);
   rpc getListingById(IdRequest) returns (HouseResponse);

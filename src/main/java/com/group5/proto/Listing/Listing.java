@@ -57,7 +57,7 @@ public final class Listing {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\rListing.proto\022\030com.group5.proto.Listin" +
       "g\"\266\002\n\031CreateHouseListingRequest\0229\n\007addre" +
       "ss\030\001 \001(\0132(.com.group5.proto.Listing.Addr" +
@@ -107,43 +107,43 @@ public final class Listing {
     internal_static_com_group5_proto_Listing_CreateHouseListingRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_group5_proto_Listing_CreateHouseListingRequest_descriptor,
-        new String[] { "Address", "ConstructionYear", "LastRebuilt", "HasInspection", "GroundArea", "FloorArea", "Images", "Price", "UserEmail", "Description", });
+        new java.lang.String[] { "Address", "ConstructionYear", "LastRebuilt", "HasInspection", "GroundArea", "FloorArea", "Images", "Price", "UserEmail", "Description", });
     internal_static_com_group5_proto_Listing_IdRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_group5_proto_Listing_IdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_group5_proto_Listing_IdRequest_descriptor,
-        new String[] { "Id", });
+        new java.lang.String[] { "Id", });
     internal_static_com_group5_proto_Listing_HouseResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_group5_proto_Listing_HouseResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_group5_proto_Listing_HouseResponse_descriptor,
-        new String[] { "Id", "Address", "ConstructionYear", "LastRebuilt", "HasInspection", "GroundArea", "FloorArea", "Images", "Price", "UserEmail", "CreationDate", "Description", });
+        new java.lang.String[] { "Id", "Address", "ConstructionYear", "LastRebuilt", "HasInspection", "GroundArea", "FloorArea", "Images", "Price", "UserEmail", "CreationDate", "Description", });
     internal_static_com_group5_proto_Listing_ListingFiltersRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_group5_proto_Listing_ListingFiltersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_group5_proto_Listing_ListingFiltersRequest_descriptor,
-        new String[] { "PostNumber", "MaxPrice", "MinArea", "PostNumber", "MaxPrice", "MinArea", });
+        new java.lang.String[] { "PostNumber", "MaxPrice", "MinArea", "PostNumber", "MaxPrice", "MinArea", });
     internal_static_com_group5_proto_Listing_ShortListingResponse_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_com_group5_proto_Listing_ShortListingResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_group5_proto_Listing_ShortListingResponse_descriptor,
-        new String[] { "Price", "Image", "Address", "Id", });
+        new java.lang.String[] { "Price", "Image", "Address", "Id", });
     internal_static_com_group5_proto_Listing_AddressMessage_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_com_group5_proto_Listing_AddressMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_group5_proto_Listing_AddressMessage_descriptor,
-        new String[] { "Street", "PostNumber", "City", "HouseNo", });
+        new java.lang.String[] { "Street", "PostNumber", "City", "HouseNo", });
     internal_static_com_group5_proto_Listing_ImageFileMessage_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_com_group5_proto_Listing_ImageFileMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_group5_proto_Listing_ImageFileMessage_descriptor,
-        new String[] { "ImageBase64Data", "ImageContentType", "ImageFileName", });
+        new java.lang.String[] { "ImageBase64Data", "ImageContentType", "ImageFileName", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

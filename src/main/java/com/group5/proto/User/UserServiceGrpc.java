@@ -1,7 +1,5 @@
 package com.group5.proto.User;
 
-import io.grpc.stub.StreamObserver;
-
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
@@ -203,30 +201,6 @@ public final class UserServiceGrpc {
                   this, METHODID_CHECK_LOGIN_INFO)))
           .build();
     }
-
-      /*
-          public void getUserById(GetUserByIdRequest request, StreamObserver<UserResponse> responseStreamObserver){
-              try{
-
-                  System.out.println("Received Request ====> " + request.toString());
-                  User user = userRepository.findById(request.getUserId()).get();
-
-                  UserResponse response= UserResponse.newBuilder()
-                          .setName(user.getName())
-                          .setSurname(user.getSurname())
-                          .setEmail(user.getEmail())
-                          .build();
-
-                  responseStreamObserver.onNext(response);
-                  responseStreamObserver.onCompleted();
-
-              } catch (Exception e) {
-                  throw new RuntimeException(e);
-              }
-          }*/
-      public abstract void RegisterUser(RegistrationInfo info, StreamObserver<UserResponse> responseStreamObserver);
-
-    public abstract void LoginUser(LoginInfo info, StreamObserver<LoginResponse> responseStreamObserver);
   }
 
   /**

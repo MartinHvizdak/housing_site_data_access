@@ -16,11 +16,11 @@ public interface CreateHouseListingRequestOrBuilder extends
    * <code>.com.group5.proto.Listing.AddressMessage address = 1;</code>
    * @return The address.
    */
-  AddressMessage getAddress();
+  com.group5.proto.Listing.AddressMessage getAddress();
   /**
    * <code>.com.group5.proto.Listing.AddressMessage address = 1;</code>
    */
-  AddressMessageOrBuilder getAddressOrBuilder();
+  com.group5.proto.Listing.AddressMessageOrBuilder getAddressOrBuilder();
 
   /**
    * <code>int32 constructionYear = 2;</code>
@@ -55,12 +55,12 @@ public interface CreateHouseListingRequestOrBuilder extends
   /**
    * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 7;</code>
    */
-  java.util.List<ImageFileMessage>
+  java.util.List<com.group5.proto.Listing.ImageFileMessage> 
       getImagesList();
   /**
    * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 7;</code>
    */
-  ImageFileMessage getImages(int index);
+  com.group5.proto.Listing.ImageFileMessage getImages(int index);
   /**
    * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 7;</code>
    */
@@ -68,12 +68,12 @@ public interface CreateHouseListingRequestOrBuilder extends
   /**
    * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 7;</code>
    */
-  java.util.List<? extends ImageFileMessageOrBuilder>
+  java.util.List<? extends com.group5.proto.Listing.ImageFileMessageOrBuilder> 
       getImagesOrBuilderList();
   /**
    * <code>repeated .com.group5.proto.Listing.ImageFileMessage images = 7;</code>
    */
-  ImageFileMessageOrBuilder getImagesOrBuilder(
+  com.group5.proto.Listing.ImageFileMessageOrBuilder getImagesOrBuilder(
       int index);
 
   /**
@@ -86,7 +86,7 @@ public interface CreateHouseListingRequestOrBuilder extends
    * <code>string userEmail = 9;</code>
    * @return The userEmail.
    */
-  String getUserEmail();
+  java.lang.String getUserEmail();
   /**
    * <code>string userEmail = 9;</code>
    * @return The bytes for userEmail.
@@ -98,7 +98,7 @@ public interface CreateHouseListingRequestOrBuilder extends
    * <code>string description = 10;</code>
    * @return The description.
    */
-  String getDescription();
+  java.lang.String getDescription();
   /**
    * <code>string description = 10;</code>
    * @return The bytes for description.

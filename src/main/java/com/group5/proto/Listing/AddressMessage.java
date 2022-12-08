@@ -20,14 +20,14 @@ private static final long serialVersionUID = 0L;
     city_ = "";
   }
 
-  @Override
+  @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected Object newInstance(
+  protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
     return new AddressMessage();
   }
 
-  @Override
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +38,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new NullPointerException();
+      throw new java.lang.NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -51,7 +51,7 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             street_ = s;
             break;
@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             city_ = s;
             break;
@@ -95,32 +95,32 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return Listing.internal_static_com_group5_proto_Listing_AddressMessage_descriptor;
+    return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_AddressMessage_descriptor;
   }
 
-  @Override
-  protected FieldAccessorTable
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return Listing.internal_static_com_group5_proto_Listing_AddressMessage_fieldAccessorTable
+    return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_AddressMessage_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            AddressMessage.class, Builder.class);
+            com.group5.proto.Listing.AddressMessage.class, com.group5.proto.Listing.AddressMessage.Builder.class);
   }
 
   public static final int STREET_FIELD_NUMBER = 1;
-  private volatile Object street_;
+  private volatile java.lang.Object street_;
   /**
    * <code>string street = 1;</code>
    * @return The street.
    */
-  @Override
-  public String getStreet() {
-    Object ref = street_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getStreet() {
+    java.lang.Object ref = street_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       street_ = s;
       return s;
     }
@@ -129,14 +129,14 @@ private static final long serialVersionUID = 0L;
    * <code>string street = 1;</code>
    * @return The bytes for street.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getStreetBytes() {
-    Object ref = street_;
-    if (ref instanceof String) {
+    java.lang.Object ref = street_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       street_ = b;
       return b;
     } else {
@@ -150,26 +150,26 @@ private static final long serialVersionUID = 0L;
    * <code>int32 postNumber = 2;</code>
    * @return The postNumber.
    */
-  @Override
+  @java.lang.Override
   public int getPostNumber() {
     return postNumber_;
   }
 
   public static final int CITY_FIELD_NUMBER = 3;
-  private volatile Object city_;
+  private volatile java.lang.Object city_;
   /**
    * <code>string city = 3;</code>
    * @return The city.
    */
-  @Override
-  public String getCity() {
-    Object ref = city_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getCity() {
+    java.lang.Object ref = city_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       city_ = s;
       return s;
     }
@@ -178,14 +178,14 @@ private static final long serialVersionUID = 0L;
    * <code>string city = 3;</code>
    * @return The bytes for city.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getCityBytes() {
-    Object ref = city_;
-    if (ref instanceof String) {
+    java.lang.Object ref = city_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       city_ = b;
       return b;
     } else {
@@ -199,13 +199,13 @@ private static final long serialVersionUID = 0L;
    * <code>int32 houseNo = 4;</code>
    * @return The houseNo.
    */
-  @Override
+  @java.lang.Override
   public int getHouseNo() {
     return houseNo_;
   }
 
   private byte memoizedIsInitialized = -1;
-  @Override
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -215,7 +215,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(street_)) {
@@ -233,7 +233,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @Override
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -258,15 +258,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @Override
-  public boolean equals(final Object obj) {
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof AddressMessage)) {
+    if (!(obj instanceof com.group5.proto.Listing.AddressMessage)) {
       return super.equals(obj);
     }
-    AddressMessage other = (AddressMessage) obj;
+    com.group5.proto.Listing.AddressMessage other = (com.group5.proto.Listing.AddressMessage) obj;
 
     if (!getStreet()
         .equals(other.getStreet())) return false;
@@ -280,7 +280,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -300,69 +300,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static AddressMessage parseFrom(
+  public static com.group5.proto.Listing.AddressMessage parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static AddressMessage parseFrom(
+  public static com.group5.proto.Listing.AddressMessage parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static AddressMessage parseFrom(
+  public static com.group5.proto.Listing.AddressMessage parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static AddressMessage parseFrom(
+  public static com.group5.proto.Listing.AddressMessage parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static AddressMessage parseFrom(byte[] data)
+  public static com.group5.proto.Listing.AddressMessage parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static AddressMessage parseFrom(
+  public static com.group5.proto.Listing.AddressMessage parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static AddressMessage parseFrom(java.io.InputStream input)
+  public static com.group5.proto.Listing.AddressMessage parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static AddressMessage parseFrom(
+  public static com.group5.proto.Listing.AddressMessage parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static AddressMessage parseDelimitedFrom(java.io.InputStream input)
+  public static com.group5.proto.Listing.AddressMessage parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static AddressMessage parseDelimitedFrom(
+  public static com.group5.proto.Listing.AddressMessage parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static AddressMessage parseFrom(
+  public static com.group5.proto.Listing.AddressMessage parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static AddressMessage parseFrom(
+  public static com.group5.proto.Listing.AddressMessage parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -370,23 +370,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @Override
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(AddressMessage prototype) {
+  public static Builder newBuilder(com.group5.proto.Listing.AddressMessage prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @Override
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @Override
+  @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -396,18 +396,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:com.group5.proto.Listing.AddressMessage)
-      AddressMessageOrBuilder {
+      com.group5.proto.Listing.AddressMessageOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Listing.internal_static_com_group5_proto_Listing_AddressMessage_descriptor;
+      return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_AddressMessage_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Listing.internal_static_com_group5_proto_Listing_AddressMessage_fieldAccessorTable
+      return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_AddressMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              AddressMessage.class, Builder.class);
+              com.group5.proto.Listing.AddressMessage.class, com.group5.proto.Listing.AddressMessage.Builder.class);
     }
 
     // Construct using com.group5.proto.Listing.AddressMessage.newBuilder()
@@ -416,7 +416,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -425,7 +425,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @Override
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       street_ = "";
@@ -439,29 +439,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return Listing.internal_static_com_group5_proto_Listing_AddressMessage_descriptor;
+      return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_AddressMessage_descriptor;
     }
 
-    @Override
-    public AddressMessage getDefaultInstanceForType() {
-      return AddressMessage.getDefaultInstance();
+    @java.lang.Override
+    public com.group5.proto.Listing.AddressMessage getDefaultInstanceForType() {
+      return com.group5.proto.Listing.AddressMessage.getDefaultInstance();
     }
 
-    @Override
-    public AddressMessage build() {
-      AddressMessage result = buildPartial();
+    @java.lang.Override
+    public com.group5.proto.Listing.AddressMessage build() {
+      com.group5.proto.Listing.AddressMessage result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @Override
-    public AddressMessage buildPartial() {
-      AddressMessage result = new AddressMessage(this);
+    @java.lang.Override
+    public com.group5.proto.Listing.AddressMessage buildPartial() {
+      com.group5.proto.Listing.AddressMessage result = new com.group5.proto.Listing.AddressMessage(this);
       result.street_ = street_;
       result.postNumber_ = postNumber_;
       result.city_ = city_;
@@ -470,50 +470,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public Builder clone() {
       return super.clone();
     }
-    @Override
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @Override
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @Override
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @Override
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof AddressMessage) {
-        return mergeFrom((AddressMessage)other);
+      if (other instanceof com.group5.proto.Listing.AddressMessage) {
+        return mergeFrom((com.group5.proto.Listing.AddressMessage)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(AddressMessage other) {
-      if (other == AddressMessage.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.group5.proto.Listing.AddressMessage other) {
+      if (other == com.group5.proto.Listing.AddressMessage.getDefaultInstance()) return this;
       if (!other.getStreet().isEmpty()) {
         street_ = other.street_;
         onChanged();
@@ -533,21 +533,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      AddressMessage parsedMessage = null;
+      com.group5.proto.Listing.AddressMessage parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (AddressMessage) e.getUnfinishedMessage();
+        parsedMessage = (com.group5.proto.Listing.AddressMessage) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -557,21 +557,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object street_ = "";
+    private java.lang.Object street_ = "";
     /**
      * <code>string street = 1;</code>
      * @return The street.
      */
-    public String getStreet() {
-      Object ref = street_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getStreet() {
+      java.lang.Object ref = street_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         street_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -580,11 +580,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getStreetBytes() {
-      Object ref = street_;
+      java.lang.Object ref = street_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         street_ = b;
         return b;
       } else {
@@ -597,7 +597,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setStreet(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -638,7 +638,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 postNumber = 2;</code>
      * @return The postNumber.
      */
-    @Override
+    @java.lang.Override
     public int getPostNumber() {
       return postNumber_;
     }
@@ -664,21 +664,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object city_ = "";
+    private java.lang.Object city_ = "";
     /**
      * <code>string city = 3;</code>
      * @return The city.
      */
-    public String getCity() {
-      Object ref = city_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getCity() {
+      java.lang.Object ref = city_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         city_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -687,11 +687,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getCityBytes() {
-      Object ref = city_;
+      java.lang.Object ref = city_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         city_ = b;
         return b;
       } else {
@@ -704,7 +704,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setCity(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -745,7 +745,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 houseNo = 4;</code>
      * @return The houseNo.
      */
-    @Override
+    @java.lang.Override
     public int getHouseNo() {
       return houseNo_;
     }
@@ -770,13 +770,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @Override
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @Override
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -787,18 +787,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.group5.proto.Listing.AddressMessage)
-  private static final AddressMessage DEFAULT_INSTANCE;
+  private static final com.group5.proto.Listing.AddressMessage DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new AddressMessage();
+    DEFAULT_INSTANCE = new com.group5.proto.Listing.AddressMessage();
   }
 
-  public static AddressMessage getDefaultInstance() {
+  public static com.group5.proto.Listing.AddressMessage getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<AddressMessage>
       PARSER = new com.google.protobuf.AbstractParser<AddressMessage>() {
-    @Override
+    @java.lang.Override
     public AddressMessage parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -811,13 +811,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @Override
+  @java.lang.Override
   public com.google.protobuf.Parser<AddressMessage> getParserForType() {
     return PARSER;
   }
 
-  @Override
-  public AddressMessage getDefaultInstanceForType() {
+  @java.lang.Override
+  public com.group5.proto.Listing.AddressMessage getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

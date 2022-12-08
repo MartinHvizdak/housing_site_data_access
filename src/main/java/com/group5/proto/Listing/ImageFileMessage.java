@@ -21,14 +21,14 @@ private static final long serialVersionUID = 0L;
     imageFileName_ = "";
   }
 
-  @Override
+  @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected Object newInstance(
+  protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
     return new ImageFileMessage();
   }
 
-  @Override
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -39,7 +39,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new NullPointerException();
+      throw new java.lang.NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -52,19 +52,19 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             imageBase64Data_ = s;
             break;
           }
           case 18: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             imageContentType_ = s;
             break;
           }
           case 26: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             imageFileName_ = s;
             break;
@@ -92,32 +92,32 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return Listing.internal_static_com_group5_proto_Listing_ImageFileMessage_descriptor;
+    return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_ImageFileMessage_descriptor;
   }
 
-  @Override
-  protected FieldAccessorTable
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return Listing.internal_static_com_group5_proto_Listing_ImageFileMessage_fieldAccessorTable
+    return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_ImageFileMessage_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            ImageFileMessage.class, Builder.class);
+            com.group5.proto.Listing.ImageFileMessage.class, com.group5.proto.Listing.ImageFileMessage.Builder.class);
   }
 
   public static final int IMAGEBASE64DATA_FIELD_NUMBER = 1;
-  private volatile Object imageBase64Data_;
+  private volatile java.lang.Object imageBase64Data_;
   /**
    * <code>string imageBase64Data = 1;</code>
    * @return The imageBase64Data.
    */
-  @Override
-  public String getImageBase64Data() {
-    Object ref = imageBase64Data_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getImageBase64Data() {
+    java.lang.Object ref = imageBase64Data_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       imageBase64Data_ = s;
       return s;
     }
@@ -126,14 +126,14 @@ private static final long serialVersionUID = 0L;
    * <code>string imageBase64Data = 1;</code>
    * @return The bytes for imageBase64Data.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getImageBase64DataBytes() {
-    Object ref = imageBase64Data_;
-    if (ref instanceof String) {
+    java.lang.Object ref = imageBase64Data_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       imageBase64Data_ = b;
       return b;
     } else {
@@ -142,20 +142,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int IMAGECONTENTTYPE_FIELD_NUMBER = 2;
-  private volatile Object imageContentType_;
+  private volatile java.lang.Object imageContentType_;
   /**
    * <code>string imageContentType = 2;</code>
    * @return The imageContentType.
    */
-  @Override
-  public String getImageContentType() {
-    Object ref = imageContentType_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getImageContentType() {
+    java.lang.Object ref = imageContentType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       imageContentType_ = s;
       return s;
     }
@@ -164,14 +164,14 @@ private static final long serialVersionUID = 0L;
    * <code>string imageContentType = 2;</code>
    * @return The bytes for imageContentType.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getImageContentTypeBytes() {
-    Object ref = imageContentType_;
-    if (ref instanceof String) {
+    java.lang.Object ref = imageContentType_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       imageContentType_ = b;
       return b;
     } else {
@@ -180,20 +180,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int IMAGEFILENAME_FIELD_NUMBER = 3;
-  private volatile Object imageFileName_;
+  private volatile java.lang.Object imageFileName_;
   /**
    * <code>string imageFileName = 3;</code>
    * @return The imageFileName.
    */
-  @Override
-  public String getImageFileName() {
-    Object ref = imageFileName_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getImageFileName() {
+    java.lang.Object ref = imageFileName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       imageFileName_ = s;
       return s;
     }
@@ -202,14 +202,14 @@ private static final long serialVersionUID = 0L;
    * <code>string imageFileName = 3;</code>
    * @return The bytes for imageFileName.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getImageFileNameBytes() {
-    Object ref = imageFileName_;
-    if (ref instanceof String) {
+    java.lang.Object ref = imageFileName_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       imageFileName_ = b;
       return b;
     } else {
@@ -218,7 +218,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
-  @Override
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -228,7 +228,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageBase64Data_)) {
@@ -243,7 +243,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @Override
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -263,15 +263,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @Override
-  public boolean equals(final Object obj) {
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof ImageFileMessage)) {
+    if (!(obj instanceof com.group5.proto.Listing.ImageFileMessage)) {
       return super.equals(obj);
     }
-    ImageFileMessage other = (ImageFileMessage) obj;
+    com.group5.proto.Listing.ImageFileMessage other = (com.group5.proto.Listing.ImageFileMessage) obj;
 
     if (!getImageBase64Data()
         .equals(other.getImageBase64Data())) return false;
@@ -283,7 +283,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -301,69 +301,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static ImageFileMessage parseFrom(
+  public static com.group5.proto.Listing.ImageFileMessage parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ImageFileMessage parseFrom(
+  public static com.group5.proto.Listing.ImageFileMessage parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ImageFileMessage parseFrom(
+  public static com.group5.proto.Listing.ImageFileMessage parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ImageFileMessage parseFrom(
+  public static com.group5.proto.Listing.ImageFileMessage parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ImageFileMessage parseFrom(byte[] data)
+  public static com.group5.proto.Listing.ImageFileMessage parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ImageFileMessage parseFrom(
+  public static com.group5.proto.Listing.ImageFileMessage parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ImageFileMessage parseFrom(java.io.InputStream input)
+  public static com.group5.proto.Listing.ImageFileMessage parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ImageFileMessage parseFrom(
+  public static com.group5.proto.Listing.ImageFileMessage parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ImageFileMessage parseDelimitedFrom(java.io.InputStream input)
+  public static com.group5.proto.Listing.ImageFileMessage parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static ImageFileMessage parseDelimitedFrom(
+  public static com.group5.proto.Listing.ImageFileMessage parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ImageFileMessage parseFrom(
+  public static com.group5.proto.Listing.ImageFileMessage parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ImageFileMessage parseFrom(
+  public static com.group5.proto.Listing.ImageFileMessage parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -371,23 +371,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @Override
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(ImageFileMessage prototype) {
+  public static Builder newBuilder(com.group5.proto.Listing.ImageFileMessage prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @Override
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @Override
+  @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -397,18 +397,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:com.group5.proto.Listing.ImageFileMessage)
-      ImageFileMessageOrBuilder {
+      com.group5.proto.Listing.ImageFileMessageOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Listing.internal_static_com_group5_proto_Listing_ImageFileMessage_descriptor;
+      return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_ImageFileMessage_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Listing.internal_static_com_group5_proto_Listing_ImageFileMessage_fieldAccessorTable
+      return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_ImageFileMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ImageFileMessage.class, Builder.class);
+              com.group5.proto.Listing.ImageFileMessage.class, com.group5.proto.Listing.ImageFileMessage.Builder.class);
     }
 
     // Construct using com.group5.proto.Listing.ImageFileMessage.newBuilder()
@@ -417,7 +417,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -426,7 +426,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @Override
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       imageBase64Data_ = "";
@@ -438,29 +438,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return Listing.internal_static_com_group5_proto_Listing_ImageFileMessage_descriptor;
+      return com.group5.proto.Listing.Listing.internal_static_com_group5_proto_Listing_ImageFileMessage_descriptor;
     }
 
-    @Override
-    public ImageFileMessage getDefaultInstanceForType() {
-      return ImageFileMessage.getDefaultInstance();
+    @java.lang.Override
+    public com.group5.proto.Listing.ImageFileMessage getDefaultInstanceForType() {
+      return com.group5.proto.Listing.ImageFileMessage.getDefaultInstance();
     }
 
-    @Override
-    public ImageFileMessage build() {
-      ImageFileMessage result = buildPartial();
+    @java.lang.Override
+    public com.group5.proto.Listing.ImageFileMessage build() {
+      com.group5.proto.Listing.ImageFileMessage result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @Override
-    public ImageFileMessage buildPartial() {
-      ImageFileMessage result = new ImageFileMessage(this);
+    @java.lang.Override
+    public com.group5.proto.Listing.ImageFileMessage buildPartial() {
+      com.group5.proto.Listing.ImageFileMessage result = new com.group5.proto.Listing.ImageFileMessage(this);
       result.imageBase64Data_ = imageBase64Data_;
       result.imageContentType_ = imageContentType_;
       result.imageFileName_ = imageFileName_;
@@ -468,50 +468,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public Builder clone() {
       return super.clone();
     }
-    @Override
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @Override
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @Override
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @Override
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof ImageFileMessage) {
-        return mergeFrom((ImageFileMessage)other);
+      if (other instanceof com.group5.proto.Listing.ImageFileMessage) {
+        return mergeFrom((com.group5.proto.Listing.ImageFileMessage)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(ImageFileMessage other) {
-      if (other == ImageFileMessage.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.group5.proto.Listing.ImageFileMessage other) {
+      if (other == com.group5.proto.Listing.ImageFileMessage.getDefaultInstance()) return this;
       if (!other.getImageBase64Data().isEmpty()) {
         imageBase64Data_ = other.imageBase64Data_;
         onChanged();
@@ -529,21 +529,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      ImageFileMessage parsedMessage = null;
+      com.group5.proto.Listing.ImageFileMessage parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (ImageFileMessage) e.getUnfinishedMessage();
+        parsedMessage = (com.group5.proto.Listing.ImageFileMessage) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -553,21 +553,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object imageBase64Data_ = "";
+    private java.lang.Object imageBase64Data_ = "";
     /**
      * <code>string imageBase64Data = 1;</code>
      * @return The imageBase64Data.
      */
-    public String getImageBase64Data() {
-      Object ref = imageBase64Data_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getImageBase64Data() {
+      java.lang.Object ref = imageBase64Data_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         imageBase64Data_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -576,11 +576,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getImageBase64DataBytes() {
-      Object ref = imageBase64Data_;
+      java.lang.Object ref = imageBase64Data_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         imageBase64Data_ = b;
         return b;
       } else {
@@ -593,7 +593,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setImageBase64Data(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -629,21 +629,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object imageContentType_ = "";
+    private java.lang.Object imageContentType_ = "";
     /**
      * <code>string imageContentType = 2;</code>
      * @return The imageContentType.
      */
-    public String getImageContentType() {
-      Object ref = imageContentType_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getImageContentType() {
+      java.lang.Object ref = imageContentType_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         imageContentType_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -652,11 +652,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getImageContentTypeBytes() {
-      Object ref = imageContentType_;
+      java.lang.Object ref = imageContentType_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         imageContentType_ = b;
         return b;
       } else {
@@ -669,7 +669,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setImageContentType(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -705,21 +705,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object imageFileName_ = "";
+    private java.lang.Object imageFileName_ = "";
     /**
      * <code>string imageFileName = 3;</code>
      * @return The imageFileName.
      */
-    public String getImageFileName() {
-      Object ref = imageFileName_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getImageFileName() {
+      java.lang.Object ref = imageFileName_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         imageFileName_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -728,11 +728,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getImageFileNameBytes() {
-      Object ref = imageFileName_;
+      java.lang.Object ref = imageFileName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         imageFileName_ = b;
         return b;
       } else {
@@ -745,7 +745,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setImageFileName(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -780,13 +780,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @Override
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @Override
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -797,18 +797,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.group5.proto.Listing.ImageFileMessage)
-  private static final ImageFileMessage DEFAULT_INSTANCE;
+  private static final com.group5.proto.Listing.ImageFileMessage DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new ImageFileMessage();
+    DEFAULT_INSTANCE = new com.group5.proto.Listing.ImageFileMessage();
   }
 
-  public static ImageFileMessage getDefaultInstance() {
+  public static com.group5.proto.Listing.ImageFileMessage getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<ImageFileMessage>
       PARSER = new com.google.protobuf.AbstractParser<ImageFileMessage>() {
-    @Override
+    @java.lang.Override
     public ImageFileMessage parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -821,13 +821,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @Override
+  @java.lang.Override
   public com.google.protobuf.Parser<ImageFileMessage> getParserForType() {
     return PARSER;
   }
 
-  @Override
-  public ImageFileMessage getDefaultInstanceForType() {
+  @java.lang.Override
+  public com.group5.proto.Listing.ImageFileMessage getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
