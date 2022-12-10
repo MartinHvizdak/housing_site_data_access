@@ -16,12 +16,12 @@ public class UserImpl extends UserServiceGrpc.UserServiceImplBase {
     {
         this.userRepository=userRepository;
     }
-    /*
+
     public void getUserById(GetUserByIdRequest request, StreamObserver<UserResponse> responseStreamObserver){
         try{
 
             System.out.println("Received Request ====> " + request.toString());
-            User user = userRepository.findById(request.getUserId()).get();
+            User user = userRepository.findById(request.getEmail()).get();
 
             UserResponse response= UserResponse.newBuilder()
                     .setName(user.getName())
@@ -35,7 +35,7 @@ public class UserImpl extends UserServiceGrpc.UserServiceImplBase {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }*/
+    }
 
 
     @Override
@@ -61,6 +61,7 @@ public class UserImpl extends UserServiceGrpc.UserServiceImplBase {
         {
             throw new RuntimeException();
         }
+        System.out.println("New user registering:" + info.getEmail()+", "+info.getName()+" "+info.getSurname()+", "+info.getPassword());
         User user = new User(info.getName(),info.getSurname(),info.getEmail(),info.getPassword());
         userRepository.save(user);
         UserResponse response=UserResponse.newBuilder().setEmail(user.getEmail()).setName(user.getName()).setSurname(user.getSurname())

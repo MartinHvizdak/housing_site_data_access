@@ -16,7 +16,7 @@ public interface ListingFiltersRequestOrBuilder extends
    * <code>optional string city = 1;</code>
    * @return The city.
    */
-  String getCity();
+  java.lang.String getCity();
   /**
    * <code>optional string city = 1;</code>
    * @return The bytes for city.

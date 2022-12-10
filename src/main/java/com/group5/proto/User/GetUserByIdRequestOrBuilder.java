@@ -8,8 +8,14 @@ public interface GetUserByIdRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int64 userId = 1;</code>
-   * @return The userId.
+   * <code>string email = 1;</code>
+   * @return The email.
    */
-  long getUserId();
+  java.lang.String getEmail();
+  /**
+   * <code>string email = 1;</code>
+   * @return The bytes for email.
+   */
+  com.google.protobuf.ByteString
+      getEmailBytes();
 }

@@ -3,6 +3,7 @@ import com.group5.Model.*;
 import com.group5.proto.Listing.*;
 import com.group5.repository.*;
 import io.grpc.stub.StreamObserver;
+import org.hibernate.cfg.NotYetImplementedException;
 import org.lognet.springboot.grpc.GRpcService;
 
 import java.time.LocalDate;
@@ -126,6 +127,18 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
             responseObserver.onNext(response);
         }
         responseObserver.onCompleted();
+    }
+    @Override
+    public void updateListing(HouseResponse request, StreamObserver<IsOk> responseObserver)
+    {
+        /*Area area = new Area(request.getAddress().getPostNumber(), request.getAddress().getCity());
+        area = areaRepository.(area);
+        Address address = addressRepository.save(new Address(request.getAddress().getStreet(), request.getAddress().getHouseNo(), area));
+
+        HouseListing houseListing = houseListingRepository.save(new HouseListing(request.getConstructionYear(),
+                request.getLastRebuilt(), request.getHasInspection(), request.getGroundArea(),
+                request.getFloorArea(), (long) request.getPrice(), address, LocalDate.now().toString(), request.getDescription()));*/
+       throw new NotYetImplementedException();
     }
 
     private ShortListingResponse buildShortListing(HouseListing listing) {

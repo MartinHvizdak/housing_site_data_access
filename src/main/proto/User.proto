@@ -3,7 +3,7 @@ option java_multiple_files = true;
 package com.group5.proto.User;
 
 message GetUserByIdRequest {
-  int64 userId = 1;
+  string email = 1;
 }
 
 message  UserResponse{
@@ -19,6 +19,20 @@ message RegistrationInfo {
   string password = 4;
 }
 
+message CreateUserRequest {
+  string email = 1;
+  string name = 2;
+  string surname = 3;
+  string password = 4;
+}
+
+message CreateUserResponse {
+  string email = 1;
+  string name = 2;
+  string surname = 3;
+  string password = 4;
+}
+
 message LoginInfo {
   string email = 3;
   string password = 4;
@@ -27,8 +41,10 @@ message LoginInfo {
 message LoginResponse {
   bool isValid=1;
 }
+
 service UserService {
   rpc getUserById(GetUserByIdRequest) returns (UserResponse);
+  rpc createUser(CreateUserRequest) returns (CreateUserResponse);
   rpc registerUser(RegistrationInfo) returns (UserResponse);
   rpc checkLoginInfo(LoginInfo) returns (LoginResponse);
 }

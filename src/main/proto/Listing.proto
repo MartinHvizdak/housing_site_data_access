@@ -36,7 +36,7 @@ message HouseResponse {
 }
 
 message ListingFiltersRequest{
-  optional int64 postNumber=1;
+  optional string city=1;
   optional int64 maxPrice=2;
   optional int64 minArea=3;
 }
@@ -59,8 +59,12 @@ message ImageFileMessage{
   string imageContentType = 2;
   string imageFileName = 3;
 }
+message IsOk{
+  bool isOk = 1;
+}
 service ListingService {
   rpc createListing(CreateHouseListingRequest) returns (HouseResponse);
   rpc getListingById(IdRequest) returns (HouseResponse);
   rpc getFilteredListings(ListingFiltersRequest) returns (stream ShortListingResponse);
+  rpc updateListing(HouseResponse) returns (IsOk);
 }

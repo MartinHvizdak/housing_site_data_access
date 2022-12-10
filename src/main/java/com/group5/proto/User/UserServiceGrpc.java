@@ -45,6 +45,37 @@ public final class UserServiceGrpc {
     return getGetUserByIdMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.group5.proto.User.CreateUserRequest,
+      com.group5.proto.User.CreateUserResponse> getCreateUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "createUser",
+      requestType = com.group5.proto.User.CreateUserRequest.class,
+      responseType = com.group5.proto.User.CreateUserResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.group5.proto.User.CreateUserRequest,
+      com.group5.proto.User.CreateUserResponse> getCreateUserMethod() {
+    io.grpc.MethodDescriptor<com.group5.proto.User.CreateUserRequest, com.group5.proto.User.CreateUserResponse> getCreateUserMethod;
+    if ((getCreateUserMethod = UserServiceGrpc.getCreateUserMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getCreateUserMethod = UserServiceGrpc.getCreateUserMethod) == null) {
+          UserServiceGrpc.getCreateUserMethod = getCreateUserMethod =
+              io.grpc.MethodDescriptor.<com.group5.proto.User.CreateUserRequest, com.group5.proto.User.CreateUserResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "createUser"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.group5.proto.User.CreateUserRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.group5.proto.User.CreateUserResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("createUser"))
+              .build();
+        }
+      }
+    }
+    return getCreateUserMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.group5.proto.User.RegistrationInfo,
       com.group5.proto.User.UserResponse> getRegisterUserMethod;
 
@@ -164,6 +195,13 @@ public final class UserServiceGrpc {
 
     /**
      */
+    public void createUser(com.group5.proto.User.CreateUserRequest request,
+        io.grpc.stub.StreamObserver<com.group5.proto.User.CreateUserResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateUserMethod(), responseObserver);
+    }
+
+    /**
+     */
     public void registerUser(com.group5.proto.User.RegistrationInfo request,
         io.grpc.stub.StreamObserver<com.group5.proto.User.UserResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRegisterUserMethod(), responseObserver);
@@ -185,6 +223,13 @@ public final class UserServiceGrpc {
                 com.group5.proto.User.GetUserByIdRequest,
                 com.group5.proto.User.UserResponse>(
                   this, METHODID_GET_USER_BY_ID)))
+          .addMethod(
+            getCreateUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.group5.proto.User.CreateUserRequest,
+                com.group5.proto.User.CreateUserResponse>(
+                  this, METHODID_CREATE_USER)))
           .addMethod(
             getRegisterUserMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -227,6 +272,14 @@ public final class UserServiceGrpc {
 
     /**
      */
+    public void createUser(com.group5.proto.User.CreateUserRequest request,
+        io.grpc.stub.StreamObserver<com.group5.proto.User.CreateUserResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void registerUser(com.group5.proto.User.RegistrationInfo request,
         io.grpc.stub.StreamObserver<com.group5.proto.User.UserResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -261,6 +314,13 @@ public final class UserServiceGrpc {
     public com.group5.proto.User.UserResponse getUserById(com.group5.proto.User.GetUserByIdRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetUserByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.group5.proto.User.CreateUserResponse createUser(com.group5.proto.User.CreateUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateUserMethod(), getCallOptions(), request);
     }
 
     /**
@@ -302,6 +362,14 @@ public final class UserServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.group5.proto.User.CreateUserResponse> createUser(
+        com.group5.proto.User.CreateUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.group5.proto.User.UserResponse> registerUser(
         com.group5.proto.User.RegistrationInfo request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -318,8 +386,9 @@ public final class UserServiceGrpc {
   }
 
   private static final int METHODID_GET_USER_BY_ID = 0;
-  private static final int METHODID_REGISTER_USER = 1;
-  private static final int METHODID_CHECK_LOGIN_INFO = 2;
+  private static final int METHODID_CREATE_USER = 1;
+  private static final int METHODID_REGISTER_USER = 2;
+  private static final int METHODID_CHECK_LOGIN_INFO = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -341,6 +410,10 @@ public final class UserServiceGrpc {
         case METHODID_GET_USER_BY_ID:
           serviceImpl.getUserById((com.group5.proto.User.GetUserByIdRequest) request,
               (io.grpc.stub.StreamObserver<com.group5.proto.User.UserResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_USER:
+          serviceImpl.createUser((com.group5.proto.User.CreateUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.group5.proto.User.CreateUserResponse>) responseObserver);
           break;
         case METHODID_REGISTER_USER:
           serviceImpl.registerUser((com.group5.proto.User.RegistrationInfo) request,
@@ -412,6 +485,7 @@ public final class UserServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new UserServiceFileDescriptorSupplier())
               .addMethod(getGetUserByIdMethod())
+              .addMethod(getCreateUserMethod())
               .addMethod(getRegisterUserMethod())
               .addMethod(getCheckLoginInfoMethod())
               .build();
