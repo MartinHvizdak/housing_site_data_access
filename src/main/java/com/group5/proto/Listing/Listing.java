@@ -40,6 +40,11 @@ public final class Listing {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_group5_proto_Listing_ShortListingResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_group5_proto_Listing_EmailRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_group5_proto_Listing_EmailRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_group5_proto_Listing_AddressMessage_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -88,23 +93,27 @@ public final class Listing {
       "\005image\030\002 \001(\0132*.com.group5.proto.Listing." +
       "ImageFileMessage\0229\n\007address\030\003 \001(\0132(.com." +
       "group5.proto.Listing.AddressMessage\022\n\n\002i" +
-      "d\030\004 \001(\003\"S\n\016AddressMessage\022\016\n\006street\030\001 \001(" +
-      "\t\022\022\n\npostNumber\030\002 \001(\005\022\014\n\004city\030\003 \001(\t\022\017\n\007h" +
-      "ouseNo\030\004 \001(\005\"\\\n\020ImageFileMessage\022\027\n\017imag" +
-      "eBase64Data\030\001 \001(\t\022\030\n\020imageContentType\030\002 " +
-      "\001(\t\022\025\n\rimageFileName\030\003 \001(\t\"\024\n\004IsOk\022\014\n\004is" +
-      "Ok\030\001 \001(\0102\263\003\n\016ListingService\022m\n\rcreateLis" +
-      "ting\0223.com.group5.proto.Listing.CreateHo" +
-      "useListingRequest\032\'.com.group5.proto.Lis" +
-      "ting.HouseResponse\022^\n\016getListingById\022#.c" +
-      "om.group5.proto.Listing.IdRequest\032\'.com." +
-      "group5.proto.Listing.HouseResponse\022x\n\023ge" +
-      "tFilteredListings\022/.com.group5.proto.Lis" +
-      "ting.ListingFiltersRequest\032..com.group5." +
-      "proto.Listing.ShortListingResponse0\001\022X\n\r" +
-      "updateListing\022\'.com.group5.proto.Listing" +
-      ".HouseResponse\032\036.com.group5.proto.Listin" +
-      "g.IsOkB\002P\001b\006proto3"
+      "d\030\004 \001(\003\"\035\n\014EmailRequest\022\r\n\005email\030\001 \001(\t\"S" +
+      "\n\016AddressMessage\022\016\n\006street\030\001 \001(\t\022\022\n\npost" +
+      "Number\030\002 \001(\005\022\014\n\004city\030\003 \001(\t\022\017\n\007houseNo\030\004 " +
+      "\001(\005\"\\\n\020ImageFileMessage\022\027\n\017imageBase64Da" +
+      "ta\030\001 \001(\t\022\030\n\020imageContentType\030\002 \001(\t\022\025\n\rim" +
+      "ageFileName\030\003 \001(\t\"\024\n\004IsOk\022\014\n\004isOk\030\001 \001(\0102" +
+      "\243\004\n\016ListingService\022m\n\rcreateListing\0223.co" +
+      "m.group5.proto.Listing.CreateHouseListin" +
+      "gRequest\032\'.com.group5.proto.Listing.Hous" +
+      "eResponse\022^\n\016getListingById\022#.com.group5" +
+      ".proto.Listing.IdRequest\032\'.com.group5.pr" +
+      "oto.Listing.HouseResponse\022x\n\023getFiltered" +
+      "Listings\022/.com.group5.proto.Listing.List" +
+      "ingFiltersRequest\032..com.group5.proto.Lis" +
+      "ting.ShortListingResponse0\001\022X\n\rupdateLis" +
+      "ting\022\'.com.group5.proto.Listing.HouseRes" +
+      "ponse\032\036.com.group5.proto.Listing.IsOk\022n\n" +
+      "\022getListingsByEmail\022&.com.group5.proto.L" +
+      "isting.EmailRequest\032..com.group5.proto.L" +
+      "isting.ShortListingResponse0\001B\002P\001b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -140,20 +149,26 @@ public final class Listing {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_group5_proto_Listing_ShortListingResponse_descriptor,
         new java.lang.String[] { "Price", "Image", "Address", "Id", });
-    internal_static_com_group5_proto_Listing_AddressMessage_descriptor =
+    internal_static_com_group5_proto_Listing_EmailRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_com_group5_proto_Listing_EmailRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_group5_proto_Listing_EmailRequest_descriptor,
+        new java.lang.String[] { "Email", });
+    internal_static_com_group5_proto_Listing_AddressMessage_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_com_group5_proto_Listing_AddressMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_group5_proto_Listing_AddressMessage_descriptor,
         new java.lang.String[] { "Street", "PostNumber", "City", "HouseNo", });
     internal_static_com_group5_proto_Listing_ImageFileMessage_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_com_group5_proto_Listing_ImageFileMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_group5_proto_Listing_ImageFileMessage_descriptor,
         new java.lang.String[] { "ImageBase64Data", "ImageContentType", "ImageFileName", });
     internal_static_com_group5_proto_Listing_IsOk_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_com_group5_proto_Listing_IsOk_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_group5_proto_Listing_IsOk_descriptor,

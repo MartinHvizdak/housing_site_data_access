@@ -47,7 +47,9 @@ message ShortListingResponse{
   AddressMessage address=3;
   int64 id = 4;
 }
-
+message EmailRequest{
+  string email=1;
+}
 message AddressMessage{
   string street = 1;
   int32 postNumber = 2;
@@ -67,4 +69,5 @@ service ListingService {
   rpc getListingById(IdRequest) returns (HouseResponse);
   rpc getFilteredListings(ListingFiltersRequest) returns (stream ShortListingResponse);
   rpc updateListing(HouseResponse) returns (IsOk);
+  rpc getListingsByEmail(EmailRequest) returns (stream ShortListingResponse);
 }

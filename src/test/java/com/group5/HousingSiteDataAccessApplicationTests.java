@@ -1,7 +1,8 @@
 package com.group5;
 
+import com.group5.Model.HouseListingShort;
 import com.group5.Model.User;
-import com.group5.repository.UserRepository;
+import com.group5.repository.*;
 import org.aspectj.apache.bcel.Repository;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -17,18 +18,22 @@ class HousingSiteDataAccessApplicationTests {
 /*
     @RunWith(SpringRunner.class)
     @DataJpaTest
-    public class MyRepositoryTest {
+    public class MyRepositoryTest {*/
 
         @Autowired
-        UserRepository userRepository;
-
+        HouseListingRepository houseListingRepository;
+        @Autowired
+        ImageFileRepository imageRepository;
+        @Autowired
+        AddressRepository addressRepository;
+        @Autowired
+        AreaRepository areaRepository;
         @Test
         public void myTest() throws Exception {
-            userRepository.save(new User("Martin","Hvizdak", "example@mail.com","password"));
-            userRepository.save(new User("David","Koljnrekaj", "example@mail.com","password"));
-            userRepository.save(new User("Lovre","Varvodic", "example@mail.com","password"));
-            userRepository.save(new User("Nerijus","Savickas", "example@mail.com","password"));
-            userRepository.save(new User("Matas","Kairys", "example@mail.com","password"));
-        }
+                imageRepository.deleteAll();
+            houseListingRepository.deleteAll();
+            addressRepository.deleteAll();
+            areaRepository.deleteAll();
+        }/*
     }*/
 }

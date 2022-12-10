@@ -138,6 +138,37 @@ public final class ListingServiceGrpc {
     return getUpdateListingMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.group5.proto.Listing.EmailRequest,
+      com.group5.proto.Listing.ShortListingResponse> getGetListingsByEmailMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "getListingsByEmail",
+      requestType = com.group5.proto.Listing.EmailRequest.class,
+      responseType = com.group5.proto.Listing.ShortListingResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.group5.proto.Listing.EmailRequest,
+      com.group5.proto.Listing.ShortListingResponse> getGetListingsByEmailMethod() {
+    io.grpc.MethodDescriptor<com.group5.proto.Listing.EmailRequest, com.group5.proto.Listing.ShortListingResponse> getGetListingsByEmailMethod;
+    if ((getGetListingsByEmailMethod = ListingServiceGrpc.getGetListingsByEmailMethod) == null) {
+      synchronized (ListingServiceGrpc.class) {
+        if ((getGetListingsByEmailMethod = ListingServiceGrpc.getGetListingsByEmailMethod) == null) {
+          ListingServiceGrpc.getGetListingsByEmailMethod = getGetListingsByEmailMethod =
+              io.grpc.MethodDescriptor.<com.group5.proto.Listing.EmailRequest, com.group5.proto.Listing.ShortListingResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getListingsByEmail"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.group5.proto.Listing.EmailRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.group5.proto.Listing.ShortListingResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ListingServiceMethodDescriptorSupplier("getListingsByEmail"))
+              .build();
+        }
+      }
+    }
+    return getGetListingsByEmailMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -214,6 +245,13 @@ public final class ListingServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateListingMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void getListingsByEmail(com.group5.proto.Listing.EmailRequest request,
+        io.grpc.stub.StreamObserver<com.group5.proto.Listing.ShortListingResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetListingsByEmailMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -244,6 +282,13 @@ public final class ListingServiceGrpc {
                 com.group5.proto.Listing.HouseResponse,
                 com.group5.proto.Listing.IsOk>(
                   this, METHODID_UPDATE_LISTING)))
+          .addMethod(
+            getGetListingsByEmailMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+              new MethodHandlers<
+                com.group5.proto.Listing.EmailRequest,
+                com.group5.proto.Listing.ShortListingResponse>(
+                  this, METHODID_GET_LISTINGS_BY_EMAIL)))
           .build();
     }
   }
@@ -293,6 +338,14 @@ public final class ListingServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateListingMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getListingsByEmail(com.group5.proto.Listing.EmailRequest request,
+        io.grpc.stub.StreamObserver<com.group5.proto.Listing.ShortListingResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getGetListingsByEmailMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -336,6 +389,14 @@ public final class ListingServiceGrpc {
     public com.group5.proto.Listing.IsOk updateListing(com.group5.proto.Listing.HouseResponse request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateListingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<com.group5.proto.Listing.ShortListingResponse> getListingsByEmail(
+        com.group5.proto.Listing.EmailRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getGetListingsByEmailMethod(), getCallOptions(), request);
     }
   }
 
@@ -382,6 +443,7 @@ public final class ListingServiceGrpc {
   private static final int METHODID_GET_LISTING_BY_ID = 1;
   private static final int METHODID_GET_FILTERED_LISTINGS = 2;
   private static final int METHODID_UPDATE_LISTING = 3;
+  private static final int METHODID_GET_LISTINGS_BY_EMAIL = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -415,6 +477,10 @@ public final class ListingServiceGrpc {
         case METHODID_UPDATE_LISTING:
           serviceImpl.updateListing((com.group5.proto.Listing.HouseResponse) request,
               (io.grpc.stub.StreamObserver<com.group5.proto.Listing.IsOk>) responseObserver);
+          break;
+        case METHODID_GET_LISTINGS_BY_EMAIL:
+          serviceImpl.getListingsByEmail((com.group5.proto.Listing.EmailRequest) request,
+              (io.grpc.stub.StreamObserver<com.group5.proto.Listing.ShortListingResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -481,6 +547,7 @@ public final class ListingServiceGrpc {
               .addMethod(getGetListingByIdMethod())
               .addMethod(getGetFilteredListingsMethod())
               .addMethod(getUpdateListingMethod())
+              .addMethod(getGetListingsByEmailMethod())
               .build();
         }
       }

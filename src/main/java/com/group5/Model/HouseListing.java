@@ -28,10 +28,12 @@ public class HouseListing {
     Address address;
 
     String creationDate;
-
     @Column (name= "description")
     String description;
-    public HouseListing(int constructionYear, int lastRebuilt, boolean hasInspection, double groundArea, double floorArea, long price, Address address, String creationsDate, String description) {
+    @Column (name= "email")
+    String email;
+
+    public HouseListing(int constructionYear, int lastRebuilt, boolean hasInspection, double groundArea, double floorArea, long price, Address address, String creationsDate, String description,String email) {
         this.constructionYear = constructionYear;
         this.lastRebuilt = lastRebuilt;
         this.hasInspection = hasInspection;
@@ -41,10 +43,15 @@ public class HouseListing {
         this.address = address;
         this.creationDate = creationsDate;
         this.description = description;
+        this.email=email;
     }
 
     protected HouseListing() {
 
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public long getId() {

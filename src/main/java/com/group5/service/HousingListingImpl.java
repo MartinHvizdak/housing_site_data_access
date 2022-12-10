@@ -36,7 +36,8 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
 
         HouseListing houseListing = houseListingRepository.save(new HouseListing(request.getConstructionYear(),
                 request.getLastRebuilt(), request.getHasInspection(), request.getGroundArea(),
-                request.getFloorArea(), (long) request.getPrice(), address, LocalDate.now().toString(), request.getDescription()));
+                request.getFloorArea(), (long) request.getPrice(), address, LocalDate.now().toString(), request.getDescription(),
+                request.getUserEmail()));
         List<ImageFile> images = houseListing.getAllImageFiles(request.getImagesList(),houseListing);
 
         imageFileRepository.saveAll(images);
@@ -49,7 +50,7 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
                 .addAllImages(houseListing.getAllImageFileMessages(images)).setConstructionYear(houseListing.getConstructionYear())
                 .setLastRebuilt(houseListing.getLastRebuilt()).setHasInspection(houseListing.isHasInspection()).
                 setGroundArea(houseListing.getGroundArea()).setFloorArea(houseListing.getGroundArea()).setPrice(houseListing.getPrice()).
-                setCreationDate(LocalDate.now().toString()).setDescription(houseListing.getDescription());
+                setCreationDate(LocalDate.now().toString()).setDescription(houseListing.getDescription()).setUserEmail(houseListing.getEmail());
 
         HouseResponse responseText = response.build();
         responseObserver.onNext(responseText);
@@ -141,6 +142,24 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
        throw new NotYetImplementedException();
     }
 
+    @Override
+    public void getListingsByEmail(EmailRequest request, StreamObserver<ShortListingResponse> responseObserver)
+    {
+        List<HouseListing> listings= houseListingRepository.findAll();
+        List<ShortListingResponse> filteredListings=new ArrayList<>();
+        for (HouseListing listing:listings) {
+            if(listing.getEmail().equals(request.getEmail()))
+            {
+                filteredListings.add(buildShortListing(listing));
+            }
+        }
+        for(ShortListingResponse response:filteredListings)
+        {
+            responseObserver.onNext(response);
+        }
+        responseObserver.onCompleted();
+
+    }
     private ShortListingResponse buildShortListing(HouseListing listing) {
 
         ImageFile image=imageFileRepository.findFirstByHouseListing(listing);
