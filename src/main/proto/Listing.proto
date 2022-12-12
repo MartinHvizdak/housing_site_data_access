@@ -68,6 +68,6 @@ service ListingService {
   rpc createListing(CreateHouseListingRequest) returns (HouseResponse);
   rpc getListingById(IdRequest) returns (HouseResponse);
   rpc getFilteredListings(ListingFiltersRequest) returns (stream ShortListingResponse);
-  rpc updateListing(HouseResponse) returns (IsOk);
+  rpc updateListing(HouseResponse) returns (HouseResponse);
   rpc getListingsByEmail(EmailRequest) returns (stream ShortListingResponse);
 }

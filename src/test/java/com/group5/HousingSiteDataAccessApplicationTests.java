@@ -20,7 +20,7 @@ class HousingSiteDataAccessApplicationTests {
     @DataJpaTest
     public class MyRepositoryTest {*/
 
-        @Autowired
+      /*  @Autowired
         HouseListingRepository houseListingRepository;
         @Autowired
         ImageFileRepository imageRepository;

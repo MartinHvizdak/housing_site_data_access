@@ -99,7 +99,7 @@ public final class Listing {
       "\001(\005\"\\\n\020ImageFileMessage\022\027\n\017imageBase64Da" +
       "ta\030\001 \001(\t\022\030\n\020imageContentType\030\002 \001(\t\022\025\n\rim" +
       "ageFileName\030\003 \001(\t\"\024\n\004IsOk\022\014\n\004isOk\030\001 \001(\0102" +
-      "\243\004\n\016ListingService\022m\n\rcreateListing\0223.co" +
+      "\254\004\n\016ListingService\022m\n\rcreateListing\0223.co" +
       "m.group5.proto.Listing.CreateHouseListin" +
       "gRequest\032\'.com.group5.proto.Listing.Hous" +
       "eResponse\022^\n\016getListingById\022#.com.group5" +
@@ -107,13 +107,13 @@ public final class Listing {
       "oto.Listing.HouseResponse\022x\n\023getFiltered" +
       "Listings\022/.com.group5.proto.Listing.List" +
       "ingFiltersRequest\032..com.group5.proto.Lis" +
-      "ting.ShortListingResponse0\001\022X\n\rupdateLis" +
+      "ting.ShortListingResponse0\001\022a\n\rupdateLis" +
       "ting\022\'.com.group5.proto.Listing.HouseRes" +
-      "ponse\032\036.com.group5.proto.Listing.IsOk\022n\n" +
-      "\022getListingsByEmail\022&.com.group5.proto.L" +
-      "isting.EmailRequest\032..com.group5.proto.L" +
-      "isting.ShortListingResponse0\001B\002P\001b\006proto" +
-      "3"
+      "ponse\032\'.com.group5.proto.Listing.HouseRe" +
+      "sponse\022n\n\022getListingsByEmail\022&.com.group" +
+      "5.proto.Listing.EmailRequest\032..com.group" +
+      "5.proto.Listing.ShortListingResponse0\001B\002" +
+      "P\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -108,28 +108,28 @@ public final class ListingServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<com.group5.proto.Listing.HouseResponse,
-      com.group5.proto.Listing.IsOk> getUpdateListingMethod;
+      com.group5.proto.Listing.HouseResponse> getUpdateListingMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "updateListing",
       requestType = com.group5.proto.Listing.HouseResponse.class,
-      responseType = com.group5.proto.Listing.IsOk.class,
+      responseType = com.group5.proto.Listing.HouseResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.group5.proto.Listing.HouseResponse,
-      com.group5.proto.Listing.IsOk> getUpdateListingMethod() {
-    io.grpc.MethodDescriptor<com.group5.proto.Listing.HouseResponse, com.group5.proto.Listing.IsOk> getUpdateListingMethod;
+      com.group5.proto.Listing.HouseResponse> getUpdateListingMethod() {
+    io.grpc.MethodDescriptor<com.group5.proto.Listing.HouseResponse, com.group5.proto.Listing.HouseResponse> getUpdateListingMethod;
     if ((getUpdateListingMethod = ListingServiceGrpc.getUpdateListingMethod) == null) {
       synchronized (ListingServiceGrpc.class) {
         if ((getUpdateListingMethod = ListingServiceGrpc.getUpdateListingMethod) == null) {
           ListingServiceGrpc.getUpdateListingMethod = getUpdateListingMethod =
-              io.grpc.MethodDescriptor.<com.group5.proto.Listing.HouseResponse, com.group5.proto.Listing.IsOk>newBuilder()
+              io.grpc.MethodDescriptor.<com.group5.proto.Listing.HouseResponse, com.group5.proto.Listing.HouseResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "updateListing"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.group5.proto.Listing.HouseResponse.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.group5.proto.Listing.IsOk.getDefaultInstance()))
+                  com.group5.proto.Listing.HouseResponse.getDefaultInstance()))
               .setSchemaDescriptor(new ListingServiceMethodDescriptorSupplier("updateListing"))
               .build();
         }
@@ -241,7 +241,7 @@ public final class ListingServiceGrpc {
     /**
      */
     public void updateListing(com.group5.proto.Listing.HouseResponse request,
-        io.grpc.stub.StreamObserver<com.group5.proto.Listing.IsOk> responseObserver) {
+        io.grpc.stub.StreamObserver<com.group5.proto.Listing.HouseResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateListingMethod(), responseObserver);
     }
 
@@ -280,7 +280,7 @@ public final class ListingServiceGrpc {
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.group5.proto.Listing.HouseResponse,
-                com.group5.proto.Listing.IsOk>(
+                com.group5.proto.Listing.HouseResponse>(
                   this, METHODID_UPDATE_LISTING)))
           .addMethod(
             getGetListingsByEmailMethod(),
@@ -334,7 +334,7 @@ public final class ListingServiceGrpc {
     /**
      */
     public void updateListing(com.group5.proto.Listing.HouseResponse request,
-        io.grpc.stub.StreamObserver<com.group5.proto.Listing.IsOk> responseObserver) {
+        io.grpc.stub.StreamObserver<com.group5.proto.Listing.HouseResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateListingMethod(), getCallOptions()), request, responseObserver);
     }
@@ -386,7 +386,7 @@ public final class ListingServiceGrpc {
 
     /**
      */
-    public com.group5.proto.Listing.IsOk updateListing(com.group5.proto.Listing.HouseResponse request) {
+    public com.group5.proto.Listing.HouseResponse updateListing(com.group5.proto.Listing.HouseResponse request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateListingMethod(), getCallOptions(), request);
     }
@@ -432,7 +432,7 @@ public final class ListingServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.group5.proto.Listing.IsOk> updateListing(
+    public com.google.common.util.concurrent.ListenableFuture<com.group5.proto.Listing.HouseResponse> updateListing(
         com.group5.proto.Listing.HouseResponse request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateListingMethod(), getCallOptions()), request);
@@ -476,7 +476,7 @@ public final class ListingServiceGrpc {
           break;
         case METHODID_UPDATE_LISTING:
           serviceImpl.updateListing((com.group5.proto.Listing.HouseResponse) request,
-              (io.grpc.stub.StreamObserver<com.group5.proto.Listing.IsOk>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.group5.proto.Listing.HouseResponse>) responseObserver);
           break;
         case METHODID_GET_LISTINGS_BY_EMAIL:
           serviceImpl.getListingsByEmail((com.group5.proto.Listing.EmailRequest) request,

@@ -8,4 +8,5 @@ import com.group5.Model.ImageFile;
 @Repository
 public interface ImageFileRepository extends JpaRepository<ImageFile,Long> {
 public ImageFile findFirstByHouseListing(HouseListing houseListing);
+ public void deleteAllByHouseListing(HouseListing listing);
 }

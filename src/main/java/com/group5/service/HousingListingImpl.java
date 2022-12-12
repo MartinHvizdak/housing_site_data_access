@@ -30,7 +30,11 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
         System.out.println("Received Request ====> " + request.toString());
 
         Area area = new Area(request.getAddress().getPostNumber(), request.getAddress().getCity());
-        area = areaRepository.save(area);
+        try{
+        area = areaRepository.save(area);}
+        catch(Exception ignored)
+        {
+        }
         Address address = addressRepository.save(new Address(request.getAddress().getStreet(), request.getAddress().getHouseNo(), area));
 
 
@@ -130,16 +134,31 @@ public class HousingListingImpl extends ListingServiceGrpc.ListingServiceImplBas
         responseObserver.onCompleted();
     }
     @Override
-    public void updateListing(HouseResponse request, StreamObserver<IsOk> responseObserver)
-    {
-        /*Area area = new Area(request.getAddress().getPostNumber(), request.getAddress().getCity());
-        area = areaRepository.(area);
+    public void updateListing(HouseResponse request, StreamObserver<HouseResponse> responseObserver)
+    {   Area area = new Area(request.getAddress().getPostNumber(), request.getAddress().getCity());
         Address address = addressRepository.save(new Address(request.getAddress().getStreet(), request.getAddress().getHouseNo(), area));
+        HouseListing listing=new HouseListing(request.getConstructionYear(),request.getLastRebuilt(),request.getHasInspection(),
+                request.getGroundArea(),request.getFloorArea(),(long)request.getPrice(),address,request.getCreationDate(),request.getDescription(),request.getUserEmail());
+        imageFileRepository.deleteAllByHouseListing(listing);
+        houseListingRepository.deleteById(request.getId());
+        try{
+            areaRepository.save(area);
+        }catch (Exception ignored){}
+        try{
+            addressRepository.save(address);
+        }catch (Exception ignored){}
+        HouseListing houseListing= houseListingRepository.save(listing);
+        HouseResponse.Builder response = HouseResponse.newBuilder().setId(houseListing.getId()).
+                setAddress(AddressMessage.newBuilder().setStreet(houseListing.getAddress().getStreet()).setHouseNo(houseListing.getAddress().getHouseNumber())
+                        .setCity(houseListing.getAddress().getArea().getCity()).setPostNumber(houseListing.getAddress().getArea().getPostNumber()).build())
+                .addAllImages(request.getImagesList()).setConstructionYear(houseListing.getConstructionYear())
+                .setLastRebuilt(houseListing.getLastRebuilt()).setHasInspection(houseListing.isHasInspection()).
+                setGroundArea(houseListing.getGroundArea()).setFloorArea(houseListing.getGroundArea()).setPrice(houseListing.getPrice()).
+                setCreationDate(LocalDate.now().toString()).setDescription(houseListing.getDescription()).setUserEmail(houseListing.getEmail());
 
-        HouseListing houseListing = houseListingRepository.save(new HouseListing(request.getConstructionYear(),
-                request.getLastRebuilt(), request.getHasInspection(), request.getGroundArea(),
-                request.getFloorArea(), (long) request.getPrice(), address, LocalDate.now().toString(), request.getDescription()));*/
-       throw new NotYetImplementedException();
+        HouseResponse responseText = response.build();
+        responseObserver.onNext(responseText);
+        responseObserver.onCompleted();
     }
 
     @Override
